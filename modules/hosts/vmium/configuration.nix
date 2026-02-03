@@ -2,8 +2,8 @@
   hostname = "vmium";
 in {
   flake.nixosConfigurations.${hostname} = inputs.nixpkgs.lib.nixosSystem {
-    modules = with inputs.self.modules; [
-      nixos.${hostname}
+    modules = with inputs.self.modules.nixos; [
+      ${hostname}
     ];
   };
 
@@ -14,6 +14,7 @@ in {
 
       systemd-boot
       lowerc4s3
+      kde
     ];
 
     # enable periodic ssd trim

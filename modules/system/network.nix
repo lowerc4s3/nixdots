@@ -15,9 +15,9 @@ in {
 
       # services.openssh.enable = true;
     };
+  };
 
-    flake.modules.darwin.network = {
-      networking.dns = nameservers;
-    };
+  flake.modules.darwin.network = {
+    networking.dns = nameservers;
   };
 }

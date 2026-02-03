@@ -2,7 +2,7 @@
   flake.modules.nixos.locale = {
     i18n = {
       defaultLocale = "ru_RU.UTF-8";
-      extraLocales = "en_US.UTF-8";
+      extraLocales = ["en_US.UTF-8/UTF-8"];
       extraLocaleSettings = {
         LC_ADDRESS = "ru_RU.UTF-8";
         LC_IDENTIFICATION = "ru_RU.UTF-8";

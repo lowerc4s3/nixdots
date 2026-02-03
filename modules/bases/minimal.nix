@@ -6,6 +6,8 @@
       nixconf
       network
       nix-ld
+      shell
+      cli
     ];
   };
   flake.modules.darwin.base-minimal = {
