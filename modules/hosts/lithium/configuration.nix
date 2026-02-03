@@ -20,6 +20,7 @@ in {
 
     # enable periodic ssd trim
     services.fstrim.enable = true;
+
     boot.kernelPackages = pkgs.linuxPackages_latest;
     supportedFileSystems = ["ntfs"];
     time.timeZone = "Europe/Moscow";

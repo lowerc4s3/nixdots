@@ -1,9 +1,24 @@
-{
-  flake.modules.nixos.lowerc4s3 = {pkgs, ...}: {
-    users.users.lowerc4s3 = {
+{inputs, ...}: let
+  username = "lowerc4s3";
+in {
+  flake.modules.nixos.${username} = {pkgs, ...}: {
+    users.users.${username} = {
       isNormalUser = true;
       extraGroups = ["wheel"];
       shell = pkgs.zsh;
     };
+
+    home-manager.users.${username} = {
+      imports = [
+        inputs.self.modules.home.${username}
+      ];
+    };
+  };
+
+  flake.modules.home.${username} = {pkgs, ...}: {
+    home.stateVersion = "25.11";
+    home.packages = with pkgs; [
+      fastfetch
+    ];
   };
 }
