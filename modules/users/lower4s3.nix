@@ -13,12 +13,12 @@ in {
 
     home-manager.users.${username} = {
       imports = [
-        inputs.self.modules.home.${username}
+        inputs.self.modules.homeManager.${username}
       ];
     };
   };
 
-  flake.modules.home.${username} = {pkgs, ...}: {
+  flake.modules.homeManager.${username} = {pkgs, ...}: {
     home.stateVersion = "25.11";
     home.packages = with pkgs; [
       fastfetch
