@@ -6,8 +6,8 @@
       nixconf
       network
       nix-ld
-      shell
-      cli
+      zsh
+      cli-essential
     ];
   };
 

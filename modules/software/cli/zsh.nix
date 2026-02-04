@@ -1,9 +1,13 @@
-{
-  lib,
-  ...
-}: let
+{lib, ...}: let
   inherit (lib) mkDefault;
 in {
+  flake.modules.nixos.zsh = {
+    programs.zsh = {
+      enable = true;
+      enableCompletion = true;
+    };
+  };
+
   flake.modules.homeManager.zsh = {config, ...}: {
     programs.zsh = {
       enable = true;
