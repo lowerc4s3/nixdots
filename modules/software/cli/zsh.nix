@@ -1,6 +1,4 @@
-{lib, ...}: let
-  inherit (lib) mkDefault;
-in {
+{lib, ...}: {
   flake.modules.nixos.zsh = {
     programs.zsh = {
       enable = true;
@@ -27,17 +25,32 @@ in {
         }
       '';
 
-      shellAliases = {
-        # TODO: 'o' and 'owd' platform-specific aliases
-        md = "mkdir -p";
-        la = mkDefault "ls -a";
-        lsa = mkDefault "ls -a";
-        ll = mkDefault "ls -lah";
-        l = mkDefault "ls -lh";
+      # TODO: 'o' and 'owd' platform-specific aliases
+      shellAliases = lib.mkMerge [
+        {
+          # general aliases
+          md = "mkdir -p";
+          la = lib.mkDefault "ls -a";
+          lsa = lib.mkDefault "ls -a";
+          ll = lib.mkDefault "ls -lah";
+          l = lib.mkDefault "ls -lh";
 
-        # enable colored `grep` output
-        grep = "grep --color=auto";
-      };
+          # enable colored `grep` output
+          grep = "grep --color=auto";
+        }
+        (lib.mkIf config.programs.git.enable {
+          # git aliases
+          gl = "git log --graph --abbrev-commit --decorate --date=relative --all";
+          glo = "git log --oneline --graph --abbrev-commit --decorate --date=relative --all";
+          gst = "git status --short --find-renames --branch";
+          gtsu = "git status --short --find-renames --branch --untracked-files";
+          ga = "git add";
+          gaa = "git add -A";
+          gcm = "git commit -m";
+          gcam = "git commit -am";
+          gd = "git diff";
+        })
+      ];
 
       autocd = true;
       enableCompletion = true;

@@ -26,6 +26,7 @@
     imports = with self.modules.homeManager; [
       xdg
       zsh
+      git
     ];
   };
 }
