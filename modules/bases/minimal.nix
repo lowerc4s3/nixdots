@@ -1,13 +1,16 @@
 {self, ...}: {
   flake.modules.nixos.base-minimal = {
     imports = with self.modules.nixos; [
+      nixconf
+
       firmware
       locale
-      nixconf
       network
       nix-ld
+
       zsh
-      cli-essential
+      neovim
+      git
     ];
   };
 
