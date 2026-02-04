@@ -15,6 +15,7 @@ in {
     networking.hostName = "${hostname}";
     imports = with self.modules.nixos; [
       base-desktop
+      base-develop
 
       systemd-boot
       lowerc4s3

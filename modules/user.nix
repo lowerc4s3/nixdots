@@ -22,6 +22,7 @@ in {
   flake.modules.homeManager.${username} = {pkgs, ...}: {
     imports = with self.modules.homeManager; [
       base-minimal
+      base-develop
     ];
     home.stateVersion = "25.11";
     home.packages = with pkgs; [
