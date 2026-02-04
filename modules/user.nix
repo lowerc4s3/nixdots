@@ -1,7 +1,10 @@
-{self, ...}: let
+{inputs, ...}: let
   username = "lowerc4s3";
 in {
   flake.modules.nixos.${username} = {pkgs, ...}: {
+    imports = [
+        inputs.home-manager.nixosModules.home-manager
+    ];
     users.users.${username} = {
       isNormalUser = true;
       extraGroups = ["wheel"];
@@ -10,13 +13,13 @@ in {
 
     home-manager.users.${username} = {
       imports = [
-        self.flake.modules.homeManager.${username}
+        inputs.self.modules.homeManager.${username}
       ];
     };
   };
 
   flake.modules.homeManager.${username} = {pkgs, ...}: {
-    imports = with self.flake.modules.homeManager; [
+    imports = with inputs.self.modules.homeManager; [
       base-minimal
     ];
     home.stateVersion = "25.11";
