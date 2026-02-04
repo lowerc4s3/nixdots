@@ -10,7 +10,10 @@
     programs.git = {
       enable = true;
       lfs.enable = true;
-      # TODO: settings.user.name and settings.user.email
+      settings.user = {
+        name = "lowerc4s3";
+        email = "kkirill03@gmail.com";
+      };
     };
   };
 }
