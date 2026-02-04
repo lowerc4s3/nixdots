@@ -27,6 +27,7 @@
       xdg
       zsh
       git
+      neovim
     ];
   };
 }

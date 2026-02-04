@@ -28,7 +28,6 @@
       # TODO: 'o' and 'owd' platform-specific aliases
       shellAliases = lib.mkMerge [
         {
-          # general aliases
           md = "mkdir -p";
           la = lib.mkDefault "ls -a";
           lsa = lib.mkDefault "ls -a";
@@ -39,7 +38,6 @@
           grep = "grep --color=auto";
         }
         (lib.mkIf config.programs.git.enable {
-          # git aliases
           gl = "git log --graph --abbrev-commit --decorate --date=relative --all";
           glo = "git log --oneline --graph --abbrev-commit --decorate --date=relative --all";
           gst = "git status --short --find-renames --branch";
@@ -49,6 +47,12 @@
           gcm = "git commit -m";
           gcam = "git commit -am";
           gd = "git diff";
+        })
+        (lib.mkIf config.programs.neovim.enable {
+          v = "nvim";
+        })
+        (lib.mkIf config.programs.neovide.enable {
+          vv = "neovide";
         })
       ];
 
