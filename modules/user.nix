@@ -6,10 +6,6 @@
   username = "lowerc4s3";
 in {
   flake.modules.nixos.${username} = {pkgs, ...}: {
-    # TODO: move home-manager init modules somewhere else
-    imports = [
-      inputs.home-manager.nixosModules.home-manager
-    ];
     users.users.${username} = {
       isNormalUser = true;
       extraGroups = ["wheel"];

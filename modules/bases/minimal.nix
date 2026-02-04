@@ -8,6 +8,7 @@
       network
       nix-ld
 
+      home-manager
       zsh
       neovim
       git
