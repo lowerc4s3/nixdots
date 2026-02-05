@@ -29,7 +29,7 @@ in {
     system.stateVersion = "25.11";
   };
 
-  flake.modules.nixos."${hostname}-${username}" = {
+  flake.modules.nixos."${hostname}-${username}" = {pkgs, ...}: {
     users.users.${username} = {
       isNormalUser = true;
       extraGroups = ["wheel"];
