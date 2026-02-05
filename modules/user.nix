@@ -23,10 +23,8 @@ in {
     imports = with self.modules.homeManager; [
       base-minimal
       base-develop
+      base-desktop
     ];
     home.stateVersion = "25.11";
-    home.packages = with pkgs; [
-      fastfetch
-    ];
   };
 }
