@@ -18,7 +18,7 @@ in {
     imports = with self.modules.nixos; [
       base-desktop
       base-develop
-      "${hostuser}"
+      self.modules.nixos.${hostuser}
 
       systemd-boot
       nvidia
