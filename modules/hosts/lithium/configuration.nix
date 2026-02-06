@@ -5,6 +5,7 @@
 }: let
   hostname = "lithium";
   username = "lowerc4s3";
+  hostuser = "${hostname}-${username}";
 in {
   flake.nixosConfigurations.${hostname} = inputs.nixpkgs.lib.nixosSystem {
     modules = with self.modules; [
@@ -17,6 +18,7 @@ in {
     imports = with self.modules.nixos; [
       base-desktop
       base-develop
+      "${hostuser}"
 
       systemd-boot
       nvidia
@@ -34,7 +36,7 @@ in {
     system.stateVersion = "25.11";
   };
 
-  flake.modules.nixos."${hostname}-${username}" = {pkgs, ...}: {
+  flake.modules.nixos.${hostuser} = {pkgs, ...}: {
     users.users.${username} = {
       isNormalUser = true;
       extraGroups = ["wheel"];
