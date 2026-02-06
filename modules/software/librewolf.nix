@@ -5,6 +5,13 @@ let
     DisableAppUpdate = true;
   };
   settings = {
+    # Disabling some librewolf security params
+    # to make web more usable
+    "webgl.disabled" = true;
+    "privacy.resistFingerprinting" = false;
+    "privacy.clearOnShutdown_v2.cache" = false;
+    "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
+
     # okay, these params are taken from hlissner's nix config
     # Allow svgs to take on theme colors
     "svg.context-properties.content.enabled" = true;
@@ -59,7 +66,7 @@ in {
       enable = true;
       package = pkgs.librewolf;
       inherit policies;
-      inherit settings;
+      preferences = settings;
     };
   };
 
