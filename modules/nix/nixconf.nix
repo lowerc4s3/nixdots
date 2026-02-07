@@ -14,23 +14,11 @@ in {
     imports = [
       shared
     ];
-
-    programs.nh = {
-      enable = true;
-      clean = {
-        enable = true;
-        extraArgs = "--keep 3 --keep-since 14d";
-      };
-    };
   };
 
-  flake.modules.darwin.nixconf = {pkgs, ...}: {
+  flake.modules.darwin.nixconf = {
     imports = [
       shared
-    ];
-
-    environment.systemPackages = with pkgs; [
-      nh
     ];
   };
 }

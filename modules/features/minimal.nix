@@ -12,6 +12,7 @@
       zsh
       neovim
       git
+      nh
     ];
   };
 
@@ -19,6 +20,7 @@
     imports = with self.modules.darwin; [
       nixconf
       network
+      nh
     ];
   };
 
@@ -28,6 +30,7 @@
       zsh
       git
       neovim
+      nh
     ];
   };
 }
