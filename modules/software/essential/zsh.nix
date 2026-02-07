@@ -26,6 +26,7 @@
       '';
 
       # TODO: 'o' and 'owd' platform-specific aliases
+      # TODO: move to home.shellAliases
       shellAliases = lib.mkMerge [
         {
           md = "mkdir -p";

@@ -43,7 +43,11 @@ in {
         base-develop
         base-desktop
       ];
-      home.stateVersion = "25.11";
+      home = {
+        inherit username;
+        homeDirectory = "/home/${username}";
+        stateVersion = "25.11";
+      };
     };
   };
 }
