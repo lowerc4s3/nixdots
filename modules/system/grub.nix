@@ -5,6 +5,7 @@
       timeout = 20;
       grub = {
         enable = true;
+        device = "nodev";
         efiSupport = true;
         useOSProber = true;
         # select last booted entry by default

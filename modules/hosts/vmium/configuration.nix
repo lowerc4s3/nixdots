@@ -24,8 +24,6 @@ in {
       kde
     ];
 
-    # TODO: automate this or idk
-    boot.loader.grub.device = "/dev/sda";
     boot.kernelPackages = pkgs.linuxPackages_latest;
     time.timeZone = "Europe/Moscow";
 
