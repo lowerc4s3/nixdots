@@ -20,7 +20,7 @@ in {
       base-develop
       self.modules.nixos.${hostuser}
 
-      systemd-boot
+      grub
       kde
     ];
 
