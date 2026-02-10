@@ -20,7 +20,7 @@ in {
       base-develop
       self.modules.nixos.${hostuser}
 
-      systemd-boot
+      grub
       nvidia
       amd
       kde
@@ -29,8 +29,8 @@ in {
     # enable periodic ssd trim
     services.fstrim.enable = true;
 
-    boot.kernelPackages = pkgs.linuxPackages_latest;
-    supportedFileSystems = ["ntfs"];
+    boot.kernelPackages = pkgs.linuxPackages_zen;
+    boot.supportedFilesystems = ["ntfs"];
     time.timeZone = "Europe/Moscow";
 
     system.stateVersion = "25.11";
@@ -49,7 +49,11 @@ in {
         base-develop
         base-desktop
       ];
-      home.stateVersion = "25.11";
+      home = {
+        inherit username;
+        homeDirectory = "/home/${username}";
+        stateVersion = "25.11";
+      };
     };
   };
 }
