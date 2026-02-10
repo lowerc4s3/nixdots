@@ -5,6 +5,7 @@ let
     DisableAppUpdate = true;
   };
   settings = {
+    # FIXME: some of these options is wrong
     # Disabling some librewolf security params
     # to make web more usable
     "webgl.disabled" = true;

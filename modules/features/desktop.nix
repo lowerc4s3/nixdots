@@ -7,6 +7,7 @@
       fonts
       appimage
       librewolf
+      clash-verge
     ];
   };
 
