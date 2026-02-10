@@ -20,8 +20,7 @@
       # TODO: find an idiomatic way to insert functions
       initContent = ''
         mkcd() {
-          mkdir $1
-          cd $1
+          mkdir -p "$@" && cd $_
         }
       '';
 
