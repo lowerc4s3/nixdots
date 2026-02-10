@@ -8,6 +8,7 @@
       appimage
       librewolf
       clash-verge
+      telegram
     ];
   };
 
