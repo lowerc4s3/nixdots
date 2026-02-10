@@ -45,7 +45,6 @@ in {
 
     home-manager.users.${username} = {
       imports = with self.modules.homeManager; [
-        base-minimal
         base-develop
         base-desktop
       ];

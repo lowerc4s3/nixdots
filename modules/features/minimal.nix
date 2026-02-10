@@ -13,6 +13,7 @@
       neovim
       git
       nh
+      yazi
     ];
   };
 
@@ -31,6 +32,7 @@
       git
       neovim
       nh
+      yazi
     ];
   };
 }
