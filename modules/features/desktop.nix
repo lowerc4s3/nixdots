@@ -7,7 +7,9 @@
       fonts
       appimage
       librewolf
-      clash-verge
+      # keeping this until i fix dns resolution
+      # clash-verge
+      v2raya
       telegram
     ];
   };

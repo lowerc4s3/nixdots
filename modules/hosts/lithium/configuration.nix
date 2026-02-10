@@ -39,7 +39,7 @@ in {
   flake.modules.nixos.${hostuser} = {pkgs, ...}: {
     users.users.${username} = {
       isNormalUser = true;
-      extraGroups = ["wheel"];
+      extraGroups = ["wheel" "networkmanager"];
       shell = pkgs.zsh;
     };
 
