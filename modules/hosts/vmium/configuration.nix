@@ -22,9 +22,7 @@ in {
       kde
     ];
 
-    boot.kernelPackages = pkgs.linuxPackages_latest;
     time.timeZone = "Europe/Moscow";
-
     system.stateVersion = "25.11";
   };
 

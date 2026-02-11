@@ -21,18 +21,14 @@ in {
 
       nvidia
       amd
+      ssd
+      ntfs
       kde
 
       neovide
     ];
 
-    # enable periodic ssd trim
-    services.fstrim.enable = true;
-
-    boot.kernelPackages = pkgs.linuxPackages_zen;
-    boot.supportedFilesystems = ["ntfs"];
     time.timeZone = "Europe/Moscow";
-
     system.stateVersion = "25.11";
   };
 

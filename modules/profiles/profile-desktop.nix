@@ -1,5 +1,5 @@
-{self, ...}: {
-  flake.modules.nixos.profile-desktop = {
+{self, lib, ...}: {
+  flake.modules.nixos.profile-desktop = {pkgs, ...}: {
     imports = with self.modules.nixos; [
       profile-cli
       grub
@@ -12,6 +12,9 @@
       v2raya
       gvfs
     ];
+
+    # use zen kernel on desktops
+    boot.kernelPackages = lib.mkForce pkgs.linuxPackages_zen;
   };
 
   flake.modules.darwin.profile-desktop = {

@@ -1,5 +1,5 @@
-{self, ...}: {
-  flake.modules.nixos.profile-cli = {
+{self, lib, ...}: {
+  flake.modules.nixos.profile-cli = {pkgs, ...}: {
     imports = with self.modules.nixos; [
       profile-base
       home-manager
@@ -9,6 +9,9 @@
       yazi
       neovim
     ];
+
+    # use stable kernel by default
+    boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
   };
 
   flake.modules.darwin.profile-cli = {
