@@ -3,6 +3,7 @@
     imports = with self.modules.nixos; [
       base-minimal
 
+      plymouth
       audio
       fonts
       appimage
