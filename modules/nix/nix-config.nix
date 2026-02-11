@@ -10,13 +10,13 @@ let
     };
   };
 in {
-  flake.modules.nixos.nixconf = {
+  flake.modules.nixos.nix-config = {
     imports = [
       shared
     ];
   };
 
-  flake.modules.darwin.nixconf = {
+  flake.modules.darwin.nix-config = {
     imports = [
       shared
     ];

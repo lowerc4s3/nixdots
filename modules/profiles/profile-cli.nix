@@ -1,38 +1,32 @@
 {self, ...}: {
-  flake.modules.nixos.base-minimal = {
+  flake.modules.nixos.profile-cli = {
     imports = with self.modules.nixos; [
-      nixconf
-
-      firmware
-      locale
-      network
-      nix-ld
-
+      profile-base
       home-manager
       zsh
-      neovim
       git
       nh
       yazi
+      neovim
     ];
   };
 
-  flake.modules.darwin.base-minimal = {
+  flake.modules.darwin.profile-cli = {
     imports = with self.modules.darwin; [
-      nixconf
-      network
+      profile-base
       nh
     ];
   };
 
-  flake.modules.homeManager.base-minimal = {
+  flake.modules.homeManager.profile-cli = {
     imports = with self.modules.homeManager; [
+      profile-base
       xdg
       zsh
       git
-      neovim
       nh
       yazi
+      neovim
     ];
   };
 }

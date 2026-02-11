@@ -16,11 +16,9 @@ in {
   flake.modules.nixos.${hostname} = {pkgs, ...}: {
     networking.hostName = "${hostname}";
     imports = with self.modules.nixos; [
-      base-desktop
-      base-develop
+      profile-desktop
       self.modules.nixos.${hostuser}
 
-      grub
       kde
     ];
 
@@ -39,9 +37,7 @@ in {
 
     home-manager.users.${username} = {
       imports = with self.modules.homeManager; [
-        base-minimal
-        base-develop
-        base-desktop
+        profile-desktop
       ];
       home = {
         inherit username;
