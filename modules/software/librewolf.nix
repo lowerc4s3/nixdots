@@ -27,6 +27,9 @@
           "browser.sessionstore.enabled" = true;
           "browser.startup.page" = 3;
 
+          # remember passwords
+          "signon.rememberSignons" = true;
+
           # enable search suggestions
           "browser.search.suggest.enabled" = true;
           "browser.urlbar.suggest.searches" = true;
