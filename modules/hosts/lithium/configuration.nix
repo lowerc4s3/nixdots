@@ -44,6 +44,7 @@ in {
     home-manager.users.${username} = {
       imports = with self.modules.homeManager; [
         profile-desktop
+        zathura
       ];
       home = {
         inherit username;
