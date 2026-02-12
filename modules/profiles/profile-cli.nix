@@ -9,6 +9,8 @@
       yazi
       neovim
       zoxide
+      fd
+      ripgrep
     ];
 
     # use stable kernel by default
@@ -32,6 +34,7 @@
       yazi
       neovim
       zoxide
+      fd
     ];
   };
 }
