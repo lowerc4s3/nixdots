@@ -50,6 +50,7 @@ in {
     home-manager.users.${username} = {
       imports = with self.modules.homeManager; [
         profile-desktop
+        neovide
         zathura
       ];
       home = {
