@@ -8,6 +8,7 @@
       nh
       yazi
       neovim
+      zoxide
     ];
 
     # use stable kernel by default
@@ -30,6 +31,7 @@
       nh
       yazi
       neovim
+      zoxide
     ];
   };
 }
