@@ -26,5 +26,9 @@
         # TODO: scroll step dependant on system (darwin/nixos)
       };
     };
+
+    xdg.mimeApps.defaultApplications = {
+      "application/pdf" = "org.pwmt.zathura.desktop";
+    };
   };
 }
