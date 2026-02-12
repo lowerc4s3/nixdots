@@ -27,6 +27,7 @@ in {
 
       neovide
       zathura
+      discord
     ];
 
     time.timeZone = "Europe/Moscow";
