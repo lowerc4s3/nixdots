@@ -15,6 +15,7 @@
 
     # use zen kernel on desktops
     boot.kernelPackages = lib.mkForce pkgs.linuxPackages_zen;
+    boot.kernelParams = ["quiet"];
   };
 
   flake.modules.darwin.profile-desktop = {
