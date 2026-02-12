@@ -1,6 +1,7 @@
 {
   inputs,
   self,
+  lib,
   ...
 }: let
   hostname = "lithium";
@@ -17,6 +18,7 @@ in {
     networking.hostName = "${hostname}";
     imports = with self.modules.nixos; [
       profile-desktop
+      profile-gaming
       self.modules.nixos.${hostuser}
 
       nvidia
@@ -34,10 +36,14 @@ in {
     system.stateVersion = "25.11";
   };
 
-  flake.modules.nixos.${hostuser} = {pkgs, ...}: {
+  flake.modules.nixos.${hostuser} = {config, pkgs, ...}: {
     users.users.${username} = {
       isNormalUser = true;
-      extraGroups = ["wheel" "networkmanager"];
+      extraGroups = [
+        "wheel"
+        (lib.mkIf config.networking.networkmanager.enable "networkmanager")
+        (lib.mkIf config.programs.gamemode.enable "gamemode")
+      ];
       shell = pkgs.zsh;
     };
 
