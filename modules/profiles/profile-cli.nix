@@ -27,6 +27,7 @@
   flake.modules.homeManager.profile-cli = {
     imports = with self.modules.homeManager; [
       profile-base
+      aliases
       xdg
       zsh
       git
