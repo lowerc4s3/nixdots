@@ -26,6 +26,7 @@ in {
       kde
 
       neovide
+      zathura
     ];
 
     time.timeZone = "Europe/Moscow";
