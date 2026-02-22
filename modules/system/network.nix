@@ -8,9 +8,9 @@ let
 in {
   flake.modules.nixos.network = {
     networking = {
-      nameservers = nameservers;
       networkmanager = {
         enable = true;
+        insertNameservers = nameservers;
       };
 
       # services.openssh.enable = true;
