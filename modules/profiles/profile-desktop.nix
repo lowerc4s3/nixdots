@@ -13,7 +13,7 @@
       appimage
       librewolf
       telegram
-      throne
+      clash-verge
       gvfs
     ];
 
