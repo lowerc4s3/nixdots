@@ -11,6 +11,7 @@
       zoxide
       fd
       ripgrep
+      devtools
     ];
 
     # use stable kernel by default
