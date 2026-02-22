@@ -1,4 +1,10 @@
-{lib, ...}: {
+{
+  inputs,
+  lib,
+  ...
+}: let
+  inherit (inputs) nvx;
+in {
   flake.modules.nixos.neovim = {
     programs.neovim = {
       enable = true;
@@ -7,14 +13,7 @@
     };
   };
 
-  flake.modules.homeManager.neovim = {
-    programs.neovim = {
-      enable = true;
-      defaultEditor = true;
-      viAlias = true;
-      vimAlias = true;
-    };
+  flake.modules.homeManager.neovim = {pkgs, ...}: {
+    home.packages = [nvx.packages.${pkgs.stdenv.system}.nvx];
   };
-
-  # TODO: nixvim or nvf
 }

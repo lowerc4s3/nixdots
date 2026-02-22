@@ -2,7 +2,7 @@ let
   shared = {
     nixpkgs.config.allowUnfree = true;
     nix.settings = {
-      experimental-features = ["flakes" "nix-command"];
+      experimental-features = ["flakes" "nix-command" "pipe-operators"];
 
       # Detect duplicate files in nix store
       # and replace them with hard links
