@@ -1,4 +1,8 @@
-{self, lib, ...}: {
+{
+  self,
+  lib,
+  ...
+}: {
   flake.modules.nixos.profile-desktop = {pkgs, ...}: {
     imports = with self.modules.nixos; [
       profile-cli
@@ -9,7 +13,7 @@
       appimage
       librewolf
       telegram
-      v2raya
+      throne
       gvfs
     ];
 
