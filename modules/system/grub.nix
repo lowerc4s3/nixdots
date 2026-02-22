@@ -1,5 +1,9 @@
 {inputs, ...}: {
-  flake.modules.nixos.grub = {config, pkgs, ...}: {
+  flake.modules.nixos.grub = {
+    config,
+    pkgs,
+    ...
+  }: {
     boot.loader = {
       efi.canTouchEfiVariables = true;
       timeout = 20;
