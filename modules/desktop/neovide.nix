@@ -40,5 +40,8 @@
         })
       ];
     };
+    home.shellAliases = {
+      vv = "neovide";
+    };
   };
 }
