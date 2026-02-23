@@ -14,9 +14,12 @@ in {
   };
 
   flake.modules.homeManager.neovim = {pkgs, ...}: {
-    home.packages = [nvx.packages.${pkgs.stdenv.system}.nvx];
-    home.shellAliases = {
-      v = "nvim";
+    home = {
+      packages = [nvx.packages.${pkgs.stdenv.system}.nvx];
+      sessionVariables.EDITOR = "nvim";
+      shellAliases = {
+        v = "nvim";
+      };
     };
   };
 }
