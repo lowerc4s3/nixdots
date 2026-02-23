@@ -1,9 +1,12 @@
 {
-  flake.modules.nixos.git = {
+  flake.modules.nixos.git = {pkgs, ...}: {
     programs.git = {
       enable = true;
       lfs.enable = true;
     };
+    environment.systemPackages = with pkgs; [
+      gh
+    ];
   };
 
   flake.modules.homeManager.git = {config, ...}: {
@@ -26,6 +29,10 @@
       gcam = "git commit -am";
       gd = "git diff";
       gds = "git diff --staged";
+    };
+
+    programs.gh = {
+      enable = true;
     };
   };
 }
