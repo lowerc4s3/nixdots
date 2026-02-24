@@ -253,11 +253,11 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1771785817,
-        "narHash": "sha256-M1s8q244jAfo4noH1AvZLa6BFiaA+iC7AyWofvAmvNc=",
+        "lastModified": 1771964007,
+        "narHash": "sha256-xgAO39kW8s8T2oqtE3fm6Uj0IWF7o1TunQyAmngAW9Q=",
         "owner": "lowerc4s3",
         "repo": "nvx",
-        "rev": "e09f8893400e03f3ea01160e9bfa252d5385b99d",
+        "rev": "04c9926bd676fed1f00218aee5216379f2c86efd",
         "type": "github"
       },
       "original": {
