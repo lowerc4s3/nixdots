@@ -1,8 +1,13 @@
 let
   shared = {pkgs, ...}: {
     fonts.packages = with pkgs; [
+      lilex
+      nerd-fonts.lilex
+
       jetbrains-mono
       nerd-fonts.jetbrains-mono
+
+      adwaita-fonts
     ];
   };
 in {
@@ -29,8 +34,8 @@ in {
       };
 
       defaultFonts = {
-        monospace = ["JetBrains Mono"];
-        # TODO: serif and sans
+        monospace = ["Lilex"];
+        sansSerif = ["Adwaita Sans"];
       };
     };
   };
