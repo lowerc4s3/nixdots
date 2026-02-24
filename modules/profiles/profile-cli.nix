@@ -1,4 +1,8 @@
-{self, lib, ...}: {
+{
+  self,
+  lib,
+  ...
+}: {
   flake.modules.nixos.profile-cli = {pkgs, ...}: {
     imports = with self.modules.nixos; [
       profile-base
@@ -12,6 +16,7 @@
       fd
       ripgrep
       devtools
+      bat
     ];
 
     # use stable kernel by default
@@ -37,6 +42,7 @@
       neovim
       zoxide
       fd
+      bat
     ];
   };
 }
