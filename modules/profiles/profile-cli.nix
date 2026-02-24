@@ -17,6 +17,7 @@
       ripgrep
       devtools
       bat
+      btop
     ];
 
     # use stable kernel by default
@@ -43,6 +44,7 @@
       zoxide
       fd
       bat
+      btop
     ];
   };
 }
