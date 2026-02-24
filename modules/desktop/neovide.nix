@@ -14,7 +14,8 @@
           fonts = let
             family = "JetBrainsMono Nerd Font";
           in {
-            size = 12;
+            # TODO: get font size on per-system basis
+            size = 10;
             normal = {
               inherit family;
               style = "Regular";
