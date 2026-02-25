@@ -47,6 +47,7 @@
       bat
       btop
       eza
+      prompt
     ];
   };
 }
