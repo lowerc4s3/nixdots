@@ -1,6 +1,7 @@
-let
+{inputs, ...}: let
   shared = {
     nixpkgs.config.allowUnfree = true;
+    nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
     nix.settings = {
       experimental-features = ["flakes" "nix-command" "pipe-operators"];
 
