@@ -18,6 +18,7 @@
       devtools
       bat
       btop
+      eza
     ];
 
     # use stable kernel by default
@@ -45,6 +46,7 @@
       fd
       bat
       btop
+      eza
     ];
   };
 }
