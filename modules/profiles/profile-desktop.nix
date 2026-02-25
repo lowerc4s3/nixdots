@@ -15,6 +15,7 @@
       telegram
       clash-verge
       gvfs
+      foot
     ];
 
     # use zen kernel on desktops
@@ -33,6 +34,7 @@
       profile-cli
 
       librewolf
+      foot
     ];
   };
 }
