@@ -12,7 +12,7 @@
       settings = lib.mkMerge [
         {
           fonts = let
-            family = "JetBrainsMono Nerd Font";
+            family = "Lilex Nerd Font";
           in {
             # TODO: get font size on per-system basis
             size = 10;
