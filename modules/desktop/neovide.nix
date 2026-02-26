@@ -15,7 +15,7 @@
             family = "Lilex Nerd Font";
           in {
             # TODO: get font size on per-system basis
-            size = 10;
+            size = 11;
             normal = {
               inherit family;
               style = "Regular";

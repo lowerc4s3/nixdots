@@ -43,7 +43,7 @@
         oxocarbonDark;
 
       settings.main = {
-        font = mkFont "monospace" {size = 10;};
+        font = mkFont "monospace" {size = 11;};
       };
     };
   };
