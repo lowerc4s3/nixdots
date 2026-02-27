@@ -36,7 +36,11 @@ in {
     system.stateVersion = "25.11";
   };
 
-  flake.modules.nixos.${hostuser} = {config, pkgs, ...}: {
+  flake.modules.nixos.${hostuser} = {
+    config,
+    pkgs,
+    ...
+  }: {
     users.users.${username} = {
       isNormalUser = true;
       extraGroups = [

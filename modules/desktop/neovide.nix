@@ -11,8 +11,9 @@
 
       settings = lib.mkMerge [
         {
-          fonts = let
-            family = "Lilex Nerd Font";
+          fork = true;
+          font = let
+            family = "monospace";
           in {
             # TODO: get font size on per-system basis
             size = 11;
