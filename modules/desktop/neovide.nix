@@ -16,7 +16,7 @@
             family = "monospace";
           in {
             # TODO: get font size on per-system basis
-            size = 11;
+            size = 10;
             normal = {
               inherit family;
               style = "Regular";
