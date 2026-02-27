@@ -7,7 +7,8 @@
     home-manager = {
       useUserPackages = true;
       useGlobalPkgs = true;
-      backupFileExtension = "bak";
+      backupFileExtension = "hmbak";
+      overwriteBackup = true;
       verbose = true;
     };
   };
