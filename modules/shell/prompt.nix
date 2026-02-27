@@ -26,6 +26,12 @@
       |> mapAttrs fmt
       |> attrValues
       |> join " ";
+
+    mkFg = fg:
+      mkStyle {
+        bg = "black";
+        inherit fg;
+      };
   in {
     programs.starship = {
       enable = true;
@@ -39,13 +45,14 @@
         right_format = concatStrings [
           "$git_branch"
           "$git_status"
+          "$nix_shell"
         ];
 
         directory = {
           format = "[( $read_only) $path ]($style)";
           style = mkStyle {
             bg = "black";
-            fg = "bright-blue";
+            fg = "blue";
           };
           read_only = "";
           read_only_style = mkStyle {
@@ -70,25 +77,47 @@
           vimcmd_symbol = "[ ${normalSym} ](${symStyle "green"})";
         };
 
-        git_status = {
-          format = "([ $all_status$ahead_behind ]($style))";
-          style = mkStyle {
-            bg = "bright-black";
-            fg = "bright-green";
-          };
-          ahead = " ";
-          behind = " ";
-          diverged = " ";
-          deleted = " ";
+        git_branch = {
+          format = "([ on ](${mkFg "white"})[$symbol$branch ]($style))";
+          symbol = "";
+          style = mkFg "bright-blue";
         };
 
-        git_branch = {
-          format = "([ on $symbol$branch ]($style))";
-          symbol = "";
+        git_status = let
+          withCount = icon: "(${icon}$count)";
+          mkStatusMod = status: fg: "[\$${status}](${mkFg fg})";
+          fmt = join "" [
+            (mkStatusMod "conflicted" "red")
+            (mkStatusMod "staged" "green")
+            (mkStatusMod "renamed" "magenta")
+            (mkStatusMod "deleted" "bright-red")
+            (mkStatusMod "modified" "yellow")
+            (mkStatusMod "untracked" "bright-blue")
+            (mkStatusMod "ahead" "green")
+            (mkStatusMod "behind" "yellow")
+            (mkStatusMod "diverged" "red")
+          ];
+        in {
+          format = "([${fmt} ](${mkStyle {bg = "black";}}))";
+          ahead = withCount "󰁝";
+          behind = withCount "󰁅";
+          diverged = withCount "󰹹";
+          stashed = withCount "\$";
+          modified = withCount "!";
+          staged = withCount "+";
+          deleted = withCount "󰅖";
+          renamed = withCount "»";
+          untracked = withCount "?";
+        };
+
+        nix_shell = {
+          format = "[ $symbol( $name) ]($style)";
           style = mkStyle {
-            bg = "bright-black";
-            fg = "bright-green";
+            fg = "black";
+            bg = "blue";
           };
+          symbol = "󱄅";
+          heuristic = true;
         };
       };
     };
