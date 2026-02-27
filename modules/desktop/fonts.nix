@@ -34,7 +34,7 @@ in {
       };
 
       defaultFonts = {
-        monospace = ["Lilex"];
+        monospace = ["Lilex Nerd Font"];
         sansSerif = ["Adwaita Sans"];
       };
     };
