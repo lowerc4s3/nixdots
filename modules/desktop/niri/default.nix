@@ -18,6 +18,7 @@
       niri-io
       niri-layout
       niri-misc
+      niri-rules
     ];
   };
 }
