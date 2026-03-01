@@ -39,6 +39,8 @@
           "Mod+R".action.switch-preset-column-width = [];
           "Mod+Shift+R".action.expand-column-to-available-width = [];
 
+          "Mod+T".action.toggle-column-tabbed-display = [];
+
           "Mod+H".action.focus-column-left = [];
           "Mod+J".action.focus-window-or-workspace-down = [];
           "Mod+K".action.focus-window-or-workspace-up = [];

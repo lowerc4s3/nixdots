@@ -9,6 +9,16 @@
         {proportion = 2. / 3.;}
       ];
 
+      tab-indicator = {
+        hide-when-single-tab = true;
+        place-within-column = true;
+        length.total-proportion = 0.98;
+        gap = 10;
+        width = 5;
+        gaps-between-tabs = 5;
+        corner-radius = 10;
+      };
+
       focus-ring.width = 1;
     };
   };
