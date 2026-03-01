@@ -33,6 +33,7 @@
         height = 1080;
         refresh = 144.0;
       };
+      variable-refresh-rate = "on-demand";
     };
   };
 }
