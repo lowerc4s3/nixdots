@@ -51,10 +51,8 @@
           "Mod+Shift+K".action.move-window-up = [];
           "Mod+Shift+L".action.move-column-right = [];
 
-          "Mod+Ctrl+H".action.consume-or-expel-window-left = [];
-          "Mod+Ctrl+J".action.move-window-down-or-to-workspace-down = [];
-          "Mod+Ctrl+K".action.move-window-up-or-to-workspace-up = [];
-          "Mod+Ctrl+L".action.consume-or-expel-window-right = [];
+          "Mod+Shift+Comma".action.consume-or-expel-window-left = [];
+          "Mod+Shift+Period".action.consume-or-expel-window-right = [];
 
           "Mod+V".action.toggle-window-floating = [];
           "Mod+Shift+V".action.switch-focus-between-floating-and-tiling = [];
