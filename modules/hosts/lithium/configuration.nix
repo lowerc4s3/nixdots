@@ -26,6 +26,7 @@ in {
       ssd
       ntfs
       kde
+      niri
 
       neovide
       zathura
@@ -54,6 +55,7 @@ in {
     home-manager.users.${username} = {
       imports = with self.modules.homeManager; [
         profile-desktop
+        niri
         neovide
         zathura
       ];
