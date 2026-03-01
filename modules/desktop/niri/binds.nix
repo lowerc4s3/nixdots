@@ -2,10 +2,11 @@
   flake.modules.homeManager.niri-binds = {
     lib,
     config,
+    pkgs,
     ...
   }: {
     programs.niri.settings.binds = let
-      inherit (lib) range nameValuePair listToAttrs mkIf mkMerge;
+      inherit (lib) range nameValuePair listToAttrs mkIf mkMerge getExe;
       mkWorkspaceBinds = prefix: action:
         range 1 9
         |> map (num: nameValuePair "${prefix}+${toString num}" {action.${action} = num;})
@@ -17,7 +18,7 @@
           "Mod+Return".action.spawn = "foot";
           "Mod+B".action.spawn = "librewolf";
 
-          "Mod+Shift+Q".action.quit = [];
+          "Mod+Shift+E".action.quit = [];
 
           "Mod+Tab" = {
             action.toggle-overview = [];
@@ -26,6 +27,10 @@
 
           "Mod+W" = {
             action.close-window = [];
+            repeat = false;
+          };
+          "Mod+Q" = {
+            action.spawn-sh = "kill -9 $(niri msg --json focused-window | ${getExe pkgs.jq} '.id')";
             repeat = false;
           };
           "Mod+F".action.maximize-column = [];
@@ -45,8 +50,8 @@
           "Mod+Shift+L".action.move-column-right = [];
 
           "Mod+Ctrl+H".action.consume-or-expel-window-left = [];
-          "Mod+Ctrl+J".action.move-window-down = [];
-          "Mod+Ctrl+K".action.move-window-up = [];
+          "Mod+Ctrl+J".action.move-window-down-or-to-workspace-down = [];
+          "Mod+Ctrl+K".action.move-window-up-or-to-workspace-up = [];
           "Mod+Ctrl+L".action.consume-or-expel-window-right = [];
 
           "Mod+V".action.toggle-window-floating = [];
@@ -75,9 +80,13 @@
           };
         }
         (mkWorkspaceBinds "Mod" "focus-workspace")
-        (mkWorkspaceBinds "Mod+Shift" "move-column-to-workspace")
+        (mkWorkspaceBinds "Mod+Ctrl" "move-column-to-workspace")
+        (mkWorkspaceBinds "Mod+Shift" "move-window-to-workspace")
         (mkIf config.programs.vicinae.enable {
-          "Alt+Space".action.spawn = ["vicinae" "toggle"];
+          "Alt+Space" = {
+            action.spawn = ["vicinae" "toggle"];
+            repeat = false;
+          };
         })
       ];
   };
