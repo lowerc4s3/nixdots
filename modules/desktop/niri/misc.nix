@@ -32,6 +32,8 @@
       };
 
       xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
+
+      hotkey-overlay.skip-at-startup = true;
     };
   };
 }

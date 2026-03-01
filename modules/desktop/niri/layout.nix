@@ -8,6 +8,8 @@
         {proportion = 1. / 2.;}
         {proportion = 2. / 3.;}
       ];
+
+      focus-ring.width = 1;
     };
   };
 }
