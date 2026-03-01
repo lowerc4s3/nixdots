@@ -4,6 +4,7 @@
       gnumake
       cmakeMinimal
       just
+      jq
     ];
   };
 }
