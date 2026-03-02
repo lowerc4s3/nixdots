@@ -29,6 +29,7 @@
       gcam = "git commit -am";
       gd = "git diff";
       gds = "git diff --staged";
+      grs = "git restore --staged";
     };
 
     programs.gh = {
