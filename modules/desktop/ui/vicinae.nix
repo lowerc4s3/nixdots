@@ -1,11 +1,11 @@
 {
-  flake.modules.nixos.launcher = {pkgs, ...}: {
+  flake.modules.nixos.vicinae = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       vicinae
     ];
   };
 
-  flake.modules.homeManager.launcher = {
+  flake.modules.homeManager.vicinae = {
     programs.vicinae = {
       enable = true;
       systemd.enable = true;
@@ -29,6 +29,8 @@
           applications.entrypoints = {
             librewolf.alias = "lw";
             neovide.alias = "nv";
+            discord.alias = "ds";
+            "org.telegram".alias = "tg"; # weird ass name
           };
 
           browser-extension.enabled = false;

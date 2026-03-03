@@ -2,14 +2,14 @@
   flake.modules.nixos.profile-niri = {
     imports = with self.modules.nixos; [
       niri
-      launcher
+      vicinae
     ];
   };
 
   flake.modules.homeManager.profile-niri = {
     imports = with self.modules.homeManager; [
       niri
-      launcher
+      vicinae
       noctalia-shell
     ];
   };
