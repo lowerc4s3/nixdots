@@ -19,6 +19,7 @@
       bat
       btop
       eza
+      tealdeer
     ];
 
     # use stable kernel by default
@@ -48,6 +49,7 @@
       btop
       eza
       prompt
+      tealdeer
     ];
   };
 }
