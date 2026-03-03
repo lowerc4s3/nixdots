@@ -3,7 +3,6 @@
     imports = with self.modules.nixos; [
       niri
       launcher
-      wallpaper
     ];
   };
 
@@ -11,7 +10,7 @@
     imports = with self.modules.homeManager; [
       niri
       launcher
-      wallpaper
+      noctalia-shell
     ];
   };
 }
