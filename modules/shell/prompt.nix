@@ -89,7 +89,7 @@
           fmt = join "" [
             (mkStatusMod "conflicted" "red")
             (mkStatusMod "staged" "green")
-            (mkStatusMod "renamed" "magenta")
+            (mkStatusMod "renamed" "purple")
             (mkStatusMod "deleted" "bright-red")
             (mkStatusMod "modified" "yellow")
             (mkStatusMod "untracked" "bright-blue")
