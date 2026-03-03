@@ -50,6 +50,7 @@
       eza
       prompt
       tealdeer
+      fzf
     ];
   };
 }

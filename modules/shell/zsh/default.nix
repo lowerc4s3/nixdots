@@ -7,6 +7,7 @@
   };
 
   flake.modules.homeManager.zsh = {
+    lib,
     pkgs,
     config,
     ...
@@ -42,7 +43,7 @@
         strategy = ["completion"];
       };
 
-      initContent = ''
+      initContent = lib.mkOrder 800 ''
         source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
       '';
 
