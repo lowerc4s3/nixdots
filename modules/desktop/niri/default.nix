@@ -19,6 +19,7 @@
       niri-layout
       niri-misc
       niri-rules
+      niri-backdrop
     ];
   };
 }
