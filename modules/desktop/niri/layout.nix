@@ -1,6 +1,7 @@
 {
   flake.modules.homeManager.niri-layout = {
     programs.niri.settings.layout = {
+      always-center-single-column = true;
       gaps = 10;
       default-column-width.proportion = 1. / 2.;
       preset-column-widths = [
