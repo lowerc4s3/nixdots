@@ -15,6 +15,11 @@
           geometry-corner-radius = allCorners 10.;
           clip-to-geometry = true;
         }
+
+        {
+          matches = [{app-id = "^cs2$";}];
+          variable-refresh-rate = true;
+        }
       ];
 
       layer-rules = [
