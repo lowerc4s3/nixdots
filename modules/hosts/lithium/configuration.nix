@@ -4,7 +4,7 @@
     system.stateVersion = "25.11";
 
     imports = with self.modules.nixos; [
-      ./_hardware-configuration.nix
+      ./hardware-configuration.nix
       base-desktop
 
       sys-amd

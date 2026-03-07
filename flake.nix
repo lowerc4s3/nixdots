@@ -36,7 +36,7 @@
   };
 
   outputs = inputs:
-    inputs.flake-parts.lib.mkFlake {inherit inputs;}
-    # (inputs.import-tree.filter (name: name != "hardware-configuration.nix") ./modules);
-    (inputs.import-tree ./modules);
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} ({lib, ...}: {
+      imports = [(inputs.import-tree.filterNot (lib.hasInfix "hardware-configuration") ./modules)];
+    });
 }
