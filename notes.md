@@ -2,7 +2,7 @@
 
 ## todo
 - [ ] security enhancements (apparmor, selinux)
-- [ ] config resturcture
+- [x] config resturcture
 - [ ] noctalia config
 - [ ] stylix
 - [ ] shared options declarations (font size, profile image, etc)
@@ -10,6 +10,8 @@
 - [ ] starship time module
 - [ ] librewolf tridactyl or qutebrowser
 - [ ] use nvx modules instead of a package
+- [ ] try openrgb
+- [ ] check facter
 
 ## structure changes
 1. bases – general packages and configs wanted on every system. system can have
@@ -20,6 +22,11 @@
     - cli/shell – cli utils, some minimal neovim config, zsh
     - desktop – desktop specific settings (fonts, some params)
 2. features – sets of packages and configs tailored for a specific usecase.
-   system can import multiple features.
-    - app sets – social, development, gaming, general (terminal, browser), wm basic apps (file manager, etc)
-    - desktop environments – kde, gnome, niri (with shell like noctalia, file manager, pdf and image viewer, etc)
+system can import multiple features.
+    - app sets – social, development, gaming, general (terminal, browser), wm basic
+    apps (file manager, etc)
+    - desktop environments – kde, gnome, niri (with shell like noctalia, file
+    manager, pdf and image viewer, etc)
+3. feature cores – 
+4. features (and probably bases) should be placed in the subdir named after the
+   feature and import all required modules in `default.nix`

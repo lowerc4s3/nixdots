@@ -1,69 +1,36 @@
-{
-  inputs,
-  self,
-  lib,
-  ...
-}: let
-  hostname = "lithium";
-  username = "lowerc4s3";
-  hostuser = "${hostname}-${username}";
-in {
-  flake.nixosConfigurations.${hostname} = inputs.nixpkgs.lib.nixosSystem {
-    modules = with self.modules; [
-      nixos.${hostname}
-    ];
-  };
-
-  flake.modules.nixos.${hostname} = {pkgs, ...}: {
-    networking.hostName = "${hostname}";
-    imports = with self.modules.nixos; [
-      profile-desktop
-      profile-gaming
-      self.modules.nixos.${hostuser}
-
-      nvidia
-      amd
-      ssd
-      ntfs
-      kde
-      profile-niri
-
-      neovide
-      zathura
-      discord
-    ];
-
+{self, ...}: {
+  flake.nixosConfigurations = self.lib.mkNixosWithUser "lithium" "lowerc4s3" {
     time.timeZone = "Europe/Moscow";
     system.stateVersion = "25.11";
-  };
 
-  flake.modules.nixos.${hostuser} = {
-    config,
-    pkgs,
-    ...
-  }: {
-    users.users.${username} = {
-      isNormalUser = true;
-      extraGroups = [
-        "wheel"
-        (lib.mkIf config.networking.networkmanager.enable "networkmanager")
-        (lib.mkIf config.programs.gamemode.enable "gamemode")
-      ];
-      shell = pkgs.zsh;
-    };
+    imports = with self.modules.nixos; [
+      ./_hardware-configuration.nix
+      base-desktop
 
-    home-manager.users.${username} = {
+      sys-amd
+      sys-nvidia
+      sys-ntfs
+      sys-ssd
+
+      desktop-kde
+      desktop-niri
+
+      apps-social
+      games-core
+      dev-core
+      dev-neovide
+    ];
+
+    home-manager.users.lowerc4s3 = {
+      home.stateVersion = "25.11";
       imports = with self.modules.homeManager; [
-        profile-desktop
-        profile-niri
-        neovide
-        zathura
+        base-desktop
+
+        desktop-niri
+
+        games-core
+        dev-neovide
       ];
-      home = {
-        inherit username;
-        homeDirectory = "/home/${username}";
-        stateVersion = "25.11";
-      };
     };
   };
 }

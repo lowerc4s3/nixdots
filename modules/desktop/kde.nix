@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.kde = {pkgs, ...}: {
+  flake.modules.nixos.desktop-kde = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       # NOTE: temp location, will move somewhere else later
       wl-clipboard

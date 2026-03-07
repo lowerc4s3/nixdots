@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.niri-layout = {
+  flake.modules.homeManager.desktop-niri = {
     programs.niri.settings.layout = {
       always-center-single-column = true;
       gaps = 10;

@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.niri-misc = {
+  flake.modules.homeManager.desktop-niri = {
     lib,
     pkgs,
     ...

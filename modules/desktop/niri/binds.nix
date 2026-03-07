@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.niri-binds = {
+  flake.modules.homeManager.desktop-niri = {
     lib,
     config,
     pkgs,
