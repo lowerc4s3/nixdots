@@ -16,6 +16,9 @@
           labelMode = "none";
           showApplications = false;
           enableScrollWheel = true;
+          focusedColor = "none";
+          occupiedColor = "none";
+          emptyColor = "none";
         }
       ];
 
