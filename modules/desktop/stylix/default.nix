@@ -1,13 +1,25 @@
 {inputs, ...}: {
-  flake.modules.nixos.desktop-stylix = {lib, ...}: {
+  flake.modules.nixos.desktop-stylix = {
+    lib,
+    pkgs,
+    ...
+  }: {
     imports = [inputs.stylix.nixosModules.stylix];
-    stylix.enable = true;
+    stylix = {
+      enable = true;
 
-    stylix.targets = {
-      plymouth.enable = false;
-      grub.enable = false;
-      qt.enable = false;
-      qt.platform = lib.mkForce "qtct";
+      targets = {
+        plymouth.enable = false;
+        grub.enable = false;
+        qt.enable = false;
+        qt.platform = lib.mkForce "qtct";
+      };
+
+      cursor = {
+        package = pkgs.bibata-cursors;
+        name = "Bibata-Modern-Classic";
+        size = 24;
+      };
     };
   };
 
