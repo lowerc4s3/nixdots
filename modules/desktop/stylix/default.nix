@@ -25,6 +25,7 @@
 
   flake.modules.homeManager.desktop-stylix = {
     stylix.targets = {
+      nixcord.enable = false;
       librewolf = {
         firefoxGnomeTheme.enable = true;
         profileNames = ["default"];
