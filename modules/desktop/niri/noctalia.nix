@@ -26,6 +26,11 @@
           wallpaperJsonPath = "${config.xdg.cacheHome}/noctalia/wallpapers.json";
           blurredWallpaperPath = "${config.xdg.cacheHome}/backdrop-blurred.png";
         in ''
+          # HACK: for some reason noctalia fires the hook before it updates the
+          # wallpapers.json and that breaks sync. there are probably better
+          # ways to handle this, but idk
+          sleep 1
+
           wallpaper_path="$(jq --raw-output '.wallpapers."DP-1"' ${wallpaperJsonPath})"
           magick "$wallpaper_path" -scale 10% -blur 0x2.5 -resize 1000% ${blurredWallpaperPath}
           swww img -t none ${blurredWallpaperPath}
