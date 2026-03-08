@@ -28,6 +28,7 @@
 
         desktop-niri
 
+        apps-social
         games-core
         dev-neovide
       ];
