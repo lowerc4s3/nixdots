@@ -15,11 +15,6 @@
       settings = lib.mkMerge [
         {
           fork = true;
-          font = {
-            # TODO: get font size on per-system basis
-            size = 10;
-            normal = "monospace";
-          };
         }
         (lib.mkIf pkgs.stdenv.isDarwin {
           frame = "buttonless";

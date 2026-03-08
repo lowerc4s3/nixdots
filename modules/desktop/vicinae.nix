@@ -9,7 +9,6 @@
 
         font.normal.family = "system";
         launcher_window = {
-          opacity = 1;
           blur.enabled = false;
           client_side_decorations = {
             rounding = 10;

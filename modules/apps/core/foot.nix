@@ -44,7 +44,6 @@
           oxocarbonDark;
 
         main = {
-          font = mkFont "monospace" {size = 10;};
           line-height = 18;
           pad = "5x5 center";
         };

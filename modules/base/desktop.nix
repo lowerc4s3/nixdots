@@ -10,6 +10,7 @@
       desktop-core
       sys-plymouth
       sys-grub
+      desktop-stylix
     ];
 
     # use zen kernel on desktops
@@ -28,6 +29,7 @@
       base-cli
       apps-core
       desktop-core
+      desktop-stylix
     ];
   };
 }

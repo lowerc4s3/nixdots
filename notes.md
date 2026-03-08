@@ -12,6 +12,7 @@
 - [ ] use nvx modules instead of a package
 - [ ] try openrgb
 - [ ] check facter
+- [ ] tmux or zellij
 
 ## structure changes
 1. bases – general packages and configs wanted on every system. system can have
