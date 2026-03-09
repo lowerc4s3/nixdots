@@ -35,6 +35,10 @@
 
       hotkey-overlay.skip-at-startup = true;
       clipboard.disable-primary = true;
+
+      # fix discord/telegram/etc not focusing
+      # when clicking on notif or tray icon
+      debug.honor-xdg-activation-with-invalid-serial = [];
     };
   };
 }
