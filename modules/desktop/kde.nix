@@ -1,9 +1,5 @@
 {
-  flake.modules.nixos.desktop-kde = {pkgs, ...}: {
-    environment.systemPackages = with pkgs; [
-      # NOTE: temp location, will move somewhere else later
-      wl-clipboard
-    ];
+  flake.modules.nixos.desktop-kde = {
     services.desktopManager.plasma6 = {
       enable = true;
       enableQt5Integration = true;

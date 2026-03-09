@@ -12,7 +12,6 @@
       sys-ntfs
       sys-ssd
 
-      desktop-kde
       desktop-niri
 
       apps-social
