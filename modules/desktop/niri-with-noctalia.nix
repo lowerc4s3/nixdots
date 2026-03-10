@@ -2,6 +2,7 @@
   flake.modules.nixos.desktop-niri-with-noctalia = {
     imports = with self.modules.nixos; [
       desktop-niri
+      desktop-nautilus
     ];
   };
 
