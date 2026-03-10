@@ -8,7 +8,6 @@
       desktop-noctalia
     ];
 
-    # use blurred noctalia wallpapers as a niri's overview backdrop
     services.swww.enable = true;
     programs.niri.settings = {
       layer-rules = [
@@ -18,6 +17,8 @@
         }
       ];
     };
+
+    # use blurred noctalia wallpapers as a niri's overview backdrop
     home.packages = with pkgs; [
       (writeShellApplication {
         name = "sync-backdrop";

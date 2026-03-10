@@ -34,7 +34,7 @@
       widgets.right = [
         {
           id = "Tray";
-          pinned = ["tray-icon tray app"];
+          pinned = ["tray-icon tray app main"];
         }
         {
           id = "KeyboardLayout";
