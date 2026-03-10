@@ -25,15 +25,6 @@
         suspendTimeout = 0;
       };
 
-      hooks = {
-        enabled = true;
-        # TODO: point derivation
-        # FIXME: for some reason hook doesn't fire. the script itself activates
-        # but noctalia doesn't run it when wallpaper updates. manual script invocation
-        # is required
-        wallpaperChange = "sync-backdrop";
-      };
-
       dock.enabled = false;
       desktopWidgets.enabled = false;
       audio.visualizerType = "none";
