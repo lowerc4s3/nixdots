@@ -1,10 +1,17 @@
 {self, ...}: {
-  flake.modules.homeManager.desktop-niri = {
+  flake.modules.nixos.desktop-niri-with-noctalia = {
+    imports = with self.modules.nixos; [
+      desktop-niri
+    ];
+  };
+
+  flake.modules.homeManager.desktop-niri-with-noctalia = {
     pkgs,
     config,
     ...
   }: {
     imports = with self.modules.homeManager; [
+      desktop-niri
       desktop-noctalia
     ];
 

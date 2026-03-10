@@ -12,7 +12,7 @@
       sys-ntfs
       sys-ssd
 
-      desktop-niri
+      desktop-niri-with-noctalia
 
       apps-social
       games-core
@@ -25,7 +25,7 @@
       imports = with self.modules.homeManager; [
         base-desktop
 
-        desktop-niri
+        desktop-niri-with-noctalia
 
         apps-social
         games-core
