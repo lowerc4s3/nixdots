@@ -29,10 +29,16 @@
       desktopWidgets.enabled = false;
       audio.visualizerType = "none";
 
-      launcher = {
-        enableSessionSearch = false;
+      appLauncher = {
+        position = "center";
+        terminalCommand = "foot --";
+        viewMode = "list";
+        density = "comfortable";
+        showCategories = false;
+
         enableSettingsSearch = false;
-        enableWindowsSearch = false;
+        enableSessionSearch = true;
+        enableWindowsSearch = true;
       };
     };
   };

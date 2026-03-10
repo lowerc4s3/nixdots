@@ -9,7 +9,15 @@
       widgetSpacing = 4;
       contentPadding = 2;
 
+      mouseWheelAction = "none";
+      leftClickAction = "none";
+      rightClickAction = "none";
+
       widgets.left = [
+        {
+          id = "Launcher";
+          icon = "layout-grid-filled";
+        }
         {
           id = "Workspace";
           pillSize = 0.4;
@@ -39,19 +47,26 @@
         {
           id = "KeyboardLayout";
           diplayMode = "forceOpen";
-          showIcon = false;
-        }
-        {
-          id = "NotificationHistory";
-          showUnreadBadge = true;
+          showIcon = true;
         }
         {
           id = "Volume";
           displayMode = "onhover";
         }
         {
+          id = "Network";
+        }
+        {
+          id = "Battery";
+          hideIfNotDetected = true;
+        }
+        {
+          id = "NotificationHistory";
+          showUnreadBadge = true;
+        }
+        {
           id = "ControlCenter";
-          icon = "settings-2";
+          icon = "adjustments";
         }
       ];
     };

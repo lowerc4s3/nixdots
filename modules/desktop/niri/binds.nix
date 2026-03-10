@@ -82,12 +82,6 @@
         (mkWorkspaceBinds "Mod" "focus-workspace")
         (mkWorkspaceBinds "Mod+Ctrl" "move-column-to-workspace")
         (mkWorkspaceBinds "Mod+Shift" "move-window-to-workspace")
-        (mkIf config.programs.vicinae.enable {
-          "Alt+Space" = {
-            action.spawn = ["vicinae" "toggle"];
-            repeat = false;
-          };
-        })
       ];
   };
 }

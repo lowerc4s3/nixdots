@@ -13,8 +13,5 @@
   };
 
   flake.modules.homeManager.desktop-niri = {
-    imports = with self.modules.homeManager; [
-      desktop-vicinae
-    ];
   };
 }
