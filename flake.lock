@@ -516,9 +516,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "noctalia-qs": [
-          "noctalia-qs"
-        ]
+        "noctalia-qs": "noctalia-qs"
       },
       "locked": {
         "lastModified": 1773071735,
@@ -537,15 +535,16 @@
     "noctalia-qs": {
       "inputs": {
         "nixpkgs": [
+          "noctalia",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1773067578,
-        "narHash": "sha256-thQ7Ht+7P7eLBpXrr5owAPk6Xj84W0DHgUzmZnkqwNk=",
+        "lastModified": 1773154457,
+        "narHash": "sha256-86qsfxyO7CJlDxyIPuFNY+MKaPL+Q7DOM6NDJEQ3IUE=",
         "owner": "noctalia-dev",
         "repo": "noctalia-qs",
-        "rev": "70d328e3b951ddb40c91bef7bb76770ea55f9d7c",
+        "rev": "2dbd00cac711209283c11a6e4d11c41123d61431",
         "type": "github"
       },
       "original": {
@@ -641,7 +640,6 @@
         "nixcord": "nixcord",
         "nixpkgs": "nixpkgs_2",
         "noctalia": "noctalia",
-        "noctalia-qs": "noctalia-qs",
         "nvx": "nvx",
         "silentSDDM": "silentSDDM",
         "stylix": "stylix"

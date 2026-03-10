@@ -12,6 +12,9 @@
       desktop-noctalia
     ];
     programs.niri.settings = {
+      spawn-at-startup = [
+        {argv = ["noctalia-shell"];}
+      ];
       layer-rules = [
         {
           matches = [{namespace = "^noctalia-overview*";}];
