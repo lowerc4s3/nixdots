@@ -2,7 +2,6 @@
   flake.modules.homeManager.desktop-niri = {
     programs.niri.settings.layout = {
       always-center-single-column = true;
-      gaps = 10;
       default-column-width.proportion = 1. / 2.;
       preset-column-widths = [
         {proportion = 1. / 3.;}
@@ -21,6 +20,14 @@
       };
 
       focus-ring.width = 1;
+
+      gaps = 10;
+      struts = {
+        left = 25;
+        right = 25;
+        top = 15;
+        bottom = 15;
+      };
     };
   };
 }
