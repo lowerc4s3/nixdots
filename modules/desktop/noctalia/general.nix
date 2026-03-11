@@ -35,10 +35,16 @@
         viewMode = "list";
         density = "comfortable";
         showCategories = false;
+        overviewLayer = true;
 
         enableSettingsSearch = false;
         enableSessionSearch = true;
         enableWindowsSearch = true;
+      };
+
+      colorSchemes = {
+        useWallpaperColors = true;
+        generationMethod = "tonal-spot";
       };
     };
   };
