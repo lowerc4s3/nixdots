@@ -3,6 +3,7 @@
     programs.noctalia-shell.settings.ui = {
       boxBorderEnabled = true;
       panelsAttachedToBar = true;
+      panelBackgroundOpacity = 1;
     };
   };
 }
