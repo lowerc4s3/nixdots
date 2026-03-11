@@ -1,7 +1,7 @@
 # notes and todos
 
 ## todo
-- [ ] file manager (nautilus)
+- [x] file manager (nautilus)
 - [ ] security enhancements (apparmor, selinux)
 - [x] config resturcture
 - [x] noctalia config

@@ -36,7 +36,7 @@
     };
   in {
     stylix = {
-      base16Scheme = favorites.oxocarbon-terminal;
+      base16Scheme = favorites.flexoki-dark;
     };
   };
 }
