@@ -23,7 +23,7 @@
           pillSize = 0.4;
           labelMode = "none";
           showApplications = false;
-          enableScrollWheel = true;
+          enableScrollWheel = false;
           focusedColor = "none";
           occupiedColor = "none";
           emptyColor = "none";
@@ -46,7 +46,7 @@
         }
         {
           id = "KeyboardLayout";
-          diplayMode = "forceOpen";
+          displayMode = "forceOpen";
           showIcon = true;
         }
         {
