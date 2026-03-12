@@ -6,7 +6,12 @@
       programs.silentSDDM = {
         enable = true;
         theme = "default";
-        # TODO: avatar
+        profileIcons.lowerc4s3 = ./face.jpg;
+        backgrounds.square = ./life-death.jpg;
+        settings = {
+          LockScreen.background = "life-death.jpg";
+          LoginScreen.background = "life-death.jpg";
+        };
       };
     };
   };
