@@ -3,19 +3,17 @@
     includes,
     module,
   }: let
-    aspectsModule = {inherit includes;};
+    resolveIncludes = class: {imports = map (aspect: aspect.resolve {inherit class;}) includes;};
 
     initModule = {
       pkgs,
       config,
       lib,
       ...
-    }: let
-      aspectsLib = inputs.flake-aspects.lib lib;
-    in {
+    }: {
       networking.hostName = "${hostname}";
       imports = [
-        (aspectsLib.resolve "nixos" [] aspectsModule)
+        (resolveIncludes "nixos")
         module
       ];
 
@@ -32,10 +30,12 @@
         shell = pkgs.zsh;
       };
 
-      home-manager.users.${username}.home = {
-        imports = [(aspectsLib.resolve "homeManager" [] aspectsModule)];
-        inherit username;
-        homeDirectory = "/home/${username}";
+      home-manager.users.${username} = {
+        imports = [(resolveIncludes "homeManager")];
+        home = {
+          inherit username;
+          homeDirectory = "/home/${username}";
+        };
       };
     };
   in {

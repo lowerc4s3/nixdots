@@ -11,7 +11,7 @@
       desktop-niri-with-noctalia
 
       apps-social
-      games
+      games-core
       dev-core
       dev-neovide
     ];

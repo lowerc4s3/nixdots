@@ -1,6 +1,6 @@
-{self, ...}: {
-  flake.aspects.base-minimal = {
-    includes = with self.aspects; [
+{
+  flake.aspects = {aspects, ...}: {
+    base-minimal.includes = with aspects; [
       nix-config
       home-manager
       sys-core

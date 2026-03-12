@@ -1,36 +1,38 @@
-{self, ...}: {
-  flake.aspects.niri-with-noctalia = {
-    includes = with self.aspects; [
-      desktop-niri
-      desktop-nautilus
-      desktop-noctalia
-    ];
+{
+  flake.aspects = {aspects, ...}: {
+    desktop-niri-with-noctalia = {
+      includes = with aspects; [
+        desktop-niri
+        desktop-nautilus
+        desktop-noctalia
+      ];
 
-    homeManager = {lib, ...}: {
-      programs.niri.settings = {
-        spawn-at-startup = [
-          {argv = ["noctalia-shell"];}
-        ];
+      homeManager = {lib, ...}: {
+        programs.niri.settings = {
+          spawn-at-startup = [
+            {argv = ["noctalia-shell"];}
+          ];
 
-        binds = let
-          noctalia = cmd: ["noctalia-shell" "ipc" "call"] ++ (lib.splitString " " cmd);
-        in {
-          "Alt+Space" = {
-            action.spawn = noctalia "launcher toggle";
-            repeat = false;
+          binds = let
+            noctalia = cmd: ["noctalia-shell" "ipc" "call"] ++ (lib.splitString " " cmd);
+          in {
+            "Alt+Space" = {
+              action.spawn = noctalia "launcher toggle";
+              repeat = false;
+            };
+            "Mod+Shift+M" = {
+              action.spawn = noctalia "sessionMenu toggle";
+              repeat = false;
+            };
           };
-          "Mod+Shift+M" = {
-            action.spawn = noctalia "sessionMenu toggle";
-            repeat = false;
-          };
+
+          layer-rules = [
+            {
+              matches = [{namespace = "^noctalia-overview*";}];
+              place-within-backdrop = true;
+            }
+          ];
         };
-
-        layer-rules = [
-          {
-            matches = [{namespace = "^noctalia-overview*";}];
-            place-within-backdrop = true;
-          }
-        ];
       };
     };
   };

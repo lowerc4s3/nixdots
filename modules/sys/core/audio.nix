@@ -1,5 +1,5 @@
 {
-  flake.aspecst.sys-core.nixos = {
+  flake.aspects.sys-core.nixos = {
     # Realtime priority (needed for pipewire)
     security.rtkit.enable = true;
     services.pipewire = {
