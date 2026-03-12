@@ -1,5 +1,7 @@
 {
-  flake.aspects.sys-ntfs.nixos = {
-    boot.supportedFilesystems = ["ntfs"];
+  flake.aspects.sys-ntfs = {
+    nixos = {
+      boot.supportedFilesystems = ["ntfs"];
+    };
   };
 }

@@ -1,14 +1,16 @@
 {
-  flake.aspects.cli-core.homeManager = {lib, ...}: {
-    home.shellAliases = {
-      md = "mkdir -p";
-      la = lib.mkDefault "ls -a";
-      lsa = lib.mkDefault "ls -a";
-      ll = lib.mkDefault "ls -lah";
-      l = lib.mkDefault "ls -lh";
+  flake.aspects.cli-core = {
+    homeManager = {lib, ...}: {
+      home.shellAliases = {
+        md = "mkdir -p";
+        la = lib.mkDefault "ls -a";
+        lsa = lib.mkDefault "ls -a";
+        ll = lib.mkDefault "ls -lah";
+        l = lib.mkDefault "ls -lh";
 
-      # enable colored `grep` output
-      grep = "grep --color=auto";
+        # enable colored `grep` output
+        grep = "grep --color=auto";
+      };
     };
   };
 }

@@ -11,7 +11,11 @@
       desktop-niri-with-noctalia
 
       apps-social
-      games-core
+
+      games-mangohud
+      games-gamemode
+      games-steam
+
       dev-core
       dev-neovide
     ];

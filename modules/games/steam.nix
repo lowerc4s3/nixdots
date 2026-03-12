@@ -1,10 +1,12 @@
 {
-  flake.aspects.games-steam.nixos = {
-    programs.steam = {
-      enable = true;
-      remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = true;
-      localNetworkGameTransfers.openFirewall = true;
+  flake.aspects.games-steam = {
+    nixos = {
+      programs.steam = {
+        enable = true;
+        remotePlay.openFirewall = true;
+        dedicatedServer.openFirewall = true;
+        localNetworkGameTransfers.openFirewall = true;
+      };
     };
   };
 }

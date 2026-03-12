@@ -1,13 +1,15 @@
 {
-  flake.aspects.desktop-noctalia.homeManager = {config, ...}: {
-    programs.noctalia-shell.settings.wallpaper = {
-      enabled = true;
-      overviewEnabled = true;
-      directory = "${config.home.homeDirectory}/Pictures/wallpapers/";
-      setWallpaperOnAllMonitors = true;
-      showHiddenFiles = true;
-      viewMode = "recursive";
-      transitionType = "fade";
+  flake.aspects.desktop-noctalia = {
+    homeManager = {config, ...}: {
+      programs.noctalia-shell.settings.wallpaper = {
+        enabled = true;
+        overviewEnabled = true;
+        directory = "${config.home.homeDirectory}/Pictures/wallpapers/";
+        setWallpaperOnAllMonitors = true;
+        showHiddenFiles = true;
+        viewMode = "recursive";
+        transitionType = "fade";
+      };
     };
   };
 }
