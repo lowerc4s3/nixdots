@@ -1,12 +1,11 @@
 {
-  flake.modules.homeManager.desktop-niri = {
+  flake.aspects.desktop-niri.homeManager = {
     lib,
-    config,
     pkgs,
     ...
   }: {
     programs.niri.settings.binds = let
-      inherit (lib) range nameValuePair listToAttrs mkIf mkMerge getExe;
+      inherit (lib) range nameValuePair listToAttrs mkMerge getExe;
       mkWorkspaceBinds = prefix: action:
         range 1 9
         |> map (num: nameValuePair "${prefix}+${toString num}" {action.${action} = num;})

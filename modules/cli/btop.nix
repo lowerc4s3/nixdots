@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.cli-btop = {
+  flake.aspects.cli-btop.homeManager = {
     programs.btop = {
       enable = true;
       settings = {

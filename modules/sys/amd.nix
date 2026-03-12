@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.sys-amd = {
+  flake.aspects.sys-amd.nixos = {
     hardware = {
       cpu.amd.updateMicrocode = true;
     };

@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.desktop-niri = let
+  flake.aspects.desktop-niri.homeManager = let
     allCorners = radius: {
       bottom-left = radius;
       bottom-right = radius;

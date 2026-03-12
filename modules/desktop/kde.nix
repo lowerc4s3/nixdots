@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.desktop-kde = {
+  flake.aspects.desktop-kde.nixos = {
     services.desktopManager.plasma6 = {
       enable = true;
       enableQt5Integration = true;

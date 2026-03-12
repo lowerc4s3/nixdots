@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.desktop-noctalia = {config, ...}: {
+  flake.aspects.desktop-noctalia.homeManager = {config, ...}: {
     programs.noctalia-shell.settings.wallpaper = {
       enabled = true;
       overviewEnabled = true;

@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.sys-plymouth = {pkgs, ...}: {
+  flake.aspects.sys-plymouth.nixos = {pkgs, ...}: {
     boot.kernelParams = ["quiet"];
     boot.plymouth = {
       enable = true;

@@ -1,7 +1,7 @@
 {
   # multiple dot parent dir expansion
   # (implementation is the same as in zimfw/input)
-  flake.modules.homeManager.cli-zsh-dot-expand = {
+  flake.aspects.cli-zsh-dot-expand.homeManager = {
     programs.zsh = {
       siteFunctions = {
         double-dot-expand = ''

@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.desktop-core = {pkgs, ...}: {
+  flake.aspects.desktop-core.nixos = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       wl-clipboard
     ];

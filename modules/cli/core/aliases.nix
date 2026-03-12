@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.cli-core = {lib, ...}: {
+  flake.aspects.cli-core.homeManager = {lib, ...}: {
     home.shellAliases = {
       md = "mkdir -p";
       la = lib.mkDefault "ls -a";

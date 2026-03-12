@@ -1,6 +1,6 @@
 {
   # completion options (implementation is again from zimfw/completion)
-  flake.modules.homeManager.cli-zsh-completion = {
+  flake.aspects.cli-zsh-completion.homeManager = {
     programs.zsh.completionInit = ''
       autoload -Uz compinit && compinit
 

@@ -1,35 +1,23 @@
 {self, ...}: {
-  flake.modules.nixos.base-desktop = {
-    pkgs,
-    lib,
-    ...
-  }: {
-    imports = with self.modules.nixos; [
+  flake.aspects.base-desktop = {
+    includes = with self.aspects; [
       base-cli
-      apps-core
-      desktop-core
+
       sys-plymouth
       sys-grub
-      desktop-stylix
-    ];
 
-    # use zen kernel on desktops
-    boot.kernelPackages = lib.mkForce pkgs.linuxPackages_zen;
-  };
-
-  flake.modules.darwin.base-desktop = {
-    imports = with self.modules.darwin; [
-      base-cli
       desktop-core
-    ];
-  };
-
-  flake.modules.homeManager.base-desktop = {
-    imports = with self.modules.homeManager; [
-      base-cli
+      desktop-stylix
       apps-core
-      desktop-core
-      desktop-stylix
     ];
+
+    nixos = {
+      pkgs,
+      lib,
+      ...
+    }: {
+      # use zen kernel on desktops
+      boot.kernelPackages = lib.mkForce pkgs.linuxPackages_zen;
+    };
   };
 }

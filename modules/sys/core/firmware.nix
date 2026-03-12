@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.sys-core = {
+  flake.aspects.sys-core.nixos = {
     hardware = {
       enableAllFirmware = true;
       enableRedistributableFirmware = true;

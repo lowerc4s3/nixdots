@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.modules.nixos.cli-core = {
+  flake.aspects.cli-core.nixos = {
     imports = [inputs.nix-index-database.nixosModules.default];
 
     # run programs without installing them

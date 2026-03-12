@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.desktop-niri = {lib, ...}: {
+  flake.aspects.desktop-niri.homeManager = {lib, ...}: {
     programs.niri.settings.input = {
       mod-key = "Super";
       keyboard = {

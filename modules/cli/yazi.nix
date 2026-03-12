@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.cli-yazi = {
+  flake.aspects.cli-yazi.homeManager = {
     pkgs,
     lib,
     ...

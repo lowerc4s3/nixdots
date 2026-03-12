@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.cli-eza = {
+  flake.aspects.cli-eza.homeManager = {
     programs.eza = {
       enable = true;
       enableZshIntegration = true;

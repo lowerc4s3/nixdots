@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.desktop-core = {
+  flake.aspects.desktop-core.homeManager = {
     xdg = {
       enable = true;
       mimeApps.enable = true;

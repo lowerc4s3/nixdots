@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.modules.nixos.desktop-core = {
+  flake.aspects.desktop-core.nixos = {
     imports = [inputs.silentSDDM.nixosModules.default];
     services.displayManager.sddm.wayland.compositor = "kwin";
     programs.silentSDDM = {

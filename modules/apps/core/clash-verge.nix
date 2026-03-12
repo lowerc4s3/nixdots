@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.apps-core = {lib, ...}: {
+  flake.aspects.apps-core.nixos = {lib, ...}: {
     programs.clash-verge = {
       enable = true;
       autoStart = true;

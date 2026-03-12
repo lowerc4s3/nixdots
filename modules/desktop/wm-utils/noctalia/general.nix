@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.desktop-noctalia = {
+  flake.aspects.desktop-noctalia.homeManager = {
     programs.noctalia-shell.settings = {
       settingsVersion = 54;
       general = {

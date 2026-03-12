@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.cli-core = {pkgs, ...}: {
+  flake.aspects.cli-core.nixos = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       ripgrep
     ];

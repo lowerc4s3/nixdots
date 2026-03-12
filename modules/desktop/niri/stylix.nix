@@ -1,6 +1,6 @@
 {
   # some niri-flake stylix overrides
-  flake.modules.homeManager.desktop-niri = {
+  flake.aspects.desktop-niri.homeManager = {
     config,
     lib,
     ...

@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.cli-fzf = {
+  flake.aspects.cli-fzf.homeManager = {
     lib,
     config,
     ...

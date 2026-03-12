@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.cli-bat = {
+  flake.aspects.cli-bat.homeManager = {
     programs.bat = {
       enable = true;
       config = {

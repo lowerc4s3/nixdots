@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.cli-starship = {lib, ...}: let
+  flake.aspects.cli-starship.homeManager = {lib, ...}: let
     inherit (lib) concatStrings join mapAttrs filterAttrs;
     inherit (builtins) isBool attrValues;
 

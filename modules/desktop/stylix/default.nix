@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.modules.nixos.desktop-stylix = {pkgs, ...}: {
+  flake.aspects.desktop-stylix.nixos = {pkgs, ...}: {
     imports = [inputs.stylix.nixosModules.stylix];
 
     stylix = {

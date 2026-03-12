@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.modules.homeManager.apps-social = {
+  flake.aspects.apps-social.homeManager = {
     imports = [inputs.nixcord.homeModules.nixcord];
 
     programs.nixcord = {

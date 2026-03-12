@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.desktop-nautilus = {pkgs, ...}: {
+  flake.aspects.desktop-nautilus.nixos = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       nautilus
     ];

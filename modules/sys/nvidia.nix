@@ -1,5 +1,5 @@
-{lib, ...}: {
-  flake.modules.nixos.sys-nvidia = {config, ...}: {
+{
+  flake.modules.sys-nvidia.nixos = {config, ...}: {
     services.xserver.videoDrivers = ["nvidia"];
     hardware.nvidia = {
       # NOTE: the default stable driver is a bit stale

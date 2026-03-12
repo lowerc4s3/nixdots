@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.sys-ssd = {
+  flake.aspecst.sys-ssd.nixos = {
     services.fstrim.enable = true;
   };
 }

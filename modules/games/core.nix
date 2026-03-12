@@ -1,14 +1,16 @@
 {self, ...}: {
-  flake.modules.nixos.games-core = {
-    imports = with self.modules.nixos; [
-      games-gamemode
-      games-steam
-    ];
-  };
+  flake.aspects.games-core = {
+    nixos = {
+      imports = with self.modules.nixos; [
+        games-gamemode
+        games-steam
+      ];
+    };
 
-  flake.modules.homeManager.games-core = {
-    imports = with self.modules.homeManager; [
-      games-mangohud
-    ];
+    homeManager = {
+      imports = with self.modules.homeManager; [
+        games-mangohud
+      ];
+    };
   };
 }

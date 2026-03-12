@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.desktop-vicinae = {
+  flake.aspects.desktop-vicinae.homeManager = {
     programs.vicinae = {
       enable = true;
       systemd.enable = true;

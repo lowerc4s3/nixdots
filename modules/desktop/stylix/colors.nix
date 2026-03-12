@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.desktop-stylix = {pkgs, ...}: let
+  flake.aspects.desktop-stylix.nixos = {pkgs, ...}: let
     getScheme = name: "${pkgs.base16-schemes}/share/themes/${name}.yaml";
     favorites = {
       tokyodark = getScheme "tokyodark";

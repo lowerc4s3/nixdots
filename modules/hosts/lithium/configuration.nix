@@ -1,10 +1,6 @@
 {self, ...}: {
   flake.nixosConfigurations = self.lib.mkNixosWithUser "lithium" "lowerc4s3" {
-    time.timeZone = "Europe/Moscow";
-    system.stateVersion = "25.11";
-
-    imports = with self.modules.nixos; [
-      ./hardware-configuration.nix
+    includes = with self.aspects; [
       base-desktop
 
       sys-amd
@@ -15,22 +11,19 @@
       desktop-niri-with-noctalia
 
       apps-social
-      games-core
+      games
       dev-core
       dev-neovide
     ];
 
-    home-manager.users.lowerc4s3 = {
-      home.stateVersion = "25.11";
-      imports = with self.modules.homeManager; [
-        base-desktop
+    module = {
+      time.timeZone = "Europe/Moscow";
+      system.stateVersion = "25.11";
 
-        desktop-niri-with-noctalia
-
-        apps-social
-        games-core
-        dev-neovide
-      ];
+      imports = [./hardware-configuration.nix];
+      home-manager.users.lowerc4s3 = {
+        home.stateVersion = "25.11";
+      };
     };
   };
 }

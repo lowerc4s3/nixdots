@@ -1,13 +1,23 @@
 {inputs, ...}: {
-  flake.lib.mkNixosWithUser = hostname: username: module: let
+  flake.lib.mkNixosWithUser = hostname: username: {
+    includes,
+    module,
+  }: let
+    aspectsModule = {inherit includes;};
+
     initModule = {
       pkgs,
       config,
       lib,
       ...
-    }: {
+    }: let
+      aspectsLib = inputs.flake-aspects.lib lib;
+    in {
       networking.hostName = "${hostname}";
-      imports = [module];
+      imports = [
+        (aspectsLib.resolve "nixos" [] aspectsModule)
+        module
+      ];
 
       users.users.${username} = {
         isNormalUser = true;
@@ -23,6 +33,7 @@
       };
 
       home-manager.users.${username}.home = {
+        imports = [(aspectsLib.resolve "homeManager" [] aspectsModule)];
         inherit username;
         homeDirectory = "/home/${username}";
       };

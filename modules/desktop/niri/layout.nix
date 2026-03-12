@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.desktop-niri = {
+  flake.aspects.desktop-niri.homeManager = {
     programs.niri.settings.layout = {
       always-center-single-column = true;
       default-column-width.proportion = 1. / 2.;

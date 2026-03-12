@@ -1,27 +1,5 @@
-let
-  fontPackages = {pkgs, ...}: {
-    fonts.packages = with pkgs; [
-      lilex
-      nerd-fonts.lilex
-
-      jetbrains-mono
-      nerd-fonts.jetbrains-mono
-
-      adwaita-fonts
-    ];
-  };
-in {
-  flake.modules.darwin.desktop-core = {
-    imports = [
-      fontPackages
-    ];
-  };
-
-  flake.modules.nixos.desktop-core = {
-    imports = [
-      fontPackages
-    ];
-
+{
+  flake.aspects.nixos = {
     fonts.fontconfig = {
       antialias = true;
       hinting = {

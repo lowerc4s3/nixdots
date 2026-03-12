@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.desktop-core = {
+  flake.aspects.desktop-core.nixos = {
     programs.appimage = {
       enable = true;
 
