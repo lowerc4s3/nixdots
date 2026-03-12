@@ -1,14 +1,16 @@
 {
-  flake.modules.nixos.cli-core = {pkgs, ...}: {
-    environment.systemPackages = with pkgs; [
-      tealdeer
-    ];
-  };
+  flake.aspects.cli-core = {
+    nixos = {pkgs, ...}: {
+      environment.systemPackages = with pkgs; [
+        tealdeer
+      ];
+    };
 
-  flake.modules.homeManager.tealdeer = {
-    programs.tealdeer = {
-      enable = true;
-      enableAutoUpdates = false;
+    homeManager = {
+      programs.tealdeer = {
+        enable = true;
+        enableAutoUpdates = false;
+      };
     };
   };
 }

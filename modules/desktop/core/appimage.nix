@@ -1,10 +1,12 @@
 {
-  flake.modules.nixos.desktop-core = {
-    programs.appimage = {
-      enable = true;
+  flake.aspects.desktop-core = {
+    nixos = {
+      programs.appimage = {
+        enable = true;
 
-      # automatically run appimages through appimage-run
-      binfmt = true;
+        # automatically run appimages through appimage-run
+        binfmt = true;
+      };
     };
   };
 }

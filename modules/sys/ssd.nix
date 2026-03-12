@@ -1,5 +1,7 @@
 {
-  flake.modules.nixos.sys-ssd = {
-    services.fstrim.enable = true;
+  flake.aspects.sys-ssd = {
+    nixos = {
+      services.fstrim.enable = true;
+    };
   };
 }

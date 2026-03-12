@@ -105,6 +105,21 @@
         "type": "github"
       }
     },
+    "flake-aspects": {
+      "locked": {
+        "lastModified": 1773185256,
+        "narHash": "sha256-e3YqMwdQ2EpVTuWRkK2rkrHywp8QCpkj7x2U53SNoIA=",
+        "owner": "vic",
+        "repo": "flake-aspects",
+        "rev": "81a51a8997abe392b9d0794424a4823adc9bd3af",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vic",
+        "repo": "flake-aspects",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "locked": {
         "lastModified": 1733328505,
@@ -672,6 +687,7 @@
     "root": {
       "inputs": {
         "distro-grub-themes": "distro-grub-themes",
+        "flake-aspects": "flake-aspects",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
         "import-tree": "import-tree",

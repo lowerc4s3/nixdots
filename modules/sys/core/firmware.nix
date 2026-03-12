@@ -1,8 +1,10 @@
 {
-  flake.modules.nixos.sys-core = {
-    hardware = {
-      enableAllFirmware = true;
-      enableRedistributableFirmware = true;
+  flake.aspects.sys-core = {
+    nixos = {
+      hardware = {
+        enableAllFirmware = true;
+        enableRedistributableFirmware = true;
+      };
     };
   };
 }

@@ -12,5 +12,5 @@
 - [ ] librewolf tridactyl or qutebrowser
 - [ ] use nvx modules instead of a package
 - [ ] try openrgb
-- [ ] check facter
+- [x] check facter
 - [ ] tmux or zellij

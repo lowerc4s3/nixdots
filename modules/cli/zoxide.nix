@@ -1,8 +1,10 @@
 {
-  flake.modules.homeManager.cli-zoxide = {
-    programs.zoxide = {
-      enable = true;
-      enableZshIntegration = true;
+  flake.aspects.cli-zoxide = {
+    homeManager = {
+      programs.zoxide = {
+        enable = true;
+        enableZshIntegration = true;
+      };
     };
   };
 }

@@ -1,37 +1,28 @@
-{self, ...}: {
-  flake.modules.nixos.base-cli = {
-    pkgs,
-    lib,
-    ...
-  }: {
-    imports = with self.modules.nixos; [
-      base-minimal
-      cli-neovim
-      cli-zsh
-    ];
+{
+  flake.aspects = {aspects, ...}: {
+    base-cli = {
+      includes = with aspects; [
+        base-minimal
 
-    # use stable kernel on more minimal installations
-    boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
-  };
+        cli-bat
+        cli-btop
+        cli-eza
+        cli-fzf
+        cli-neovim
+        cli-starship
+        cli-yazi
+        cli-zoxide
+        cli-zsh
+      ];
 
-  flake.modules.darwin.base-cli = {
-    imports = with self.modules.darwin; [
-      base-minimal
-    ];
-  };
-
-  flake.modules.homeManager.base-cli = {
-    imports = with self.modules.homeManager; [
-      base-minimal
-      cli-bat
-      cli-btop
-      cli-eza
-      cli-fzf
-      cli-neovim
-      cli-starship
-      cli-yazi
-      cli-zoxide
-      cli-zsh
-    ];
+      nixos = {
+        lib,
+        pkgs,
+        ...
+      }: {
+        # use stable kernel on more minimal installations
+        boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
+      };
+    };
   };
 }

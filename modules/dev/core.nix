@@ -1,10 +1,12 @@
 {
-  flake.modules.nixos.dev-core = {pkgs, ...}: {
-    environment.systemPackages = with pkgs; [
-      gnumake
-      cmakeMinimal
-      just
-      jq
-    ];
+  flake.aspects.dev-core = {
+    nixos = {pkgs, ...}: {
+      environment.systemPackages = with pkgs; [
+        gnumake
+        cmakeMinimal
+        just
+        jq
+      ];
+    };
   };
 }

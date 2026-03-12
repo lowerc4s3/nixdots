@@ -1,8 +1,10 @@
 {inputs, ...}: {
-  flake.modules.homeManager.desktop-noctalia = {
-    imports = [inputs.noctalia.homeModules.default];
-    programs.noctalia-shell = {
-      enable = true;
+  flake.aspects.desktop-noctalia = {
+    homeManager = {
+      imports = [inputs.noctalia.homeModules.default];
+      programs.noctalia-shell = {
+        enable = true;
+      };
     };
   };
 }

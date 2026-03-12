@@ -1,8 +1,10 @@
 {
-  flake.modules.homeManager.desktop-noctalia = {
-    programs.noctalia-shell.settings.notifications = {
-      enableKeyboardLayoutToast = true;
-      respectExpireTimeout = true;
+  flake.aspects.desktop-noctalia = {
+    homeManager = {
+      programs.noctalia-shell.settings.notifications = {
+        enableKeyboardLayoutToast = true;
+        respectExpireTimeout = true;
+      };
     };
   };
 }

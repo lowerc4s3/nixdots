@@ -1,10 +1,12 @@
 {
-  flake.modules.nixos.games-gamemode = {
-    programs.gamemode = {
-      enable = true;
-      settings = {
-        # increase process priority (renice to -10)
-        general.renice = 10;
+  flake.aspects.games-gamemode = {
+    nixos = {
+      programs.gamemode = {
+        enable = true;
+        settings = {
+          # increase process priority (renice to -10)
+          general.renice = 10;
+        };
       };
     };
   };

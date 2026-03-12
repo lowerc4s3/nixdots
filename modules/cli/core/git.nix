@@ -1,39 +1,41 @@
 {
-  flake.modules.nixos.cli-core = {pkgs, ...}: {
-    programs.git = {
-      enable = true;
-      lfs.enable = true;
-    };
-    environment.systemPackages = with pkgs; [
-      gh
-    ];
-  };
-
-  flake.modules.homeManager.cli-core = {config, ...}: {
-    programs.git = {
-      enable = true;
-      lfs.enable = true;
-      settings.user = {
-        name = "lowerc4s3";
-        email = "kkirill03@gmail.com";
+  flake.aspects.cli-core = {
+    nixos = {pkgs, ...}: {
+      programs.git = {
+        enable = true;
+        lfs.enable = true;
       };
-    };
-    home.shellAliases = {
-      gl = "git log --graph --abbrev-commit --decorate --date=relative --all";
-      glo = "git log --oneline --graph --abbrev-commit --decorate --date=relative --all";
-      gst = "git status --short --find-renames --branch";
-      gtsu = "git status --short --find-renames --branch --untracked-files";
-      ga = "git add";
-      gaa = "git add -A";
-      gcm = "git commit -m";
-      gcam = "git commit -am";
-      gd = "git diff";
-      gds = "git diff --staged";
-      grs = "git restore --staged";
+      environment.systemPackages = with pkgs; [
+        gh
+      ];
     };
 
-    programs.gh = {
-      enable = true;
+    homeManager = {
+      programs.git = {
+        enable = true;
+        lfs.enable = true;
+        settings.user = {
+          name = "lowerc4s3";
+          email = "kkirill03@gmail.com";
+        };
+      };
+      home.shellAliases = {
+        gl = "git log --graph --abbrev-commit --decorate --date=relative --all";
+        glo = "git log --oneline --graph --abbrev-commit --decorate --date=relative --all";
+        gst = "git status --short --find-renames --branch";
+        gtsu = "git status --short --find-renames --branch --untracked-files";
+        ga = "git add";
+        gaa = "git add -A";
+        gcm = "git commit -m";
+        gcam = "git commit -am";
+        gd = "git diff";
+        gds = "git diff --staged";
+        grs = "git restore --staged";
+      };
+
+      programs.gh = {
+        enable = true;
+      };
     };
   };
 }

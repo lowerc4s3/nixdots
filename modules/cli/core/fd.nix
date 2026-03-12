@@ -1,14 +1,16 @@
 {
-  flake.modules.nixos.cli-core = {pkgs, ...}: {
-    environment.systemPackages = with pkgs; [
-      fd
-    ];
-  };
+  flake.aspects.cli-core = {
+    nixos = {pkgs, ...}: {
+      environment.systemPackages = with pkgs; [
+        fd
+      ];
+    };
 
-  flake.modules.homeManager.cli-core = {
-    programs.fd = {
-      enable = true;
-      ignores = [".git/"];
+    homeManager = {
+      programs.fd = {
+        enable = true;
+        ignores = [".git/"];
+      };
     };
   };
 }

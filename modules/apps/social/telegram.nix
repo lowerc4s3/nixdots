@@ -1,7 +1,9 @@
 {
-  flake.modules.nixos.apps-social = {pkgs, ...}: {
-    environment.systemPackages = with pkgs; [
-      telegram-desktop
-    ];
+  flake.aspects.apps-social = {
+    nixos = {pkgs, ...}: {
+      environment.systemPackages = with pkgs; [
+        telegram-desktop
+      ];
+    };
   };
 }
