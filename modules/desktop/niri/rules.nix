@@ -31,6 +31,21 @@
             ];
             default-column-width.proportion = 1. / 5.;
           }
+
+          {
+            # move steam notifications in the bottom right corner
+            matches = [
+              {
+                app-id = "steam";
+                title = "^notificationtoasts_\d+_desktop$";
+              }
+            ];
+            default-floating-position = {
+              x = 10;
+              y = 10;
+              relative-to = "bottom-right";
+            };
+          }
         ];
 
         layer-rules = [
