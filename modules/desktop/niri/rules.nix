@@ -21,6 +21,16 @@
             matches = [{app-id = "^cs2$";}];
             variable-refresh-rate = true;
           }
+
+          {
+            matches = [
+              {
+                app-id = "steam";
+                title = "^Список друзей$";
+              }
+            ];
+            default-column-width.proportion = 1. / 5.;
+          }
         ];
 
         layer-rules = [
