@@ -1,5 +1,5 @@
 {
-  flake.aspects.games-gamemode = {
+  flake.aspects.games-core = {
     nixos = {
       programs.gamemode = {
         enable = true;

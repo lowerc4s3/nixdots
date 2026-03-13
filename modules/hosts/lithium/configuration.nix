@@ -12,9 +12,9 @@
 
       apps-social
 
-      games-mangohud
-      games-gamemode
+      games-core
       games-steam
+      games-minecraft
 
       dev-core
       dev-neovide
