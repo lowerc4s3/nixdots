@@ -37,9 +37,10 @@
             matches = [
               {
                 app-id = "steam";
-                title = "^notificationtoasts_\d+_desktop$";
+                title = "^notificationtoasts_.+_desktop$";
               }
             ];
+            open-focused = false;
             default-floating-position = {
               x = 10;
               y = 10;
