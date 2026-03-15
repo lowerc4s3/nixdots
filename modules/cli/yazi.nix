@@ -13,7 +13,6 @@
         };
 
         # cd on exit
-        enableZshIntegration = true;
         shellWrapperName = "fm";
 
         initLua = ''

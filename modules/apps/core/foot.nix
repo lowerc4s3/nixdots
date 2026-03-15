@@ -3,7 +3,6 @@
     nixos = {
       programs.foot = {
         enable = true;
-        enableZshIntegration = true;
       };
     };
 

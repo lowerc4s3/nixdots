@@ -19,6 +19,8 @@
         config,
         ...
       }: {
+        # autoenable zsh-specific settings for some tools
+        home.shell.enableZshIntegration = true;
         programs.zsh = {
           enable = true;
           # you want to obey xdg...
