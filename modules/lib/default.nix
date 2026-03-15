@@ -6,7 +6,6 @@
     resolveIncludes = class: {imports = map (aspect: aspect.resolve {inherit class;}) includes;};
 
     initModule = {
-      pkgs,
       config,
       lib,
       ...
@@ -27,7 +26,6 @@
           (lib.mkIf config.networking.networkmanager.enable "networkmanager")
           (lib.mkIf config.programs.gamemode.enable "gamemode")
         ];
-        shell = pkgs.zsh;
       };
 
       home-manager.users.${username} = {

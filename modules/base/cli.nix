@@ -6,13 +6,11 @@
 
         cli-bat
         cli-btop
-        cli-eza
         cli-fzf
         cli-neovim
         cli-starship
         cli-yazi
         cli-zoxide
-        cli-zsh
       ];
 
       nixos = {
