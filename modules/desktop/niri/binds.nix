@@ -58,8 +58,8 @@
             "Mod+Shift+V".action.switch-focus-between-floating-and-tiling = [];
 
             "Print".action.screenshot = [];
-            "Shift+Print".action.screenshot-screen = {write-to-disk = false;};
-            "Mod+Print".action.screenshot-window = {write-to-disk = false;};
+            "Shift+Print".action.screenshot-screen = [];
+            "Mod+Print".action.screenshot-window = [];
 
             "Mod+WheelScrollDown".action.focus-column-right = [];
             "Mod+WheelScrollUp".action.focus-column-left = [];
