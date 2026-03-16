@@ -47,6 +47,11 @@
               relative-to = "bottom-right";
             };
           }
+
+          {
+            matches = [{app-id = "^VirtualBox Machine$";}];
+            open-fullscreen = true;
+          }
         ];
 
         layer-rules = [

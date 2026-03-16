@@ -13,6 +13,7 @@
       desktop-niri-with-noctalia
 
       apps-social
+      apps-virtualbox
 
       games-core
       games-steam
