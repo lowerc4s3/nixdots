@@ -80,8 +80,8 @@
           # show table footer when table would scroll the header off screen
           footer_mode = "auto";
           table = {
-            mode = "compact";
-            index_mode = "auto";
+            mode = "single";
+            index_mode = "always";
             header_on_separator = true;
           };
 
