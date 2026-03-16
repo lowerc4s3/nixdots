@@ -29,13 +29,28 @@
           add_newline = false;
           format = concatStrings [
             "$directory"
-            "$character"
           ];
           right_format = concatStrings [
             "$git_branch"
             "$git_status"
             "$nix_shell"
+            "$status"
           ];
+
+          status = {
+            disabled = false;
+            format = "[ $symbol $status ]($style)";
+            style = mkStyle {
+              bg = "red";
+              fg = "bold black";
+            };
+            pipestatus = true;
+            symbol = "󰅖";
+            not_executable_symbol = "";
+            not_found_symbol = "";
+            sigint_symbol = "";
+            signal_symbol = "";
+          };
 
           directory = {
             format = "[( $read_only) $path ]($style)";

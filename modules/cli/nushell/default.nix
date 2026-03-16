@@ -49,6 +49,11 @@
           open ${config.home.profileDirectory}/etc/profile.d/hm-session-vars.sh | capture-foreign-env | load-env
         '';
 
+        environmentVariables = {
+          PROMPT_INDICATOR_VI_INSERT = "λ ";
+          PROMPT_INDICATOR_VI_NORMAL = "@ ";
+        };
+
         settings = {
           history = {
             file_format = "sqlite"; # provides additional context to history
@@ -63,6 +68,11 @@
           completions = {
             algorithm = "substring";
             # TODO: fish completions
+          };
+
+          cursor_shape = {
+            vi_insert = "line";
+            vi_normal = "block";
           };
 
           error_style = "short";
