@@ -6,11 +6,5 @@
         gvfs.enable = true;
       };
     };
-
-    homeManager = {
-      services.udiskie = {
-        enable = true;
-      };
-    };
   };
 }
