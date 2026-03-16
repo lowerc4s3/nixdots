@@ -14,6 +14,7 @@
 
       apps-social
       apps-virtualbox
+      apps-onlyoffice
 
       games-core
       games-steam
