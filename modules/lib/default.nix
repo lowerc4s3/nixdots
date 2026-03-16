@@ -25,6 +25,7 @@
           "wheel"
           (lib.mkIf config.networking.networkmanager.enable "networkmanager")
           (lib.mkIf config.programs.gamemode.enable "gamemode")
+          (lib.mkIf config.virtualisation.virtualbox.host.enable "vboxusers")
         ];
       };
 
