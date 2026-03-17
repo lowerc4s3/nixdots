@@ -47,6 +47,11 @@
           useWallpaperColors = true;
           generationMethod = "tonal-spot";
         };
+
+        location = {
+          name = "Moscow";
+          weatherEnabled = false;
+        };
       };
     };
   };
