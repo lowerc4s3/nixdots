@@ -38,10 +38,6 @@
     # nixos
     #
     niri.url = "github:sodiboo/niri-flake";
-    distro-grub-themes = {
-      url = "github:AdisonCavani/distro-grub-themes";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     silentSDDM = {
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
