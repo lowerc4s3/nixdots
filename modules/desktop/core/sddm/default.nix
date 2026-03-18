@@ -1,8 +1,14 @@
 {inputs, ...}: {
   flake.aspects.desktop-core = {
     nixos = {
+      services.displayManager.sddm = {
+        autoNumlock = true;
+
+        # NOTE: for some reason sddm doesn't start with weston
+        wayland.compositor = "kwin";
+      };
+
       imports = [inputs.silentSDDM.nixosModules.default];
-      services.displayManager.sddm.wayland.compositor = "kwin";
       programs.silentSDDM = {
         enable = true;
         theme = "default";
