@@ -17,6 +17,7 @@
       apps-virtualbox
       apps-onlyoffice
       apps-gnome-disks
+      apps-chainner
 
       games-core
       games-steam
