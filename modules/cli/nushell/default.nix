@@ -66,7 +66,7 @@
 
           show_hints = false;
           completions = {
-            algorithm = "substring";
+            algorithm = "fuzzy";
             # TODO: fish completions
           };
 
