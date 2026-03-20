@@ -15,6 +15,7 @@
       apps-social
       apps-virtualbox
       apps-onlyoffice
+      apps-gnome-disks
 
       games-core
       games-steam
