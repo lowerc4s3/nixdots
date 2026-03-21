@@ -18,6 +18,7 @@
       apps-onlyoffice
       apps-gnome-disks
       apps-chainner
+      apps-loupe
 
       games-core
       games-steam

@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  inputs,
+  lib,
+  ...
+}: {
   flake.lib.mkNixosWithUser = hostname: username: {
     includes,
     module,
@@ -42,4 +46,9 @@
       modules = [initModule];
     };
   };
+
+  flake.lib.setDefaultAppFor = app: mimetypes:
+    mimetypes
+    |> map (mimetype: lib.nameValuePair mimetype app)
+    |> builtins.listToAttrs;
 }
