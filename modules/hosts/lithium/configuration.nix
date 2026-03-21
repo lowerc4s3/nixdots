@@ -12,6 +12,7 @@
       cli-nushell
 
       desktop-niri-with-noctalia
+      desktop-flatpak
 
       apps-social
       apps-virtualbox
