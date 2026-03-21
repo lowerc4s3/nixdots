@@ -19,6 +19,7 @@
       apps-gnome-disks
       apps-chainner
       apps-loupe
+      apps-clapper
 
       games-core
       games-steam
