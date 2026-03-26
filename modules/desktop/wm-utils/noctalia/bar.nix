@@ -16,8 +16,16 @@
 
         widgets.left = [
           {
-            id = "Launcher";
+            id = "CustomButton";
+            showIcon = true;
+            generalTooltipText = "Open vicinae";
             icon = "layout-grid-filled";
+            hideMode = "alwaysExpanded";
+            ipcIdentifier = "vicinae-button";
+            leftClickExec = "vicinae toggle";
+            showExecTooltip = false;
+            showTextTooltip = false;
+            parseJson = false;
           }
           {
             id = "Workspace";

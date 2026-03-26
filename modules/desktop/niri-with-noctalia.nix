@@ -5,6 +5,7 @@
         desktop-niri
         desktop-nautilus
         desktop-noctalia
+        desktop-vicinae
       ];
 
       homeManager = {lib, ...}: {
@@ -17,7 +18,7 @@
             noctalia = cmd: ["noctalia-shell" "ipc" "call"] ++ (lib.splitString " " cmd);
           in {
             "Alt+Space" = {
-              action.spawn = noctalia "launcher toggle";
+              action.spawn = ["vicinae" "toggle"];
               repeat = false;
             };
             "Mod+Shift+M" = {
