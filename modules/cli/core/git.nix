@@ -18,6 +18,7 @@
           name = "lowerc4s3";
           email = "kkirill03@gmail.com";
         };
+        settings.core.pager = "less -F -R -i -+X";
       };
       home.shellAliases = {
         gl = "git log --graph --abbrev-commit --decorate --date=relative --all";
