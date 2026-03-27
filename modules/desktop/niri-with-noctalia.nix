@@ -17,7 +17,7 @@
           binds = let
             noctalia = cmd: ["noctalia-shell" "ipc" "call"] ++ (lib.splitString " " cmd);
           in {
-            "Alt+Space" = {
+            "Mod+Space" = {
               action.spawn = ["vicinae" "toggle"];
               repeat = false;
             };

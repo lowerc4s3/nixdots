@@ -10,7 +10,7 @@
             layout = "us,ru";
             model = "pc104"; # ansi layout
             options = lib.join "," [
-              "grp:win_space_toggle"
+              "grp:alt_space_toggle"
               "compose:ralt"
               "caps:escape" # use capslock as an escape button
             ];
