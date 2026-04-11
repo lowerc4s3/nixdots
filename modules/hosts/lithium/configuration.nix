@@ -21,6 +21,7 @@
       apps-chainner
       apps-loupe
       apps-clapper
+      apps-obs
 
       games-core
       games-steam
