@@ -29,6 +29,7 @@
 
       dev-core
       dev-neovide
+      dev-rust
     ];
 
     module = {
