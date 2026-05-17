@@ -4,6 +4,8 @@
       includes = with aspects; [
         cli-zsh-dot-expand
         cli-zsh-completion
+        cli-eza
+        cli-aliases
       ];
 
       nixos = {
