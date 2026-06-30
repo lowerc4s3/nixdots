@@ -1,4 +1,4 @@
-{inputs, ...}: {
+{
   flake.aspects.cli-neovim = {
     nixos = {
       programs.neovim = {
@@ -8,9 +8,9 @@
       };
     };
 
-    homeManager = {pkgs, ...}: {
+    homeManager = {
       home = {
-        packages = [inputs.nvx.packages.${pkgs.stdenv.system}.nvx];
+        # packages = [inputs.nvx.packages.${pkgs.stdenv.system}.nvx];
         sessionVariables.EDITOR = "nvim";
         shellAliases = {
           v = "nvim";
