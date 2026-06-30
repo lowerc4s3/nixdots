@@ -48,14 +48,6 @@
             };
           }
         ];
-
-        layer-rules = [
-          {
-            matches = [{namespace = "^vicinae$";}];
-            shadow.enable = true;
-            geometry-corner-radius = allCorners 10.;
-          }
-        ];
       };
     };
   };

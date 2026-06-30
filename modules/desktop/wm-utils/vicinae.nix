@@ -16,6 +16,7 @@
               border-width = 1;
             };
             compact_mode.enabled = false;
+            layer_shell.layer = "overlay";
           };
 
           providers = {
