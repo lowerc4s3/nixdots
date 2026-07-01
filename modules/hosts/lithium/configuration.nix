@@ -7,7 +7,6 @@
       sys-nvidia
       sys-ntfs
       sys-ssd
-      sys-cuda
 
       cli-zsh
 

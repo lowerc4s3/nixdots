@@ -1,6 +1,9 @@
 {
   flake.aspects.apps-core = {
     nixos = {lib, ...}: {
+      nixpkgs.config.permittedInsecurePackages = [
+        "pnpm-9.15.9"
+      ];
       programs.clash-verge = {
         enable = true;
         autoStart = true;

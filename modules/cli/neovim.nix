@@ -1,6 +1,9 @@
 {
   flake.aspects.cli-neovim = {
-    nixos = {
+    nixos = {pkgs, ...}: {
+      environment.systemPackages = with pkgs; [
+        tree-sitter
+      ];
       programs.neovim = {
         enable = true;
         viAlias = true;
