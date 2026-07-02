@@ -6,7 +6,7 @@
         tokyodark = getScheme "tokyodark";
         horizon-dark = getScheme "horizon-dark";
         flexoki-dark = getScheme "flexoki-dark";
-        oxocarbon-terminal = {
+        oxocarbon = {
           scheme = "Oxocarbon Dark Terminal";
           author = "shaunsingh/IBM";
           base00 = "#161616"; # regular
@@ -17,13 +17,13 @@
           base05 = "#f2f4f8";
           base06 = "#ffffff";
           base07 = "#ffffff";
-          base08 = "#ee5396"; # red
+          base08 = "#ff7eb6"; # red
           base09 = "#78a9ff";
-          base0A = "#ffe97b"; # yellow
+          base0A = "#82cfff"; # yellow
           base0B = "#42be65"; # green
-          base0C = "#08bdba"; # cyan
+          base0C = "#3ddbd9"; # cyan
           base0D = "#33b1ff"; # blue
-          base0E = "#be95ff"; # magenta
+          base0E = "#ee5396"; # magenta
           base0F = "#82cfff";
           base10 = "#080808";
           base11 = "#000000";
@@ -37,7 +37,7 @@
       };
     in {
       stylix = {
-        base16Scheme = favorites.flexoki-dark;
+        base16Scheme = favorites.oxocarbon;
       };
     };
   };
