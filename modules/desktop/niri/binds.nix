@@ -8,8 +8,8 @@
       programs.niri.settings.binds = let
         inherit (lib) range nameValuePair listToAttrs mkMerge getExe;
         mkWorkspaceBinds = prefix: action:
-          range 1 9
-          |> map (num: nameValuePair "${prefix}+${toString num}" {action.${action} = num;})
+          range 0 9
+          |> map (num: nameValuePair "${prefix}+${toString num}" {action.${action} = num + 1;})
           |> listToAttrs;
       in
         mkMerge [

@@ -2,6 +2,7 @@
   flake.aspects.desktop-niri = {
     homeManager = {
       programs.niri.settings.layout = {
+        empty-workspace-above-first = true;
         always-center-single-column = true;
         default-column-width.proportion = 1. / 2.;
         preset-column-widths = [
