@@ -9,11 +9,16 @@
 
       programs.pistol = {
         enable = true;
-        associations = [
+        associations = let
+          bat-cmd =  "${lib.getExe pkgs.bat} --paging=never --color=always --style=plain %pistol-filename%";
+        in [
           {
-            # command = "${lib.getBin pkgs.bat} --paging=never --color=always --style=plain %pistol-filename%";
-            command = "bat --paging=never --color=always --style=plain %pistol-filename%";
+            command = bat-cmd;
             mime = "text/*";
+          }
+          {
+            command = bat-cmd;
+            mime = "application/json";
           }
         ];
       };
