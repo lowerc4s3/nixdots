@@ -9,7 +9,7 @@
         cli-fzf
         cli-neovim
         cli-starship
-        cli-yazi
+        cli-lf
         cli-zoxide
       ];
 
