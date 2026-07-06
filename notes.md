@@ -2,7 +2,6 @@
 
 ## todo
 - [x] file manager (nautilus)
-- [ ] nix nushell helper utility
 - [ ] security enhancements (apparmor, selinux)
 - [x] config resturcture
 - [x] noctalia config

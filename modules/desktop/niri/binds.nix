@@ -16,7 +16,7 @@
           {
             # TODO: spawn default apps
             "Mod+Return".action.spawn = "foot";
-            "Mod+B".action.spawn = "librewolf";
+            "Mod+B".action.spawn = "qutebrowser";
 
             "Mod+Shift+E".action.quit = [];
 
