@@ -5,6 +5,7 @@
         cli-zsh-dot-expand
         cli-zsh-completion
         cli-eza
+        cli-starship
         cli-aliases
       ];
 

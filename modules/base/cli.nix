@@ -8,7 +8,6 @@
         cli-btop
         cli-fzf
         cli-neovim
-        cli-starship
         cli-lf
         cli-zoxide
       ];

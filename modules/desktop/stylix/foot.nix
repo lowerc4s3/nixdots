@@ -12,7 +12,7 @@
         alpha = config.stylix.opacity.terminal;
         foreground = base05;
         background = base00;
-        regular0 = base00;
+        regular0 = base01;
         regular1 = red;
         regular2 = green;
         regular3 = yellow;

@@ -28,7 +28,10 @@
         source = ./config;
       };
       programs.zsh.siteFunctions = {
-        lf = ''cd "$(command lf -print-last-dir "$@")"'';
+        lf = /* zsh */ ''cd "$(command lf -print-last-dir "$@")"'';
+      };
+      programs.fish.functions = {
+        lf = /* fish */ ''cd (command lf -print-last-dir $argv)'';
       };
     };
   };

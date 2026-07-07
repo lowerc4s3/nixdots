@@ -23,12 +23,14 @@
           inherit fg;
         };
     in {
+      stylix.targets.starship.colors.enable = false;
       programs.starship = {
         enable = true;
         settings = {
           add_newline = false;
           format = concatStrings [
             "$directory"
+            "$character"
           ];
           right_format = concatStrings [
             "$git_branch"
@@ -60,7 +62,7 @@
             };
             read_only = "";
             read_only_style = mkStyle {
-              bg = "black";
+              bg = "bright-black";
               fg = "bright-blue";
             };
             truncation_length = 0;
@@ -68,17 +70,22 @@
           };
 
           character = let
-            insertSym = "λ";
-            normalSym = "@";
-            symStyle = fg:
+            insert = "λ";
+            normal = "@";
+            visual = "V";
+            replace = "R";
+            style = bg:
               mkStyle {
-                bg = "bright-black";
-                inherit fg;
+                inherit bg;
+                fg = "black";
               };
           in {
-            success_symbol = "[ ${insertSym} ](${symStyle "green"})";
-            error_symbol = "[ ${insertSym} ](${symStyle "red"})";
-            vimcmd_symbol = "[ ${normalSym} ](${symStyle "green"})";
+            success_symbol = "[ ${insert} ](${style "green"})";
+            error_symbol = "[ ${insert} ](${style "red"})";
+            vimcmd_symbol = "[ ${normal} ](${style "green"})";
+            vimcmd_visual_symbol = "[ ${visual} ](${style "magenta"})";
+            vimcmd_replace_symbol = " [ ${replace} ](${style "bold red"})";
+            vimcmd_replace_one_symbol = " [ ${replace} ](${style "red"})";
           };
 
           git_branch = {

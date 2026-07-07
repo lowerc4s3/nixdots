@@ -7,8 +7,9 @@
         horizon-dark = getScheme "horizon-dark";
         flexoki-dark = getScheme "flexoki-dark";
         oxocarbon = {
-          scheme = "Oxocarbon Dark Terminal";
+          scheme = "Oxocarbon Dark";
           author = "shaunsingh/IBM";
+          slug = "oxocarbon-dark";
           base00 = "#161616"; # regular
           base01 = "#262626";
           base02 = "#393939";
@@ -28,7 +29,7 @@
           base10 = "#080808";
           base11 = "#000000";
           base12 = "#ff7eb6";
-          base13 = "#ffe97b";
+          base13 = "#82cfff";
           base14 = "#42be65";
           base15 = "#3ddbd9";
           base16 = "#78a9ff";

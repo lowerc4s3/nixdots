@@ -8,7 +8,7 @@
       sys-ntfs
       sys-ssd
 
-      cli-zsh
+      cli-fish
 
       desktop-niri-with-noctalia
       desktop-flatpak
@@ -34,7 +34,7 @@
       time.timeZone = "Europe/Moscow";
       system.stateVersion = "25.11";
 
-      users.users.lowerc4s3.shell = pkgs.zsh;
+      users.users.lowerc4s3.shell = pkgs.fish;
 
       imports = [./hardware-configuration.nix];
       home-manager.users.lowerc4s3 = {
