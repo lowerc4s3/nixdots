@@ -22,6 +22,7 @@
         searchEngines = {
           DEFAULT = "https://duckduckgo.com/?q={}";
           g = "https://www.google.com/search?q={}";
+          nix = "https://mynixos.com/search?q={}";
         };
 
         settings =  {
