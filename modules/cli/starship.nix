@@ -41,12 +41,15 @@
 
           status = {
             disabled = false;
-            format = "[ $symbol $status ]($style)";
+            format = "[ $symbol $status( $signal_name) ]($style)";
             style = mkStyle {
               bg = "red";
               fg = "bold black";
             };
             pipestatus = true;
+            pipestatus_separator = "";
+            pipestatus_format = "[ ($pipestatus| )$symbol $status( $signal_name) ]($style)";
+            pipestatus_segment_format = "[$status ]($style)";
             symbol = "󰅖";
             not_executable_symbol = "";
             not_found_symbol = "";
@@ -83,8 +86,8 @@
             success_symbol = "[ ${insert} ](${style "green"})";
             error_symbol = "[ ${insert} ](${style "red"})";
             vimcmd_symbol = "[ ${normal} ](${style "green"})";
-            vimcmd_visual_symbol = "[ ${visual} ](${style "magenta"})";
-            vimcmd_replace_symbol = " [ ${replace} ](${style "bold red"})";
+            vimcmd_visual_symbol = "[ ${visual} ](${style "purple"})";
+            vimcmd_replace_symbol = " [ ${replace} ](${style "red"})";
             vimcmd_replace_one_symbol = " [ ${replace} ](${style "red"})";
           };
 

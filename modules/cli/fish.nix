@@ -24,16 +24,9 @@
           enable = true;
           functions = {
             mkcd = /* fish */ ''mkdir -p $argv; and cd $argv[1]'';
-            fish_multi_key_bindings = /* fish */ ''
-              # set emacs bindings for insert mode
-              fish_default_key_bindings -M insert
-
-              # and vi bindings for everything else
-              fish_vi_key_bindings --no-erase
-            '';
           };
           interactiveShellInit = /* fish */ ''
-            set -g fish_key_bindings fish_multi_key_bindings
+            set -g fish_key_bindings fish_hybrid_key_bindings
           '';
         };
       };
