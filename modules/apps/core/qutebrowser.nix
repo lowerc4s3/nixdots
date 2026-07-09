@@ -1,4 +1,4 @@
-{
+{inputs, ...}: {
   flake.aspects.apps-core = {
     homeManager = {config, pkgs, lib, ...}: {
       stylix.targets.qutebrowser.colors.override = {
@@ -17,7 +17,14 @@
 
       programs.qutebrowser = {
         enable = true;
-        package = pkgs.qutebrowser.override { enableWideVine = true; };
+        package = let 
+          pkgs' = import inputs.nixpkgs-qb {
+            inherit (pkgs.stdenv) system;
+            config.allowUnfree = true;
+          };
+        in pkgs'.qutebrowser.override {
+          enableWideVine = true;
+        };
 
         searchEngines = {
           DEFAULT = "https://duckduckgo.com/?q={}";

@@ -420,6 +420,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-qb": {
+      "locked": {
+        "lastModified": 1775308435,
+        "narHash": "sha256-vfF7u5xjgxkxUBFHaxoR3Y+FCGT1MFB8agxKBQHbzhc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "0e9e7de81eedaab584de143f4d200c4829f0b9a2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "0e9e7de81eedaab584de143f4d200c4829f0b9a2",
+        "type": "github"
+      }
+    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1782651437,
@@ -533,6 +549,7 @@
         "nix-index-database": "nix-index-database",
         "nixcord": "nixcord",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-qb": "nixpkgs-qb",
         "noctalia": "noctalia",
         "silentSDDM": "silentSDDM",
         "stylix": "stylix"
