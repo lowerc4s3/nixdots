@@ -3,13 +3,15 @@
     homeManager = {
       programs.eza = {
         enable = true;
-        icons = "auto";
+
+        # disable creation of aliases
+        enableFishIntegration = false;
         colors = "auto";
         extraOptions = [
           "--group-directories-first"
         ];
       };
-      home.shellAliases = {
+      programs.fish.shellAliases = {
         ls = "eza";
         tree = "eza --tree";
       };

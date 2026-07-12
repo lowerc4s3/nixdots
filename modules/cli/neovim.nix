@@ -12,13 +12,8 @@
     };
 
     homeManager = {
-      home = {
-        # packages = [inputs.nvx.packages.${pkgs.stdenv.system}.nvx];
-        sessionVariables.EDITOR = "nvim";
-        shellAliases = {
-          v = "nvim";
-        };
-      };
+        home.sessionVariables.EDITOR = "nvim";
+        programs.fish.shellAbbrs.v = "nvim";
     };
   };
 }

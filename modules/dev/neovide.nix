@@ -25,7 +25,7 @@
         ];
       };
 
-      home.shellAliases = {
+      programs.fish.shellAbbrs = {
         vv = "neovide";
       };
     };
