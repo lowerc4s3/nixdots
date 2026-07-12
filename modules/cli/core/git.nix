@@ -17,6 +17,23 @@
         settings.user = {
           name = "lowerc4s3";
           email = "kkirill03@gmail.com";
+        settings = {
+          user = {
+            name = "lowerc4s3";
+            email = "kkirill03@gmail.com";
+          };
+          core.pager = "less -F -R -i -+X";
+          log = {
+            date = "relative";
+            abbrevCommit = true;
+          };
+          diff.renames = true;
+
+          url = {
+            "https://github.com/".insteadOf = "gh:";
+            "https://gitlab.com/".insteadOf = "gl:";
+            "https://codeberg.org/".insteadOf = "cb:";
+          };
         };
         settings.core.pager = "less -F -R -i -+X";
       };
