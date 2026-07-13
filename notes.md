@@ -1,17 +1,7 @@
 # notes and todos
 
 ## todo
-- [x] file manager (nautilus)
 - [ ] security enhancements (apparmor, selinux)
-- [x] config resturcture
-- [x] noctalia config
-- [x] stylix
 - [ ] shared options declarations (font size, profile image, etc)
 - [ ] option declarations for better structuring
-- [ ] starship time module
-- [ ] librewolf tridactyl or qutebrowser
-- [ ] use nvx modules instead of a package
 - [ ] try openrgb
-- [x] check facter
-- [ ] tmux or zellij
-- [ ] enable "always create workspace above" for niri, rebind 2nd workspace to mod+1
