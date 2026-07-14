@@ -1,8 +1,9 @@
 {inputs, ...}: {
   flake.aspects.apps-core = {
     homeManager = {config, pkgs, lib, ...}: {
-      stylix.targets.qutebrowser.colors.override = {
-        base01 = lib.mkForce "#161616";
+      stylix.targets.qutebrowser.colors.override.withHashtag = {
+        base01 = "#161616";
+        base03 = "#262626";
       };
 
       xdg.mimeApps.defaultApplications = let
@@ -29,7 +30,7 @@
         searchEngines = {
           DEFAULT = "https://duckduckgo.com/?q={}";
           g = "https://www.google.com/search?q={}";
-          nix = "https://mynixos.com/search?q={}";
+          mynix = "https://mynixos.com/search?q={}";
         };
 
         settings =  {

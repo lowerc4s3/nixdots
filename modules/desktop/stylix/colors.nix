@@ -18,13 +18,13 @@
           base05 = "#f2f4f8";
           base06 = "#ffffff";
           base07 = "#ffffff";
-          base08 = "#ff7eb6"; # red
+          base08 = "#ee5396"; # red
           base09 = "#78a9ff";
           base0A = "#82cfff"; # yellow
           base0B = "#42be65"; # green
           base0C = "#3ddbd9"; # cyan
           base0D = "#33b1ff"; # blue
-          base0E = "#ee5396"; # magenta
+          base0E = "#be95ff"; # magenta
           base0F = "#82cfff";
           base10 = "#080808";
           base11 = "#000000";
@@ -37,9 +37,7 @@
         };
       };
     in {
-      stylix = {
-        base16Scheme = favorites.oxocarbon;
-      };
+      stylix.base16Scheme = favorites.oxocarbon;
     };
   };
 }

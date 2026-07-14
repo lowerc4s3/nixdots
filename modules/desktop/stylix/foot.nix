@@ -1,6 +1,4 @@
 {
-  # NOTE: stylix foot template is outdated since
-  # foot's v1.26.0 color syntax change
   flake.aspects.desktop-stylix = {
     homeManager = {config, ...}: {
       stylix.targets.foot = {
@@ -8,6 +6,8 @@
         opacity.enable = false;
       };
 
+      # stylix provides foot module i define
+      # my own one to use base24 colors
       programs.foot.settings.colors-dark = with config.lib.stylix.colors; {
         alpha = config.stylix.opacity.terminal;
         foreground = base05;
