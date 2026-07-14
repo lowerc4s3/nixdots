@@ -114,8 +114,6 @@
               set -U tide_nix_shell_bg_color brblue
               set -U tide_nix_shell_color black
               set -U tide_nix_shell_icon ''
-
-              tide reload
             '';
           in {
             setupTide = lib.hm.dag.entryAfter ["writeBoundary"] /* bash */ ''
