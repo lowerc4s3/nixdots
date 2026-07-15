@@ -8,7 +8,6 @@
           favorites = [];
           pop_to_root_on_close = true;
 
-          font.normal.family = "system";
           launcher_window = {
             blur.enabled = false;
             client_side_decorations = {
