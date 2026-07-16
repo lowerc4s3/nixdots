@@ -17,10 +17,6 @@
               action.spawn = ["vicinae" "toggle"];
               repeat = false;
             };
-            "Mod+Shift+Space" = {
-              action.spawn = noctalia "panel-toggle launcher";
-              repeat = false;
-            };
             "Mod+Shift+M" = {
               action.spawn = noctalia "panel-toggle session";
               repeat = false;
