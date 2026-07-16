@@ -25,6 +25,8 @@
               neovide.alias = "nv";
               discord.alias = "ds";
               "org.telegram".alias = "tg"; # weird ass name
+              "org.qutebrowser.qutebrowser".alias = "qb";
+              "org.gnome.Nautilus".alias = "fs";
             };
 
             browser-extension.enabled = false;

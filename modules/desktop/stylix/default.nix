@@ -20,5 +20,10 @@
         };
       };
     };
+
+    homeManager = {
+      # disable deprecation warning
+      home.pointerCursor.enable = true;
+    };
   };
 }
