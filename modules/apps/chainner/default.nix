@@ -1,7 +1,8 @@
 {
   flake.aspects.apps-chainner.nixos = {pkgs, ...}: {
-    environment.systemPackages = [
-      (pkgs.callPackage ./_package.nix {})
+    environment.systemPackages = with pkgs; [
+      (callPackage ./_package.nix {})
+      identity
     ];
   };
 }
