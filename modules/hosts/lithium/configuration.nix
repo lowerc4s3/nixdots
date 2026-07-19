@@ -10,7 +10,7 @@
 
       cli-fish
 
-      desktop-niri-with-noctalia-v5
+      desktop-niri-with-noctalia
       desktop-flatpak
 
       apps-social

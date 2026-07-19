@@ -10,26 +10,22 @@
 
       homeManager = {lib, ...}: {
         programs.niri.settings = {
-          spawn-at-startup = [
-            {argv = ["noctalia-shell"];}
-          ];
-
           binds = let
-            noctalia = cmd: ["noctalia-shell" "ipc" "call"] ++ (lib.splitString " " cmd);
+            noctalia = cmd: ["noctalia" "msg"] ++ (lib.splitString " " cmd);
           in {
             "Mod+Space" = {
               action.spawn = ["vicinae" "toggle"];
               repeat = false;
             };
             "Mod+Shift+M" = {
-              action.spawn = noctalia "sessionMenu toggle";
+              action.spawn = noctalia "panel-toggle session";
               repeat = false;
             };
           };
 
           layer-rules = [
             {
-              matches = [{namespace = "^noctalia-overview*";}];
+              matches = [{namespace = "^noctalia-backdrop*";}];
               place-within-backdrop = true;
             }
           ];

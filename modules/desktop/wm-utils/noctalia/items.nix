@@ -1,5 +1,5 @@
 {
-  flake.aspects.desktop-noctalia-v5.homeManager = {
+  flake.aspects.desktop-noctalia.homeManager = {
     programs.noctalia.settings = {
       control_center = {
         hidden_tabs = ["power" "network" "bluetooth" "screen-time"];

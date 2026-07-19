@@ -1,83 +1,43 @@
 {
-  flake.aspects.desktop-noctalia = {
-    homeManager = {
-      programs.noctalia-shell.settings.bar = {
+  flake.aspects.desktop-noctalia.homeManager = {
+    programs.noctalia.settings = {
+      bar.default = {
         position = "left";
-        density = "comfortable";
-        displayMode = "always_visible";
-        showCapsule = false; # show bar widgets background
-        showOutline = false;
-        widgetSpacing = 4;
-        contentPadding = 2;
+        margin_ends = 0;
+        padding = 10;
+        widget_spacing = 16;
+        radius_bottom_left = 0;
+        radius_top_left = 0;
 
-        mouseWheelAction = "none";
-        leftClickAction = "none";
-        rightClickAction = "none";
+        # items
+        start = ["workspaces"];
+        center = ["clock"];
+        end = ["tray" "keyboard_layout" "volume" "notifications" "control-center"];
+      };
 
-        widgets.left = [
-          {
-            id = "CustomButton";
-            showIcon = true;
-            generalTooltipText = "Open vicinae";
-            icon = "layout-grid-filled";
-            hideMode = "alwaysExpanded";
-            ipcIdentifier = "vicinae-button";
-            leftClickExec = "vicinae toggle";
-            showExecTooltip = false;
-            showTextTooltip = false;
-            parseJson = false;
-          }
-          {
-            id = "Workspace";
-            pillSize = 0.4;
-            labelMode = "none";
-            showApplications = false;
-            enableScrollWheel = false;
-            focusedColor = "none";
-            occupiedColor = "none";
-            emptyColor = "none";
-          }
-        ];
+      widget = {
+        clock = {
+          font_family = "Lilex Nerd Font";
+          tooltip_format = "%c";
+          vertical_format = ''%H\n%M\n—\n%d\n%m'';
+        };
 
-        widgets.center = [
-          {
-            id = "Clock";
-            useCustomFont = true;
-            formatVertical = "HH mm — dd MM";
-            tooltipFormat = "HH:mm ddd, MMM dd";
-          }
-        ];
+        keyboard_layout = {
+          hide_when_single_layout = true;
+          show_icon = false;
+        };
 
-        widgets.right = [
-          {
-            id = "Tray";
-            pinned = ["tray-icon tray app main"];
-          }
-          {
-            id = "KeyboardLayout";
-            displayMode = "forceOpen";
-            showIcon = true;
-          }
-          {
-            id = "Volume";
-            displayMode = "onhover";
-          }
-          {
-            id = "Network";
-          }
-          {
-            id = "Battery";
-            hideIfNotDetected = true;
-          }
-          {
-            id = "NotificationHistory";
-            showUnreadBadge = true;
-          }
-          {
-            id = "ControlCenter";
-            icon = "adjustments";
-          }
-        ];
+        workspaces = {
+          pill_scale = 0.75;
+          active_pill_size = 2.6;
+          display = "none";
+          empty_color = "on_surface";
+          occupied_color = "on_surface";
+        };
+
+        tray.drawer = true;
+        volume.show_label = false;
+        control-center.glyph = "layout";
       };
     };
   };

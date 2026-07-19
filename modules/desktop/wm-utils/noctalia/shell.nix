@@ -1,5 +1,5 @@
 {
-  flake.aspects.desktop-noctalia-v5.homeManager = {config, ...}: {
+  flake.aspects.desktop-noctalia.homeManager = {config, ...}: {
     programs.noctalia.settings = let
       inherit (config.stylix) fonts;
     in {
