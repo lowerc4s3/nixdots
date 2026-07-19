@@ -1,15 +1,11 @@
 {inputs, ...}: {
   flake.aspects.apps-social = {
-    homeManager = {
-      imports = [inputs.nixcord.homeModules.nixcord];
-
-      programs.nixcord = {
+    homeManager = {pkgs, ...}: {
+      programs.discord = {
         enable = true;
-        discord.vencord.enable = true;
-
-        config = {
-          frameless = true;
-          disableMinSize = true;
+        package = pkgs.discord.override {
+          withVencord = true;
+          withOpenASAR = true;
         };
       };
     };
