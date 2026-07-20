@@ -9,6 +9,7 @@
       sys-ssd
 
       cli-fish
+      cli-direnv
 
       desktop-niri-with-noctalia
       desktop-flatpak
