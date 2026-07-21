@@ -41,5 +41,17 @@
   outputs = inputs:
     inputs.flake-parts.lib.mkFlake {inherit inputs;} ({lib, ...}: {
       imports = [(inputs.import-tree.filterNot (lib.hasInfix "hardware-configuration") ./modules)];
+
+      # expose flake-parts options to nixd
+      debug = true;
+      systems = ["x86_64-linux"];
+      perSystem = {pkgs, ...}: {
+        devShells.default = pkgs.mkShell {
+          packages = with pkgs; [
+            nixd
+            alejandra
+          ];
+        };
+      };
     });
 }
