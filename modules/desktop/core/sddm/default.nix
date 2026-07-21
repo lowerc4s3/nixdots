@@ -4,8 +4,10 @@
       services.displayManager.sddm = {
         autoNumlock = true;
 
-        # NOTE: for some reason sddm doesn't start with weston
-        wayland.compositor = "kwin";
+        wayland = {
+          enable = true;
+          compositor = "weston";
+        };
       };
 
       imports = [inputs.silentSDDM.nixosModules.default];
