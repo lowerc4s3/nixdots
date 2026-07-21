@@ -12,8 +12,8 @@
     };
 
     homeManager = {
-        home.sessionVariables.EDITOR = "nvim";
-        programs.fish.shellAbbrs.v = "nvim";
+      home.sessionVariables.EDITOR = "nvim";
+      programs.fish.shellAbbrs.v = "nvim";
     };
   };
 }

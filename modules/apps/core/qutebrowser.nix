@@ -1,6 +1,10 @@
 {inputs, ...}: {
   flake.aspects.apps-core = {
-    homeManager = {config, pkgs, lib, ...}: {
+    homeManager = {
+      pkgs,
+      lib,
+      ...
+    }: {
       stylix.targets.qutebrowser.colors.override.withHashtag = {
         base01 = "#161616";
         base03 = "#262626";
@@ -18,24 +22,27 @@
 
       programs.qutebrowser = {
         enable = true;
-        package = let 
+        package = let
           pkgs' = import inputs.nixpkgs-qb {
             inherit (pkgs.stdenv) system;
             config.allowUnfree = true;
           };
-        in pkgs'.qutebrowser.override {
-          enableWideVine = true;
-        };
+        in
+          pkgs'.qutebrowser.override {
+            enableWideVine = true;
+          };
 
         searchEngines = {
           DEFAULT = "https://duckduckgo.com/?q={}";
           g = "https://www.google.com/search?q={}";
-          mynix = "https://mynixos.com/search?q={}";
+          mynixos = "https://mynixos.com/search?q={}";
+          pkgs = "https://search.nixos.org/packages?channel=unstable&query={}";
+          opts = "https://search.nixos.org/options?channel=unstable&query={}";
         };
 
-        settings =  {
+        settings = {
           #
-          # ui 
+          # ui
           #
 
           colors.webpage = {

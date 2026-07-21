@@ -1,4 +1,4 @@
-{inputs, ...}: {
+{
   flake.aspects.apps-social = {
     homeManager = {pkgs, ...}: {
       programs.discord = {

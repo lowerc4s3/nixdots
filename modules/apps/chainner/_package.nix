@@ -2,11 +2,9 @@
   stdenv,
   lib,
   fetchurl,
-
   dpkg,
   wrapGAppsHook3,
   makeWrapper,
-
   gtk3,
   glib,
   dbus,
@@ -34,7 +32,8 @@
   gvfs,
   udev,
   ...
-}: stdenv.mkDerivation rec {
+}:
+stdenv.mkDerivation rec {
   pname = "chainner";
   version = "nightly.2026-02-23";
   src = fetchurl {
@@ -45,6 +44,7 @@
   nativeBuildInputs = [
     dpkg
     wrapGAppsHook3
+    makeWrapper
   ];
 
   buildInputs = [

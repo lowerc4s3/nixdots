@@ -13,14 +13,18 @@
         };
       };
 
-      homeManager = {pkgs, lib, ...}: {
+      homeManager = {
+        pkgs,
+        lib,
+        ...
+      }: {
         stylix.targets.fish.colors.enable = false;
         programs.fish = {
           enable = true;
 
           functions = {
-            mkcd = /* fish */ ''mkdir -p $argv; and cd $argv[1]'';
-            last_hist_item = /* fish */ ''echo $history[1]'';
+            mkcd = ''mkdir -p $argv; and cd $argv[1]'';
+            last_hist_item = ''echo $history[1]'';
           };
 
           shellAbbrs = {
@@ -29,13 +33,13 @@
               function = "last_hist_item";
             };
             md = "mkdir -p";
-            la =  "ls -a";
-            lsa =  "ls -a";
-            ll =  "ls -lah";
-            l =  "ls -lh";
+            la = "ls -a";
+            lsa = "ls -a";
+            ll = "ls -lah";
+            l = "ls -lh";
           };
 
-          interactiveShellInit = /* fish */ ''
+          interactiveShellInit = ''
             # disable greeting
             set -g fish_greeting
 
@@ -61,7 +65,7 @@
             fishPlugins.tide
           ];
           activation = let
-            script = pkgs.writers.writeFish "setup_tide.fish" /* fish */ ''
+            script = pkgs.writers.writeFish "setup_tide.fish" ''
               # preset
               tide configure --auto --style=Lean --prompt_colors='16 colors' --show_time=No \
               --lean_prompt_height='One line' --prompt_spacing=Compact --icons='Few icons' --transient=No
@@ -79,10 +83,10 @@
               set -U tide_pwd_icon_unwritable '󰍁'
 
               # character
-              set -U tide_character_icon 'λ ' 
-              set -U tide_character_vi_icon_default '@ ' 
-              set -U tide_character_vi_icon_replace 'R ' 
-              set -U tide_character_vi_icon_visual 'V ' 
+              set -U tide_character_icon 'λ '
+              set -U tide_character_vi_icon_default '@ '
+              set -U tide_character_vi_icon_replace 'R '
+              set -U tide_character_vi_icon_visual 'V '
               set -U tide_character_color black --bold --background brgreen
               set -U tide_character_color_failure black --bold --background brred
 
@@ -116,7 +120,7 @@
               set -U tide_nix_shell_icon ''
             '';
           in {
-            setupTide = lib.hm.dag.entryAfter ["writeBoundary"] /* bash */ ''
+            setupTide = lib.hm.dag.entryAfter ["writeBoundary"] ''
               run ${lib.getExe pkgs.fish} ${script}
             '';
           };
