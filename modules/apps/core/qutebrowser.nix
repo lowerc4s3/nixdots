@@ -38,6 +38,8 @@
           mynixos = "https://mynixos.com/search?q={}";
           pkgs = "https://search.nixos.org/packages?channel=unstable&query={}";
           opts = "https://search.nixos.org/options?channel=unstable&query={}";
+          archwiki = "https://wiki.archlinux.org/index.php?search={}";
+          nixwiki = "https://wiki.nixos.org/w/index.php?search={}";
         };
 
         settings = {
