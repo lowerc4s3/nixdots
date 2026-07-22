@@ -1,26 +1,15 @@
 {
   flake.aspects.desktop-niri = {
-    nixos = {
+    homeManager = {
       pkgs,
       lib,
       ...
-    }: let
-      pkg = pkgs.callPackage ./_oniri.nix {};
-    in {
-      systemd.user.services.oniri = {
-        wantedBy = ["niri.service"];
-        after = ["niri.service"];
-        description = "Automatically maximize the only window of a niri workspace";
-        serviceConfig = {
-          Type = "simple";
-          ExecStart = "${lib.getExe pkg} --tiling-layout";
-          Restart = "on-failure";
-          RestartSec = "1s";
-        };
-      };
-    };
-
-    homeManager = {
+    }: {
+      programs.niri.settings.spawn-at-startup = let
+        pkg = pkgs.callPackage ./_oniri.nix {};
+      in [
+        {argv = [(lib.getExe pkg) "--tiling-layout"];}
+      ];
       programs.niri.settings.layout = {
         empty-workspace-above-first = true;
         always-center-single-column = true;
