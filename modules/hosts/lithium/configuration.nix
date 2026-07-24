@@ -7,6 +7,7 @@
       sys-nvidia
       sys-ntfs
       sys-ssd
+      sys-printing
 
       cli-fish
       cli-direnv
