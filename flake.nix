@@ -2,22 +2,17 @@
   description = "lowerc4s3 nix systems";
 
   inputs = {
-    #
-    # nix utils
-    #
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-qb.url = "github:NixOS/nixpkgs/0e9e7de81eedaab584de143f4d200c4829f0b9a2";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    flake-aspects.url = "github:vic/flake-aspects";
-    import-tree.url = "github:vic/import-tree";
+    blueprint = {
+      url = "github:numtide/blueprint";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    #
-    # shared
-    #
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,32 +21,25 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    #
-    # nixos
-    #
     niri.url = "github:sodiboo/niri-flake";
+    noctalia.url = "github:noctalia-dev/noctalia/cachix";
     silentSDDM = {
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    noctalia.url = "github:noctalia-dev/noctalia/cachix";
+    vicinae = {
+      url = "github:vicinaehq/vicinae";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs:
-    inputs.flake-parts.lib.mkFlake {inherit inputs;} ({lib, ...}: {
-      imports = [(inputs.import-tree.filterNot (lib.hasInfix "hardware-configuration") ./modules)];
+    inputs.blueprint {
+      inherit inputs;
 
-      # expose flake-parts options to nixd
-      debug = true;
       systems = ["x86_64-linux"];
-      perSystem = {pkgs, ...}: {
-        devShells.default = pkgs.mkShell {
-          packages = with pkgs; [
-            nixd
-            alejandra
-          ];
-        };
+      nixpkgs.config = {
+        allowUnfree = true;
       };
-    });
+    };
 }

@@ -1,0 +1,29 @@
+{
+  scheme = "Oxocarbon Dark";
+  author = "shaunsingh/IBM";
+  slug = "oxocarbon-dark";
+  base00 = "#161616"; # regular
+  base01 = "#262626";
+  base02 = "#393939";
+  base03 = "#525252";
+  base04 = "#dde1e6";
+  base05 = "#f2f4f8";
+  base06 = "#ffffff";
+  base07 = "#ffffff";
+  base08 = "#ee5396"; # red
+  base09 = "#78a9ff";
+  base0A = "#82cfff"; # yellow
+  base0B = "#42be65"; # green
+  base0C = "#3ddbd9"; # cyan
+  base0D = "#33b1ff"; # blue
+  base0E = "#be95ff"; # magenta
+  base0F = "#82cfff";
+  base10 = "#080808";
+  base11 = "#000000";
+  base12 = "#ff7eb6";
+  base13 = "#82cfff";
+  base14 = "#42be65";
+  base15 = "#3ddbd9";
+  base16 = "#78a9ff";
+  base17 = "#be95ff";
+}
