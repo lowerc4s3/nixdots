@@ -1,4 +1,4 @@
-{config, ...}: {
+{ config, ... }: {
   # stylix provides foot module but i define
   # my own one to use base24 colors
   stylix.targets.foot = {

@@ -1,10 +1,7 @@
+{ inputs, pkgs, ... }:
 {
-  inputs,
-  pkgs,
-  ...
-}: {
-  imports = [inputs.niri.nixosModules.niri];
-  nixpkgs.overlays = [inputs.niri.overlays.niri];
+  imports = [ inputs.niri.nixosModules.niri ];
+  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
   programs.niri = {
     enable = true;
     package = pkgs.niri;

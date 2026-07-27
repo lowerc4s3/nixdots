@@ -3,19 +3,21 @@
   pkgs,
   lib,
   ...
-}: let
+}:
+let
   pkgs' = import inputs.nixpkgs-qb {
     inherit (pkgs.stdenv) system;
     config.allowUnfree = true;
   };
-in {
+in
+{
   imports = [
     ./stylix.nix
   ];
 
   programs.qutebrowser = {
     enable = true;
-    package = pkgs'.qutebrowser.override {enableWideVine = true;};
+    package = pkgs'.qutebrowser.override { enableWideVine = true; };
 
     searchEngines = {
       DEFAULT = "https://duckduckgo.com/?q={}";
@@ -118,7 +120,7 @@ in {
       ];
     };
 
-    extraConfig = ''
+    extraConfig = /* python */ ''
       config.unbind(".")
       en_keys = "qwertyuiop[]asdfghjkl;'zxcvbnm,./" + 'QWERTYUIOP{}ASDFGHJKL:"ZXCVBNM<>?'
       ru_keys = "йцукенгшщзхъфывапролджэячсмитьбю." + "ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ,"

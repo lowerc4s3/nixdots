@@ -1,5 +1,5 @@
-{inputs, pkgs, ...}: {
-  imports = [inputs.vicinae.homeManagerModules.default];
+{ inputs, pkgs, ... }: {
+  imports = [ inputs.vicinae.homeManagerModules.default ];
 
   programs.vicinae = {
     enable = true;
@@ -7,7 +7,7 @@
     package = pkgs.vicinae;
 
     settings = {
-      favorites = [];
+      favorites = [ ];
       pop_to_root_on_close = true;
 
       launcher_window = {

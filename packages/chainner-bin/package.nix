@@ -112,8 +112,8 @@ stdenv.mkDerivation rec {
     description = "Node-based image processing GUI for AI upscaling and image workflows";
     homepage = "https://chainner.app/";
     license = licenses.gpl3Only;
-    platforms = ["x86_64-linux"];
+    platforms = [ "x86_64-linux" ];
     mainProgram = "chainner";
-    sourceProvenance = with sourceTypes; [binaryNativeCode];
+    sourceProvenance = with sourceTypes; [ binaryNativeCode ];
   };
 }

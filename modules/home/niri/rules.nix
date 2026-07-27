@@ -5,11 +5,12 @@ let
     top-left = radius;
     top-right = radius;
   };
-in {
+in
+{
   programs.niri.settings.window-rules = [
     {
       # rounded corners for all windows
-      matches = [];
+      matches = [ ];
       geometry-corner-radius = allCorners 10.;
       clip-to-geometry = true;
     }

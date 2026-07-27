@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
@@ -12,17 +12,19 @@
     capSysNice = false;
   };
 
-  services.ananicy = let
-    pkg = pkgs.ananicy-cpp;
-  in {
-    enable = true;
-    package = pkg;
-    rulesProvider = pkg;
-    extraRules = [
-      {
-        name = "gamescope";
-        nice = -20;
-      }
-    ];
-  };
+  services.ananicy =
+    let
+      pkg = pkgs.ananicy-cpp;
+    in
+    {
+      enable = true;
+      package = pkg;
+      rulesProvider = pkg;
+      extraRules = [
+        {
+          name = "gamescope";
+          nice = -20;
+        }
+      ];
+    };
 }

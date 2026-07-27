@@ -1,6 +1,10 @@
 {
   programs.noctalia.settings.idle = {
-    behavior_order = ["screen-off" "lock" "lock-and-suspend"];
+    behavior_order = [
+      "screen-off"
+      "lock"
+      "lock-and-suspend"
+    ];
     behavior.screen-off = {
       action = "screen_off";
       enabled = true;

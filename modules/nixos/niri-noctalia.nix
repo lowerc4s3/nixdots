@@ -1,8 +1,5 @@
+{ flake, pkgs, ... }:
 {
-  flake,
-  pkgs,
-  ...
-}: {
   imports = with flake.nixosModules; [
     niri
     noctalia

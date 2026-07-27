@@ -4,10 +4,12 @@
   pkgs,
   perSystem,
   ...
-}: let
+}:
+let
   inherit (lib) join getExe;
   inherit (flake.lib) mkCmd;
-in {
+in
+{
   imports = [
     ./binds.nix
     ./rules.nix
@@ -66,13 +68,13 @@ in {
 
     # fix discord/telegram/etc not focusing
     # when clicking on notif or tray icon
-    debug.honor-xdg-activation-with-invalid-serial = [];
+    debug.honor-xdg-activation-with-invalid-serial = [ ];
 
     #
     # layout
     #
     spawn-at-startup = [
-      {argv = mkCmd "${getExe perSystem.self.oniri} --tiling-layout";}
+      { argv = mkCmd "${getExe perSystem.self.oniri} --tiling-layout"; }
     ];
 
     layout = {
@@ -80,9 +82,9 @@ in {
       always-center-single-column = true;
       default-column-width.proportion = 1. / 2.;
       preset-column-widths = [
-        {proportion = 1. / 3.;}
-        {proportion = 1. / 2.;}
-        {proportion = 2. / 3.;}
+        { proportion = 1. / 3.; }
+        { proportion = 1. / 2.; }
+        { proportion = 2. / 3.; }
       ];
 
       tab-indicator = {

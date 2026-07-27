@@ -1,12 +1,12 @@
 {
   stylix.targets.librewolf = {
-    profileNames = ["default"];
+    profileNames = [ "default" ];
     firefoxGnomeTheme.enable = true;
   };
 
   programs.librewolf = {
     enable = true;
-    languagePacks = ["ru"];
+    languagePacks = [ "ru" ];
     profiles.default = {
       settings = {
         # disable some librewolf privacy options

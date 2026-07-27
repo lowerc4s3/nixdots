@@ -1,9 +1,6 @@
+{ inputs, flake, ... }:
 {
-  inputs,
-  flake,
-  ...
-}: {
-  imports = [inputs.silentSDDM.nixosModules.default];
+  imports = [ inputs.silentSDDM.nixosModules.default ];
   services.displayManager.sddm = {
     wayland.enable = true;
   };

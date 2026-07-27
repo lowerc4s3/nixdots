@@ -3,7 +3,8 @@
   pkgs,
   perSystem,
   ...
-}: {
+}:
+{
   home.stateVersion = "25.11";
   imports = with flake.homeModules; [
     cli-core

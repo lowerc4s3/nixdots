@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     fd
     ripgrep
@@ -12,5 +12,9 @@
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
+    extraPackages = with pkgs; [
+      gcc
+      tree-sitter
+    ];
   };
 }

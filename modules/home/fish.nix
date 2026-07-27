@@ -3,14 +3,15 @@
   lib,
   flake,
   ...
-}: {
+}:
+{
   stylix.targets.fish.colors.enable = false;
   programs.fish = {
     enable = true;
 
     functions = {
-      mkcd = ''mkdir -p $argv; and cd $argv[1]'';
-      last_hist_item = ''echo $history[1]'';
+      mkcd = "mkdir -p $argv; and cd $argv[1]";
+      last_hist_item = "echo $history[1]";
     };
 
     shellAbbrs = {
@@ -25,7 +26,7 @@
       l = "ls -lh";
     };
 
-    interactiveShellInit = ''
+    interactiveShellInit = /* fish */ ''
       # disable greeting
       set -g fish_greeting
 
@@ -50,12 +51,14 @@
     packages = with pkgs; [
       fishPlugins.tide
     ];
-    activation = let
-      script = flake + /config/setup_tide.fish;
-    in {
-      setupTide = lib.hm.dag.entryAfter ["writeBoundary"] ''
-        run ${lib.getExe pkgs.fish} ${script}
-      '';
-    };
+    activation =
+      let
+        script = flake + /config/setup_tide.fish;
+      in
+      {
+        setupTide = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+          run ${lib.getExe pkgs.fish} ${script}
+        '';
+      };
   };
 }

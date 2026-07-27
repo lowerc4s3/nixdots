@@ -3,9 +3,10 @@
   flake,
   hostName,
   ...
-}: {
+}:
+{
   system.stateVersion = "25.11";
-  networking = {inherit hostName;};
+  networking = { inherit hostName; };
   time.timeZone = "Europe/Moscow";
 
   imports = with flake.nixosModules; [
@@ -26,7 +27,7 @@
   ];
 
   boot = {
-    supportedFilesystems = ["ntfs"];
+    supportedFilesystems = [ "ntfs" ];
     kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
       "amd_pstate=active" # use modern amd performance scaling driver
@@ -35,24 +36,26 @@
 
   boot.loader = {
     efi.canTouchEfiVariables = true;
-    grub = let
-      theme = pkgs.minimal-grub-theme;
-    in {
-      enable = true;
-      device = "nodev";
-      efiSupport = true;
-      useOSProber = true;
-      # select last booted entry by default
-      default = "saved";
-      configurationLimit = 50;
+    grub =
+      let
+        theme = pkgs.minimal-grub-theme;
+      in
+      {
+        enable = true;
+        device = "nodev";
+        efiSupport = true;
+        useOSProber = true;
+        # select last booted entry by default
+        default = "saved";
+        configurationLimit = 50;
 
-      inherit theme;
-      splashImage = "${theme}/background.png";
-    };
+        inherit theme;
+        splashImage = "${theme}/background.png";
+      };
     timeout = 20;
   };
 
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     branch = "latest";
 

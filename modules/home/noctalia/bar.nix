@@ -9,9 +9,15 @@
       radius_top_left = 0;
 
       # items
-      start = ["workspaces"];
-      center = ["clock"];
-      end = ["tray" "keyboard_layout" "volume" "notifications" "control-center"];
+      start = [ "workspaces" ];
+      center = [ "clock" ];
+      end = [
+        "tray"
+        "keyboard_layout"
+        "volume"
+        "notifications"
+        "control-center"
+      ];
     };
 
     widget = {

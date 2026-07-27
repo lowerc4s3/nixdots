@@ -1,8 +1,5 @@
+{ config, lib, ... }:
 {
-  config,
-  lib,
-  ...
-}: {
   programs.fish.shellAbbrs = {
     md = "mkdir -p";
     la = "ls -a";
@@ -14,7 +11,7 @@
 
   programs.fd = {
     enable = true;
-    ignores = [".git/"];
+    ignores = [ ".git/" ];
   };
 
   programs.nh = {

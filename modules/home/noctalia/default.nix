@@ -1,8 +1,5 @@
+{ inputs, flake, ... }:
 {
-  inputs,
-  flake,
-  ...
-}: {
   imports = [
     inputs.noctalia.homeModules.default
     ./stylix.nix

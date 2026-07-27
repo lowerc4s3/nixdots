@@ -3,14 +3,23 @@
   pkgs,
   flake,
   ...
-}: let
-  inherit (lib) range nameValuePair listToAttrs mkMerge getExe;
+}:
+let
+  inherit (lib)
+    range
+    nameValuePair
+    listToAttrs
+    mkMerge
+    getExe
+    ;
   inherit (flake.lib) mkCmd;
-  mkWorkspaceBinds = prefix: action:
+  mkWorkspaceBinds =
+    prefix: action:
     range 0 9
-    |> map (num: nameValuePair "${prefix}+${toString num}" {action.${action} = num + 1;})
+    |> map (num: nameValuePair "${prefix}+${toString num}" { action.${action} = num + 1; })
     |> listToAttrs;
-in {
+in
+{
   programs.niri.settings.binds = mkMerge [
     (mkWorkspaceBinds "Mod" "focus-workspace")
     (mkWorkspaceBinds "Mod+Ctrl" "move-column-to-workspace")
@@ -20,53 +29,53 @@ in {
       "Mod+Return".action.spawn = mkCmd "foot";
       "Mod+B".action.spawn = mkCmd "qutebrowser";
 
-      "Mod+Shift+E".action.quit = [];
+      "Mod+Shift+E".action.quit = [ ];
 
       "Mod+Tab" = {
-        action.toggle-overview = [];
+        action.toggle-overview = [ ];
         repeat = false;
       };
 
       "Mod+W" = {
-        action.close-window = [];
+        action.close-window = [ ];
         repeat = false;
       };
       "Mod+Q" = {
         action.spawn-sh = "kill -9 $(niri msg --json focused-window | ${getExe pkgs.jq} '.id')";
         repeat = false;
       };
-      "Mod+F".action.maximize-column = [];
-      "Mod+Shift+F".action.fullscreen-window = [];
+      "Mod+F".action.maximize-column = [ ];
+      "Mod+Shift+F".action.fullscreen-window = [ ];
 
-      "Mod+R".action.switch-preset-column-width = [];
-      "Mod+Shift+R".action.expand-column-to-available-width = [];
+      "Mod+R".action.switch-preset-column-width = [ ];
+      "Mod+Shift+R".action.expand-column-to-available-width = [ ];
 
-      "Mod+T".action.toggle-column-tabbed-display = [];
+      "Mod+T".action.toggle-column-tabbed-display = [ ];
 
-      "Mod+H".action.focus-column-left = [];
-      "Mod+J".action.focus-window-or-workspace-down = [];
-      "Mod+K".action.focus-window-or-workspace-up = [];
-      "Mod+L".action.focus-column-right = [];
+      "Mod+H".action.focus-column-left = [ ];
+      "Mod+J".action.focus-window-or-workspace-down = [ ];
+      "Mod+K".action.focus-window-or-workspace-up = [ ];
+      "Mod+L".action.focus-column-right = [ ];
 
-      "Mod+Shift+H".action.move-column-left = [];
-      "Mod+Shift+J".action.move-window-down-or-to-workspace-down = [];
-      "Mod+Shift+K".action.move-window-up-or-to-workspace-up = [];
-      "Mod+Shift+L".action.move-column-right = [];
+      "Mod+Shift+H".action.move-column-left = [ ];
+      "Mod+Shift+J".action.move-window-down-or-to-workspace-down = [ ];
+      "Mod+Shift+K".action.move-window-up-or-to-workspace-up = [ ];
+      "Mod+Shift+L".action.move-column-right = [ ];
 
-      "Mod+Shift+Comma".action.consume-or-expel-window-left = [];
-      "Mod+Shift+Period".action.consume-or-expel-window-right = [];
+      "Mod+Shift+Comma".action.consume-or-expel-window-left = [ ];
+      "Mod+Shift+Period".action.consume-or-expel-window-right = [ ];
 
-      "Mod+V".action.toggle-window-floating = [];
-      "Mod+Shift+V".action.switch-focus-between-floating-and-tiling = [];
+      "Mod+V".action.toggle-window-floating = [ ];
+      "Mod+Shift+V".action.switch-focus-between-floating-and-tiling = [ ];
 
-      "Print".action.screenshot = [];
-      "Shift+Print".action.screenshot-screen = [];
-      "Mod+Print".action.screenshot-window = [];
+      "Print".action.screenshot = [ ];
+      "Shift+Print".action.screenshot-screen = [ ];
+      "Mod+Print".action.screenshot-window = [ ];
 
-      "Mod+WheelScrollDown".action.focus-column-right = [];
-      "Mod+WheelScrollUp".action.focus-column-left = [];
-      "Mod+Shift+WheelScrollDown".action.focus-workspace-down = [];
-      "Mod+Shift+WheelScrollUp".action.focus-workspace-up = [];
+      "Mod+WheelScrollDown".action.focus-column-right = [ ];
+      "Mod+WheelScrollUp".action.focus-column-left = [ ];
+      "Mod+Shift+WheelScrollDown".action.focus-workspace-down = [ ];
+      "Mod+Shift+WheelScrollUp".action.focus-workspace-up = [ ];
 
       "XF86AudioRaiseVolume" = {
         action.spawn = mkCmd "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+";

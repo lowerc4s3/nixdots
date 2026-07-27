@@ -1,6 +1,7 @@
-{pkgs, ...}: pkgs.mkShell {
+{ pkgs, ... }:
+pkgs.mkShell {
   packages = with pkgs; [
     nixd
-    alejandra
+    nixfmt
   ];
 }

@@ -33,11 +33,12 @@
     };
   };
 
-  outputs = inputs:
+  outputs =
+    inputs:
     inputs.blueprint {
       inherit inputs;
 
-      systems = ["x86_64-linux"];
+      systems = [ "x86_64-linux" ];
       nixpkgs.config.allowUnfree = true;
     };
 }
