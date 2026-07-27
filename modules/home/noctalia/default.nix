@@ -66,6 +66,16 @@
               shortcut = "5";
               variant = "default";
             }
+            {
+              action = "command";
+              enabled = true;
+              label = "UEFI";
+              glyph = "settings";
+              command = "systemctl reboot --firmware-setup";
+              countdown_seconds = 5;
+              shortcut = "6";
+              variant = "default";
+            }
           ];
         };
       };
