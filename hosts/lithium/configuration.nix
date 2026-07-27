@@ -11,7 +11,6 @@
   imports = with flake.nixosModules; [
     ./hardware-configuration.nix
     sys-core
-    plymouth
     printing
 
     cli-core
@@ -30,7 +29,6 @@
     supportedFilesystems = ["ntfs"];
     kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
-      "quiet"
       "amd_pstate=active" # use modern amd performance scaling driver
     ];
   };
