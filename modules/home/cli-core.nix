@@ -17,10 +17,6 @@
   programs.nh = {
     enable = true;
     flake = "${config.home.homeDirectory}/nix";
-    # clean = {
-    #   enable = true;
-    #   extraArgs = "--keep 3 --keep-since 14d";
-    # };
   };
 
   programs.direnv = {

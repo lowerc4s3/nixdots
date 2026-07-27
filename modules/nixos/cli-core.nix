@@ -5,6 +5,10 @@
     psmisc
     file
     git
+
+    # needed for neovim
+    tree-sitter
+    gcc
   ];
 
   programs.neovim = {
@@ -12,9 +16,5 @@
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
-    extraPackages = with pkgs; [
-      gcc
-      tree-sitter
-    ];
   };
 }
