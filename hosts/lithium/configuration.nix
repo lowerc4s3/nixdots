@@ -55,6 +55,22 @@
     timeout = 20;
   };
 
+  fileSystems."/mnt/Storage" = {
+    device = "/dev/disk/by-uuid/AE62349D62346BE9";
+    fsType = "ntfs";
+    options = [
+      "defaults"
+      "nosuid"
+      "dmask=022"
+      "fmask=133"
+      "uid=1000"
+      "gid=100"
+      "windows_names"
+      "nofail"
+      "x-gvfs-show"
+    ];
+  };
+
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     branch = "latest";
@@ -67,8 +83,6 @@
     # and set NVreg_PreserveVideoMemoryAllocations
     powerManagement.enable = true;
   };
-
-  services.fstrim.enable = true;
 
   users.users.lowerc4s3 = {
     isNormalUser = true;
