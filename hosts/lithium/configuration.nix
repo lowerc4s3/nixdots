@@ -6,6 +6,7 @@
 }: {
   system.stateVersion = "25.11";
   networking = {inherit hostName;};
+  time.timeZone = "Europe/Moscow";
 
   imports = with flake.nixosModules; [
     ./hardware-configuration.nix
