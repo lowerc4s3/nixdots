@@ -1,9 +1,13 @@
 {
   lib,
+  flake,
   pkgs,
   perSystem,
   ...
-}: {
+}: let
+  inherit (lib) join getExe;
+  inherit (flake.lib) mkCmd;
+in {
   imports = [
     ./binds.nix
     ./rules.nix
@@ -22,7 +26,7 @@
         xkb = {
           layout = "us,ru";
           model = "pc104"; # ansi layout
-          options = lib.join "," [
+          options = join "," [
             "grp:alt_space_toggle"
             "compose:ralt"
             "caps:escape" # use capslock as an escape button
@@ -43,7 +47,7 @@
     #
     clipboard.disable-primary = true;
     hotkey-overlay.skip-at-startup = true;
-    xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
+    xwayland-satellite.path = getExe pkgs.xwayland-satellite;
     prefer-no-csd = true; # disable window deco
     overview.zoom = 0.5;
     cursor.hide-when-typing = true;
@@ -68,7 +72,7 @@
     # layout
     #
     spawn-at-startup = [
-      {argv = [(lib.getExe perSystem.self.oniri) "--tiling-layout"];}
+      {argv = mkCmd "${getExe perSystem.self.oniri} --tiling-layout";}
     ];
 
     layout = {

@@ -38,8 +38,6 @@
       inherit inputs;
 
       systems = ["x86_64-linux"];
-      nixpkgs.config = {
-        allowUnfree = true;
-      };
+      nixpkgs.config.allowUnfree = true;
     };
 }

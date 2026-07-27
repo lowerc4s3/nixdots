@@ -1,8 +1,4 @@
-{
-  flake,
-  lib,
-  ...
-}: {
+{flake, ...}: {
   imports = with flake.homeModules; [
     niri
     noctalia
@@ -11,12 +7,12 @@
   ];
 
   programs.niri.settings = let
-    noctalia = arg: ["noctalia" "msg"] ++ (cmd arg);
-    cmd = arg: lib.splitString " " arg;
+    inherit (flake.lib) mkCmd;
+    noctalia = args: mkCmd "noctalia msg ${args}";
   in {
     binds = {
       "Mod+Space" = {
-        action.spawn = cmd "vicinae toggle";
+        action.spawn = mkCmd "vicinae toggle";
         repeat = false;
       };
       "Mod+Shift+M" = {

@@ -1,9 +1,11 @@
 {
   lib,
   pkgs,
+  flake,
   ...
 }: let
   inherit (lib) range nameValuePair listToAttrs mkMerge getExe;
+  inherit (flake.lib) mkCmd;
   mkWorkspaceBinds = prefix: action:
     range 0 9
     |> map (num: nameValuePair "${prefix}+${toString num}" {action.${action} = num + 1;})
@@ -15,8 +17,8 @@ in {
     (mkWorkspaceBinds "Mod+Shift" "move-window-to-workspace")
     {
       # TODO: spawn default apps
-      "Mod+Return".action.spawn = "foot";
-      "Mod+B".action.spawn = "qutebrowser";
+      "Mod+Return".action.spawn = mkCmd "foot";
+      "Mod+B".action.spawn = mkCmd "qutebrowser";
 
       "Mod+Shift+E".action.quit = [];
 
@@ -67,15 +69,15 @@ in {
       "Mod+Shift+WheelScrollUp".action.focus-workspace-up = [];
 
       "XF86AudioRaiseVolume" = {
-        action.spawn = ["wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "5%+"];
+        action.spawn = mkCmd "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+";
         allow-when-locked = true;
       };
       "XF86AudioLowerVolume" = {
-        action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"];
+        action.spawn = mkCmd "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
         allow-when-locked = true;
       };
       "XF86AudioMute" = {
-        action.spawn = ["wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"];
+        action.spawn = mkCmd "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
         allow-when-locked = true;
       };
     }
