@@ -8,7 +8,15 @@
   };
 
   services = {
-    udisks2.enable = true;
+    udisks2 = {
+      enable = true;
+      settings = {
+        "mount_options.conf".defaults = {
+          ntfs_drivers = "ntfs";
+        };
+      };
+    };
+
     gvfs.enable = true;
     # TODO: nix-flatpak for declarative mgmt
     flatpak.enable = true;
