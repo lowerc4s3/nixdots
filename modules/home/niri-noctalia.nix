@@ -1,4 +1,5 @@
-{ flake, ... }: {
+{ flake, ... }:
+{
   imports = with flake.homeModules; [
     niri
     noctalia

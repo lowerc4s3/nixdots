@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   home = {
     pointerCursor.enable = true;
     packages = with pkgs; [

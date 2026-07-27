@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   # disable nix-manual desktop entry and html docs
   documentation.doc.enable = false;
 
@@ -10,10 +11,8 @@
   services = {
     udisks2 = {
       enable = true;
-      settings = {
-        "mount_options.conf".defaults = {
-          ntfs_drivers = "ntfs";
-        };
+      settings."mount_options.conf".defaults = {
+        ntfs_drivers = "ntfs";
       };
     };
 

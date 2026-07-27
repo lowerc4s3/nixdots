@@ -1,7 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, perSystem, ... }:
 pkgs.mkShell {
-  packages = with pkgs; [
-    nixd
-    nixfmt
-  ];
+  packages =
+    perSystem.self.formatter.passthru.runtimeInputs
+    ++ (with pkgs; [
+      nixd
+    ]);
 }

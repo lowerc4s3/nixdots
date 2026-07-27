@@ -1,1 +1,4 @@
-{ pkgs, ... }: pkgs.nixfmt-tree
+{ pkgs, ... }:
+pkgs.nixfmt-tree.override {
+  nixfmtPackage = pkgs.nixfmt-rs;
+}
