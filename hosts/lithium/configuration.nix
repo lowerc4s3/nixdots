@@ -26,6 +26,10 @@
     clash-verge
   ];
 
+  #
+  # boot
+  #
+
   boot = {
     supportedFilesystems = [ "ntfs" ];
     kernelPackages = pkgs.linuxPackages_zen;
@@ -71,6 +75,10 @@
     ];
   };
 
+  #
+  # drivers
+  #
+
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     branch = "latest";
@@ -84,6 +92,10 @@
     powerManagement.enable = true;
   };
 
+  #
+  # users
+  #
+
   users.users.lowerc4s3 = {
     isNormalUser = true;
     shell = pkgs.fish;
@@ -94,4 +106,12 @@
   };
 
   programs.obs-studio.enable = true;
+
+  fonts.fontconfig = {
+    hinting = {
+      enable = true;
+      style = "slight";
+    };
+    subpixel.rgba = "rgb";
+  };
 }
