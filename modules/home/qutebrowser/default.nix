@@ -97,6 +97,7 @@ in
         blocking.method = "both";
         headers.accept_language = "ru-RU,ru,en-US,en;q=0.9";
         pdfjs = true;
+        javascript.clipboard = "access";
       };
 
       session.lazy_restore = true;
