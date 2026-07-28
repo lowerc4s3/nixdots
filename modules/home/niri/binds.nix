@@ -26,7 +26,7 @@ in
     (mkWorkspaceBinds "Mod+Shift" "move-window-to-workspace")
     {
       # TODO: spawn default apps
-      "Mod+Return".action.spawn = mkCmd "foot";
+      "Mod+Return".action.spawn = mkCmd "footclient";
       "Mod+B".action.spawn = mkCmd "qutebrowser";
 
       "Mod+Shift+E".action.quit = [ ];
