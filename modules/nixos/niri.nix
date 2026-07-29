@@ -20,6 +20,21 @@ in
     package = pkgs.niri.override { inherit libdisplay-info; };
   };
 
+  environment.sessionVariables = {
+    # Enable wayland for glfw
+    XDG_SESSION_TYPE = "wayland";
+    # Qt fallback to X11
+    QT_QPA_PLATFORM = "wayland;xcb";
+    # Disable Qt window decorations
+    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+    # Use theme from qt6ct
+    QT_QPA_PLATFORMTHEME = "qt6ct";
+    # GTK fallback to X11 or another backend
+    GDK_BACKEND = "wayland,x11,*";
+    # Use wayland for electron apps
+    NIXOS_OZONE_WL = "1";
+  };
+
   # disable niri-flake default polkit (kde polkit)
   systemd.user.services.niri-flake-polkit.enable = false;
   security.soteria.enable = true;
