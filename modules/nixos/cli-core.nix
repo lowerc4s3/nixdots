@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   environment.systemPackages = with pkgs; [
     fd
@@ -18,4 +18,6 @@
     viAlias = true;
     vimAlias = true;
   };
+
+  home-manager.backupCommand = lib.getExe pkgs.trashy;
 }
