@@ -1,4 +1,8 @@
 {
+  imports = [
+    ./qt
+  ];
+
   xdg = {
     enable = true;
     mimeApps.enable = true;

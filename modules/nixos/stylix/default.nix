@@ -6,6 +6,7 @@
     enable = true;
     autoEnable = false;
     base16Scheme = import ./colors/oxocarbon.nix;
+    polarity = "dark";
 
     fonts = {
       sansSerif = {
