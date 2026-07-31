@@ -29,7 +29,7 @@
 
       keyboard_layout = {
         hide_when_single_layout = true;
-        show_icon = false;
+        show_glyph = false;
       };
 
       workspaces = {
