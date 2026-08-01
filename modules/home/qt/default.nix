@@ -4,22 +4,22 @@
 
   qt =
     let
-      inherit (config.stylix) fonts icons;
+      inherit (config.stylix.fonts) sansSerif monospace sizes;
       palette = config.lib.stylix.colors {
         template = ./qtcolors.conf.mustache;
         extension = ".conf";
       };
       qtctSettings = {
         Appearance = {
-          icon_theme = icons.dark;
+          icon_theme = "breeze-dark";
           standard_dialogs = "default";
           style = "Darkly";
           custom_palette = true;
           color_scheme_path = "${palette}";
         };
         Fonts = {
-          general = ''"${fonts.sansSerif.name},${toString fonts.sizes.applications}"'';
-          fixed = ''"${fonts.monospace.name},${toString fonts.sizes.terminal}"'';
+          general = ''"${sansSerif.name},${toString sizes.applications}"'';
+          fixed = ''"${monospace.name},${toString sizes.terminal}"'';
         };
       };
     in
