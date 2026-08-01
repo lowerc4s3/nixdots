@@ -85,6 +85,18 @@
       desktop_widgets.enabled = false;
       weather.effects = false;
 
+      control_center = {
+        width = 800;
+        sidebar_section = "none";
+        hidden_tabs = [ "screen-time" ];
+        shortcuts = [
+          { type = "caffeine"; }
+          { type = "nightlight"; }
+          { type = "notification"; }
+          { type = "session"; }
+        ];
+      };
+
       notification = {
         background_opacity = 1.0;
         # show above fullscreen apps
