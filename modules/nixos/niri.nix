@@ -14,8 +14,6 @@
     QT_QPA_PLATFORM = "wayland;xcb";
     # Disable Qt window decorations
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-    # GTK fallback to X11 or another backend
-    GDK_BACKEND = "wayland,x11,*";
     # Use wayland for electron apps
     NIXOS_OZONE_WL = "1";
   };
