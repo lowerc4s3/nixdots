@@ -1,6 +1,8 @@
+{{- /* vim: set ft=gotmpl: */ -}}
+
 {{$color := 44 -}}
 {{if eq .Mode "VISUAL" -}}
-  {{$color = 45 -}}
+    {{$color = 45 -}}
 {{end -}}
 {{printf "\033[30;%dm %.1s" $color .Mode}}
 
