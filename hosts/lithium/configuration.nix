@@ -114,4 +114,6 @@
     };
     subpixel.rgba = "rgb";
   };
+
+  programs.gnome-disks.enable = true;
 }
