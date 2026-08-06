@@ -1,3 +1,4 @@
+# NOTE: this package requires nix-ld
 { pkgs, ... }:
 pkgs.callPackage (
   {
