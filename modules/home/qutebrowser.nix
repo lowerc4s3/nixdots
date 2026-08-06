@@ -11,10 +11,6 @@ let
   };
 in
 {
-  imports = [
-    ./stylix.nix
-  ];
-
   programs.qutebrowser = {
     enable = true;
     package = pkgs'.qutebrowser.override { enableWideVine = true; };

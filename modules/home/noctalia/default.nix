@@ -2,7 +2,6 @@
 {
   imports = [
     inputs.noctalia.homeModules.default
-    ./stylix.nix
     ./bar.nix
     ./idle.nix
   ];

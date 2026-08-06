@@ -1,22 +1,13 @@
 {
   inputs,
   flake,
-  config,
   ...
 }:
-let
-  inherit (config.stylix) cursor;
-in
 {
   imports = [ inputs.silentSDDM.nixosModules.default ];
-  environment.systemPackages = [ cursor.package ];
 
   services.displayManager.sddm = {
     wayland.enable = true;
-    settings.Theme = {
-      CursorTheme = cursor.name;
-      CursorSize = cursor.size;
-    };
   };
 
   programs.silentSDDM = {

@@ -1,9 +1,4 @@
 {
-  stylix.targets.librewolf = {
-    profileNames = [ "default" ];
-    firefoxGnomeTheme.enable = true;
-  };
-
   programs.librewolf = {
     enable = true;
     languagePacks = [ "ru" ];

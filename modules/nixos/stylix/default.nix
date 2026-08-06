@@ -1,6 +1,9 @@
 { inputs, pkgs, ... }:
 {
-  imports = [ inputs.stylix.nixosModules.stylix ];
+  imports = [
+    inputs.stylix.nixosModules.stylix
+    ./sddm.nix
+  ];
 
   stylix = {
     enable = true;

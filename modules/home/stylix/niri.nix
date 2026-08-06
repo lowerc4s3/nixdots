@@ -1,6 +1,6 @@
 { config, lib, ... }:
 {
-  config = lib.mkIf config.stylix.enable {
+  config = lib.mkIf (config.programs ? niri) {
     programs.niri.settings = {
       # niri-flake's stylix module uses borders by default
       # and sets focus ring to false

@@ -14,7 +14,13 @@
     button-layout = ":close";
   };
 
-  stylix = {
-    autoEnable = true;
-  };
+  stylix.autoEnable = true;
+
+  imports = [
+    ./targets.nix
+    ./qt
+    ./foot.nix
+    ./niri.nix
+    ./noctalia.nix
+  ];
 }

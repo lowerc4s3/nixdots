@@ -13,7 +13,6 @@ in
   imports = [
     ./binds.nix
     ./rules.nix
-    ./stylix.nix
   ];
 
   programs.niri.settings = {
