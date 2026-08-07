@@ -55,7 +55,6 @@
     prismlauncher
 
     loupe
-    clapper
-    # TODO: swayimg
+    cine
   ];
 }
