@@ -50,7 +50,7 @@
     })
     telegram-desktop
 
-    perSystem.self.chainner-bin
+    perSystem.self.chainner
     identity
     prismlauncher
 
