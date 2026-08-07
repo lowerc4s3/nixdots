@@ -7,6 +7,8 @@
     package = pkgs.niri;
   };
 
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
   environment.sessionVariables = {
     # Enable wayland for glfw
     XDG_SESSION_TYPE = "wayland";
