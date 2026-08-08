@@ -14,11 +14,6 @@
     ignores = [ ".git/" ];
   };
 
-  programs.nh = {
-    enable = true;
-    flake = "${config.home.homeDirectory}/nix";
-  };
-
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
