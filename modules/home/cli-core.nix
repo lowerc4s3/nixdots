@@ -1,5 +1,6 @@
 { config, lib, ... }:
 {
+  home.sessionVariables.NIXOS_CONFIG = "${config.home.homeDirectory}/nix";
   programs.fish.shellAbbrs = {
     md = "mkdir -p";
     la = "ls -a";
