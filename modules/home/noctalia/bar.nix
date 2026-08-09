@@ -22,7 +22,7 @@
 
     widget = {
       clock = {
-        font_family = "Lilex Nerd Font";
+        font_family = "Adwaita Mono";
         tooltip_format = "%c";
         vertical_format = ''%H\n%M\n—\n%d\n%m'';
       };
