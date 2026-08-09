@@ -23,6 +23,10 @@
     };
 
     noctalia.url = "github:noctalia-dev/noctalia/cachix";
+    millenium = {
+      url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
