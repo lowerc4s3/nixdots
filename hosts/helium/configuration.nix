@@ -1,6 +1,7 @@
 {
   pkgs,
   flake,
+  inputs,
   hostName,
   ...
 }:
@@ -9,6 +10,7 @@
   time.timeZone = "Europe/Moscow";
 
   imports = with flake.nixosModules; [
+    inputs.nixos-hardware.nixosModules.apple-t2
     sys-core
     printing
 
