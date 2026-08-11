@@ -52,7 +52,11 @@
 
     perSystem.self.chainner
     identity
-    prismlauncher
+    (prismlauncher.override {
+      jdks = with pkgs; [
+        jdk17
+      ];
+    })
 
     loupe
     cine
