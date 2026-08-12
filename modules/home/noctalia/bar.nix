@@ -35,7 +35,7 @@
       workspaces = {
         pill_scale = 0.75;
         active_pill_size = 2.6;
-        display = "none";
+        show_labels = false;
         empty_color = "on_surface";
         occupied_color = "on_surface";
       };
