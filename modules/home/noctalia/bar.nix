@@ -7,16 +7,27 @@
       widget_spacing = 16;
       radius_bottom_left = 0;
       radius_top_left = 0;
+      dead_zone.actions.right = "none";
 
       # items
       start = [ "workspaces" ];
       center = [ "clock" ];
       end = [
         "tray"
-        "keyboard_layout"
-        "volume"
-        "notifications"
+        "group:system_controls"
         "control-center"
+      ];
+
+      capsule_group = [
+        {
+          enabled = true;
+          id = "system_controls";
+          members = [
+            "keyboard_layout"
+            "volume"
+            "notifications"
+          ];
+        }
       ];
     };
 
@@ -34,13 +45,18 @@
 
       workspaces = {
         pill_scale = 0.75;
-        active_pill_size = 2.6;
+        active_pill_size = 0.75;
+        inactive_pill_size = 0.25;
         show_labels = false;
         empty_color = "on_surface";
         occupied_color = "on_surface";
       };
 
-      tray.drawer = true;
+      tray = {
+        capsule = true;
+        drawer = true;
+      };
+
       volume.show_label = false;
       control-center.glyph = "layout";
     };
