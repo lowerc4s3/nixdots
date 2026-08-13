@@ -43,6 +43,8 @@
     "application/pdf" = "org.pwmt.zathura.desktop";
   };
 
+  services.easyeffects.enable = true;
+
   home.packages = with pkgs; [
     (discord.override {
       withVencord = true;
