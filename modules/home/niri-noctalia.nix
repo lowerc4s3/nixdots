@@ -22,6 +22,10 @@
           action.spawn = noctalia "panel-toggle session";
           repeat = false;
         };
+        "Mod+Shift+N" = {
+          action.spawn = noctalia "panel-toggle control-center notifications";
+          repeat = false;
+        };
       };
 
       layer-rules = [
