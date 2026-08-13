@@ -41,7 +41,7 @@ in
         repeat = false;
       };
       "Mod+Q" = {
-        action.spawn-sh = "kill -9 $(niri msg --json focused-window | ${getExe pkgs.jq} '.id')";
+        action.spawn-sh = "kill $(niri msg --json focused-window | ${getExe pkgs.jq} '.pid')";
         repeat = false;
       };
       "Mod+F".action.maximize-column = [ ];
