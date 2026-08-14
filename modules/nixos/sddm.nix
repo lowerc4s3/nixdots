@@ -7,7 +7,10 @@
   imports = [ inputs.silentSDDM.nixosModules.default ];
 
   services.displayManager.sddm = {
-    wayland.enable = true;
+    wayland = {
+      compositor = "kwin";
+      enable = true;
+    };
   };
 
   programs.silentSDDM = {
