@@ -105,15 +105,13 @@
     ];
   };
 
-  programs.obs-studio.enable = true;
+  programs = {
+    obs-studio.enable = true;
+    gnome-disks.enable = true;
 
-  fonts.fontconfig = {
-    hinting = {
+    localsend = {
       enable = true;
-      style = "slight";
+      openFirewall = true;
     };
-    subpixel.rgba = "rgb";
   };
-
-  programs.gnome-disks.enable = true;
 }
