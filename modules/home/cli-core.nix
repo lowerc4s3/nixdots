@@ -1,5 +1,10 @@
 { config, lib, ... }:
 {
+  home.sessionVariables = {
+    NH_ASK = "1";
+    NH_SHOW_ACTIVATION_LOGS = "1";
+  };
+
   programs = {
     nh = {
       enable = true;
