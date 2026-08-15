@@ -2,7 +2,6 @@
   lib,
   flake,
   pkgs,
-  perSystem,
   ...
 }:
 let
@@ -60,9 +59,6 @@ in
     #
     # layout
     #
-    spawn-at-startup = [
-      { argv = mkCmd "${getExe perSystem.self.oniri} --tiling-layout"; }
-    ];
 
     layout = {
       empty-workspace-above-first = true;
