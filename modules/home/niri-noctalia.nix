@@ -1,10 +1,14 @@
-{ flake, ... }:
+{ flake, pkgs, ... }:
 {
   imports = with flake.homeModules; [
     niri
     noctalia
     vicinae
     foot
+  ];
+
+  home.packages = with pkgs; [
+    udiskie
   ];
 
   programs.niri.settings =
