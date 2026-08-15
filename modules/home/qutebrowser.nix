@@ -16,13 +16,16 @@ in
     package = pkgs'.qutebrowser.override { enableWideVine = true; };
 
     searchEngines = {
+      # general
       DEFAULT = "https://duckduckgo.com/?q={}";
       g = "https://www.google.com/search?q={}";
-      mynixos = "https://mynixos.com/search?q={}";
+
+      # nix related
       pkgs = "https://search.nixos.org/packages?channel=unstable&query={}";
-      opts = "https://search.nixos.org/options?channel=unstable&query={}";
-      archwiki = "https://wiki.archlinux.org/index.php?search={}";
+      opts = "https://search.nüschtos.de/options?query={}";
+      noogle = "https://noogle.dev/q/?term={}";
       nixwiki = "https://wiki.nixos.org/w/index.php?search={}";
+      archwiki = "https://wiki.archlinux.org/index.php?search={}";
     };
 
     loadAutoconfig = true;
@@ -68,7 +71,7 @@ in
         show = "multiple";
         title = {
           alignment = "center";
-          format = "{audio}[{relative_index}] {current_title}";
+          format = "{audio}{relative_index} | {current_title}";
           format_pinned = "{relative_index}";
         };
         favicons.scale = 1.1;
