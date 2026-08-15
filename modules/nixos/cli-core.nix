@@ -1,23 +1,20 @@
-{ pkgs, lib, ... }:
 {
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
+{
+  nixpkgs.overlays = [ inputs.nvx.overlays.default ];
+
   environment.systemPackages = with pkgs; [
     fd
     ripgrep
     psmisc
     file
     git
-
-    # needed for neovim
-    tree-sitter
-    gcc
+    neovim-nvx
   ];
-
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-  };
 
   home-manager.backupCommand = lib.getExe pkgs.trashy;
 }

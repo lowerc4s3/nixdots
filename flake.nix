@@ -27,6 +27,10 @@
     };
 
     noctalia.url = "github:noctalia-dev/noctalia/cachix";
+    nvx = {
+      url = "github:lowerc4s3/nvx";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     millenium = {
       url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
       inputs.nixpkgs.follows = "nixpkgs";
