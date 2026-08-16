@@ -10,7 +10,6 @@
   time.timeZone = "Europe/Moscow";
 
   imports = with flake.nixosModules; [
-    ./hardware-configuration.nix
     sys-core
     printing
 
@@ -30,12 +29,41 @@
   # boot
   #
 
+  hardware.facter.reportPath = ./facter.json;
+  swapDevices = [ { device = "/dev/disk/by-label/linuxswap"; } ];
+  fileSystems = {
+    "/" = {
+      device = "/dev/disk/by-label/nixroot";
+      fsType = "ext4";
+    };
+    "/boot" = {
+      device = "/dev/disk/by-label/BOOT";
+      fsType = "vfat";
+      options = [
+        "fmask=0022"
+        "dmask=0022"
+      ];
+    };
+    "/mnt/Storage" = {
+      device = "/dev/disk/by-label/Storage";
+      fsType = "ntfs";
+      options = [
+        "defaults"
+        "nosuid"
+        "dmask=022"
+        "fmask=133"
+        "uid=1000"
+        "gid=100"
+        "windows_names"
+        "nofail"
+        "x-gvfs-show"
+      ];
+    };
+  };
+
   boot = {
     supportedFilesystems = [ "ntfs" ];
     kernelPackages = pkgs.linuxPackages_zen;
-    kernelParams = [
-      "amd_pstate=active" # use modern amd performance scaling driver
-    ];
   };
 
   boot.loader = {
@@ -57,22 +85,6 @@
         splashImage = "${theme}/background.png";
       };
     timeout = 20;
-  };
-
-  fileSystems."/mnt/Storage" = {
-    device = "/dev/disk/by-uuid/AE62349D62346BE9";
-    fsType = "ntfs";
-    options = [
-      "defaults"
-      "nosuid"
-      "dmask=022"
-      "fmask=133"
-      "uid=1000"
-      "gid=100"
-      "windows_names"
-      "nofail"
-      "x-gvfs-show"
-    ];
   };
 
   #
