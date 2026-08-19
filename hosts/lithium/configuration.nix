@@ -8,6 +8,7 @@
   system.stateVersion = "25.11";
   imports = [ flake.nixosModules.desktop ];
   networking = { inherit hostName; };
+  time.timeZone = "Europe/Moscow";
 
   hardware.facter.reportPath = ./facter.json;
   swapDevices = [ { device = "/dev/disk/by-label/linuxswap"; } ];
