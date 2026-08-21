@@ -23,7 +23,7 @@ in
 
         modesetting.enable = true;
         open = !cfg.nvidia.legacy;
-        nvidiaSettings = true;
+        nvidiaSettings = false;
 
         # Enable nvidia-suspend/hibernate/resume services
         # and set NVreg_PreserveVideoMemoryAllocations
