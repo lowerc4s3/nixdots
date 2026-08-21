@@ -528,11 +528,11 @@
         "tree-sitter-manager-nvim": "tree-sitter-manager-nvim"
       },
       "locked": {
-        "lastModified": 1786797277,
-        "narHash": "sha256-oq8pmEGv9Kpe2SNcKU9xNe8D3c9Uq383dvMVnFoLBj0=",
+        "lastModified": 1787326962,
+        "narHash": "sha256-ESCej0lh0Id0s6Hc6i24gpYxwdexACl6z5FSrAuXnrI=",
         "owner": "lowerc4s3",
         "repo": "nvx",
-        "rev": "d7951d08d0ec4e2f93985b28b79c4aefc8f2725f",
+        "rev": "bf9e7fcd43e81828d051b29aea4e2585b33c8ffe",
         "type": "github"
       },
       "original": {
