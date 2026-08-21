@@ -86,11 +86,15 @@
   };
 
   programs = {
-    obs-studio.enable = true;
     gnome-disks.enable = true;
     localsend = {
       enable = true;
       openFirewall = true;
+    };
+
+    gpu-screen-recorder = {
+      enable = true;
+      ui.enable = true;
     };
   };
 }
