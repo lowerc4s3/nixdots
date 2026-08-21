@@ -1,33 +1,14 @@
 {
-  pkgs,
   flake,
   hostName,
+  pkgs,
   ...
 }:
 {
   system.stateVersion = "25.11";
+  imports = [ flake.nixosModules.desktop ];
   networking = { inherit hostName; };
   time.timeZone = "Europe/Moscow";
-
-  imports = with flake.nixosModules; [
-    sys-core
-    printing
-
-    cli-core
-    nix
-    fish
-
-    desk-core
-    stylix
-    niri-noctalia
-    sddm
-    steam
-    clash-verge
-  ];
-
-  #
-  # boot
-  #
 
   hardware.facter.reportPath = ./facter.json;
   swapDevices = [ { device = "/dev/disk/by-label/linuxswap"; } ];
@@ -61,66 +42,52 @@
     };
   };
 
-  boot = {
-    supportedFilesystems = [ "ntfs" ];
-    kernelPackages = pkgs.linuxPackages_zen;
-  };
-
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    grub =
-      let
-        theme = pkgs.minimal-grub-theme;
-      in
-      {
+  atoms = {
+    system = {
+      enable = true;
+      dualboot.enable = true;
+      graphics.nvidia.enable = true;
+      network.enable = true;
+      audio.enable = true;
+      printing = {
         enable = true;
-        device = "nodev";
-        efiSupport = true;
-        useOSProber = true;
-        # select last booted entry by default
-        default = "saved";
-        configurationLimit = 50;
-
-        inherit theme;
-        splashImage = "${theme}/background.png";
+        drivers = [ pkgs.hplip ];
       };
-    timeout = 20;
-  };
+      users.lowerc4s3 = {
+        enable = true;
+        isAdmin = true;
+      };
+    };
 
-  #
-  # drivers
-  #
+    cli = {
+      enable = true;
+      nix.enable = true;
+    };
 
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia = {
-    branch = "latest";
+    stylix.enable = true;
 
-    modesetting.enable = true;
-    open = true;
-    nvidiaSettings = true;
+    desktop = {
+      enable = true;
+      noctalia.cache.enable = true;
+      sddm.enable = true;
+      niri = {
+        enable = true;
+        withNoctalia = true;
+      };
+    };
 
-    # Enable nvidia-suspend/hibernate/resume services
-    # and set NVreg_PreserveVideoMemoryAllocations
-    powerManagement.enable = true;
-  };
-
-  #
-  # users
-  #
-
-  users.users.lowerc4s3 = {
-    isNormalUser = true;
-    shell = pkgs.fish;
-    extraGroups = [
-      "wheel"
-      "networkmanager"
-    ];
+    apps = {
+      clash-verge.enable = true;
+      steam = {
+        enable = true;
+        millenium.enable = true;
+      };
+    };
   };
 
   programs = {
     obs-studio.enable = true;
     gnome-disks.enable = true;
-
     localsend = {
       enable = true;
       openFirewall = true;

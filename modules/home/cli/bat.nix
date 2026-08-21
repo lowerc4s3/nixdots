@@ -1,0 +1,34 @@
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+let
+  cfg = config.atoms.cli.bat;
+in
+{
+  options.atoms.cli.bat = {
+    enable = lib.mkEnableOption "bat, the cat clone with syntax highlighting";
+  };
+
+  config = lib.mkIf (config.atoms.cli.enable && cfg.enable) {
+    programs.bat = {
+      enable = true;
+      config = {
+        style = "numbers";
+        set-terminal-title = true;
+      };
+
+      syntaxes.fennel = {
+        src = pkgs.fetchFromGitHub {
+          owner = "gbaptista";
+          repo = "sublime-text-fennel";
+          rev = "212b9d5ab14412d8d1f4f9db783e201785e167d6";
+          hash = "sha256-puHDk0xDvdOfNGOkuc4AqaE/fSNm5vVFqoaFkL1vXIY=";
+        };
+        file = "Fennel.sublime-syntax";
+      };
+    };
+  };
+}

@@ -1,0 +1,50 @@
+{
+  config,
+  lib,
+  ...
+}:
+let
+  cfg = config.atoms.desktop;
+  allCorners = radius: {
+    bottom-left = radius;
+    bottom-right = radius;
+    top-left = radius;
+    top-right = radius;
+  };
+in
+{
+  config = lib.mkIf (config.atoms.desktop.enable && cfg.enable) {
+    programs.niri.settings.window-rules = [
+      {
+        # rounded corners for all windows
+        matches = [ ];
+        geometry-corner-radius = allCorners 10.;
+        clip-to-geometry = true;
+      }
+      {
+        matches = [
+          {
+            app-id = "steam";
+            title = "^Список друзей$";
+          }
+        ];
+        default-column-width.proportion = 1. / 5.;
+      }
+      {
+        # move steam notifications in the bottom right corner
+        matches = [
+          {
+            app-id = "steam";
+            title = "^notificationtoasts_.+_desktop$";
+          }
+        ];
+        open-focused = false;
+        default-floating-position = {
+          x = 10;
+          y = 10;
+          relative-to = "bottom-right";
+        };
+      }
+    ];
+  };
+}
