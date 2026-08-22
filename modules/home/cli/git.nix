@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 let
@@ -51,5 +52,9 @@ in
       gds = "git diff --staged";
       grs = "git restore --staged";
     };
+
+    home.packages = with pkgs; [
+      gitu
+    ];
   };
 }
