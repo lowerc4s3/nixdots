@@ -27,6 +27,8 @@ in
       psmisc
       file
       git
+      zip
+      unzipNLS
     ];
 
     programs.fish = {
