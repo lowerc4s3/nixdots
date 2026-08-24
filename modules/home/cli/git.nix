@@ -32,8 +32,12 @@ in
     };
 
     programs.gh.enable = true;
+    home.packages = with pkgs; [
+      gitu
+    ];
 
     atoms.cli.shell.abbrs = {
+      gg = "gitu";
       gl = "git log";
       glo = "git log --oneline";
       gst = "git status -sb";
@@ -52,9 +56,5 @@ in
       gds = "git diff --staged";
       grs = "git restore --staged";
     };
-
-    home.packages = with pkgs; [
-      gitu
-    ];
   };
 }
