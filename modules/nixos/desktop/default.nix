@@ -14,7 +14,6 @@ in
     flake.nixosModules.apps
     flake.nixosModules.stylix
     ./niri.nix
-    ./noctalia.nix
     ./sddm.nix
   ];
 

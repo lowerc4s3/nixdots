@@ -68,7 +68,6 @@
 
     desktop = {
       enable = true;
-      noctalia.cache.enable = true;
       sddm.enable = true;
       niri = {
         enable = true;

@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  inputs,
   flake,
   ...
 }:
@@ -10,7 +9,6 @@ let
 in
 {
   imports = [
-    inputs.noctalia.homeModules.default
     ./bar.nix
     ./idle.nix
     ./session.nix

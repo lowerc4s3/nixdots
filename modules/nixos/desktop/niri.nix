@@ -43,7 +43,6 @@ in
     }
 
     (mkIf cfg.withNoctalia {
-      atoms.desktop.noctalia.enable = true;
       environment.systemPackages = with pkgs; [
         nautilus
       ];

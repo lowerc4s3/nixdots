@@ -22,7 +22,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    noctalia.url = "github:noctalia-dev/noctalia/cachix";
     nvx = {
       url = "github:lowerc4s3/nvx";
       inputs.nixpkgs.follows = "nixpkgs";
