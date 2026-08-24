@@ -61,7 +61,7 @@
     perSystem.nvx.nvx
     identity
 
-    (prismlauncher.override { jdks = [ jdk17 ]; })
+    (perSystem.freesm-launcher.default.override { jdks = [ jdk17 ]; })
 
     loupe
     cine
