@@ -606,12 +606,12 @@
         "nixpkgs-qb": "nixpkgs-qb",
         "noctalia": "noctalia",
         "nvx": "nvx",
-        "silentSDDM": "silentSDDM",
+        "silent-sddm": "silent-sddm",
         "stylix": "stylix",
         "vicinae": "vicinae"
       }
     },
-    "silentSDDM": {
+    "silent-sddm": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
