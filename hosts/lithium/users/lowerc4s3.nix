@@ -61,7 +61,12 @@
     perSystem.nvx.nvx
     identity
 
-    (perSystem.freesm-launcher.default.override { jdks = [ jdk17 ]; })
+    (perSystem.pineconemc.default.override {
+      jdks = [ jdk17 ];
+      gamemodeSupport = false;
+      # prism launcher (and pineconemc) doesn't need glxinfo anymore
+      mesa-demos = null;
+    })
 
     loupe
     cine

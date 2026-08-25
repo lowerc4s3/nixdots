@@ -43,9 +43,8 @@
       url = "github:vicinaehq/vicinae";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    freesm-launcher = {
-      url = "github:FreesmTeam/FreesmLauncher";
+    pineconemc = {
+      url = "github:ElyPrismLauncher/Launcher";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
