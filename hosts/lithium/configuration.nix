@@ -38,6 +38,8 @@
         "windows_names"
         "nofail"
         "x-gvfs-show"
+        "noauto"
+        "x-systemd.automount"
       ];
     };
   };
