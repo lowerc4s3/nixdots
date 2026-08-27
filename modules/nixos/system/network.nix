@@ -26,9 +26,13 @@ in
   };
 
   config = lib.mkIf (config.atoms.system.enable && cfg.enable) {
-    networking.networkmanager = {
-      enable = true;
-      insertNameservers = cfg.nameservers;
+    networking = {
+      dhcpcd.enable = false;
+
+      networkmanager = {
+        enable = true;
+        insertNameservers = cfg.nameservers;
+      };
     };
   };
 }
