@@ -29,10 +29,6 @@ in
         };
 
         shellAbbrs = {
-          "!!" = {
-            position = "anywhere";
-            function = "last_hist_item";
-          };
           md = "mkdir -p";
           la = "ls -a";
           lsa = "ls -a";
@@ -51,19 +47,13 @@ in
           set -g fish_color_keyword blue
           set -g fish_color_option brblue
         '';
-
-        plugins = with pkgs.fishPlugins; [
-          {
-            name = "tide";
-            src = tide;
-          }
-        ];
       };
 
       home = {
         shell.enableFishIntegration = true;
         packages = with pkgs; [
           fishPlugins.tide
+          fishPlugins.puffer
         ];
         activation =
           let
