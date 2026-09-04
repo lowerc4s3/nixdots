@@ -54,7 +54,7 @@ in
 
         workspaces = {
           pill_scale = 0.75;
-          active_pill_size = 0.75;
+          active_pill_size = 1;
           inactive_pill_size = 0.25;
           show_labels = false;
           empty_color = "on_surface";
