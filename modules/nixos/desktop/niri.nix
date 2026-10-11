@@ -43,13 +43,7 @@ in
     }
 
     (mkIf cfg.withNoctalia {
-      environment.systemPackages = with pkgs; [
-        nautilus
-      ];
-      programs.nautilus-open-any-terminal = {
-        enable = true;
-        terminal = "foot";
-      };
+      atoms.apps.nautilus.enable = true;
     })
   ]);
 }
