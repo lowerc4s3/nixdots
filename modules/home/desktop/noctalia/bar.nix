@@ -23,6 +23,7 @@ in
         center = [ "clock" ];
         end = [
           "tray"
+          "privacy"
           "group:system_controls"
           "control-center"
         ];
@@ -64,6 +65,11 @@ in
         tray = {
           capsule = true;
           drawer = true;
+        };
+
+        privacy = {
+          capsule = true;
+          hide_inactive = true;
         };
 
         volume.show_label = false;
