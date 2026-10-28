@@ -67,6 +67,8 @@
       # prism launcher (and pineconemc) doesn't need glxinfo anymore
       mesa-demos = null;
     })
+    archipelago
+    r2modman
 
     loupe
     cine
