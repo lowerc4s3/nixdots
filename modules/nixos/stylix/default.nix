@@ -21,7 +21,7 @@ in
     stylix = {
       enable = true;
       autoEnable = false;
-      base16Scheme = import ./colors/oxocarbon.nix;
+      base16Scheme = import flake + config/colors/oxocarbon.nix;
       polarity = "dark";
 
       fonts = {

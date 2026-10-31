@@ -1,4 +1,5 @@
 {
+  flake,
   config,
   lib,
   ...
@@ -8,6 +9,9 @@ let
 in
 {
   imports = [
+    flake.homeModules.cli
+    flake.homeModules.apps
+    flake.homeModules.stylix
     ./niri
     ./noctalia
     ./qt.nix

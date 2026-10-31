@@ -2,6 +2,8 @@
   config,
   lib,
   pkgs,
+  flake,
+  inputs,
   ...
 }:
 let
@@ -10,6 +12,7 @@ in
 {
   imports = [
     ./qt.nix
+    inputs.stylix.homeModules.stylix
   ];
 
   options.atoms.stylix = {
@@ -17,7 +20,12 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    stylix.autoEnable = true;
+    stylix = {
+      enable = true;
+      autoEnable = true;
+      base16Scheme = import flake + config/colors/oxocarbon.nix;
+      polarity = "dark";
+    };
 
     home = {
       pointerCursor.enable = true;

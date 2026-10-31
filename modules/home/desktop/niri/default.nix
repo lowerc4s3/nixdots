@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 let
@@ -9,6 +10,7 @@ let
 in
 {
   imports = [
+    inputs.niri.homeModules.config
     ./binds.nix
     ./noctalia.nix
     ./rules.nix
