@@ -11,7 +11,10 @@
   time.timeZone = "Europe/Moscow";
 
   hardware.facter.reportPath = ./facter.json;
+
   swapDevices = [ { device = "/dev/disk/by-label/linuxswap"; } ];
+  boot.zswap.enable = true;
+
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-label/nixroot";
