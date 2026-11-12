@@ -62,7 +62,10 @@
     identity
 
     (perSystem.pineconemc.default.override {
-      jdks = [ jdk17 ];
+      jdks = [
+        jdk17
+        jdk25
+      ];
       gamemodeSupport = false;
       # prism launcher (and pineconemc) doesn't need glxinfo anymore
       mesa-demos = null;
