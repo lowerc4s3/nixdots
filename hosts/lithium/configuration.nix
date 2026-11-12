@@ -83,10 +83,7 @@
     apps = {
       iloader.enable = true;
       clash-verge.enable = true;
-      steam = {
-        enable = true;
-        millenium.enable = true;
-      };
+      steam.enable = true;
     };
   };
 
