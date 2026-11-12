@@ -47,8 +47,7 @@ in
     }
 
     (mkIf cfg.millenium.enable {
-      nixpkgs.overlays = [ inputs.millenium.overlays.default ];
-      programs.steam.package = pkgs.millennium-steam;
+      programs.steam.package = pkgs.steamWithMillennium;
     })
   ]);
 }

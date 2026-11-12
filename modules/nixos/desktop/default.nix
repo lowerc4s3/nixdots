@@ -25,7 +25,8 @@ in
     home-manager.sharedModules = [ flake.homeModules.desktop ];
 
     # use zen kernel on desktops
-    boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_zen;
+    # BUG: kernel panic at boot on zen kernel 7.3.4 as of 12.11.2026
+    boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_xanmod_latest;
 
     # disable nix-manual desktop entry and html docs
     documentation.doc.enable = false;

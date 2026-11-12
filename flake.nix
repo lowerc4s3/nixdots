@@ -26,10 +26,6 @@
       url = "github:lowerc4s3/nvx";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    millenium = {
-      url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     niri = {
       url = "github:epireyn/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
