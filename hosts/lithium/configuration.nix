@@ -51,6 +51,7 @@
     system = {
       enable = true;
       dualboot.enable = true;
+      plymouth.enable = true;
       graphics.nvidia.enable = true;
       network.enable = true;
       audio.enable = true;

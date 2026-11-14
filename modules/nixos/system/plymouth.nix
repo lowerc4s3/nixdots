@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }:
 let
@@ -13,10 +12,9 @@ in
   };
 
   config = lib.mkIf (config.atoms.system.enable && cfg.enable) {
+    boot.kernelParams = [ "quiet" ];
     boot.plymouth = {
       enable = true;
-      theme = "nixos-bgrt";
-      themePackages = [ pkgs.nixos-bgrt-plymouth ];
     };
   };
 }
