@@ -10,6 +10,7 @@ in
 {
   imports = [
     ./audio.nix
+    ./bootvine.nix
     ./dualboot.nix
     ./graphics.nix
     ./network.nix
