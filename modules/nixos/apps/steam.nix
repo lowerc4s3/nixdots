@@ -11,7 +11,7 @@ in
 {
   options.atoms.apps.steam = {
     enable = lib.mkEnableOption "steam game platform";
-    millenium.enable = lib.mkEnableOption "millenium, the steam modding framework";
+    millennium.enable = lib.mkEnableOption "millennium, the steam modding framework";
   };
 
   config = mkIf cfg.enable (mkMerge [
@@ -45,7 +45,7 @@ in
         };
     }
 
-    (mkIf cfg.millenium.enable {
+    (mkIf cfg.millennium.enable {
       programs.steam.package = pkgs.steamWithMillennium;
     })
   ]);

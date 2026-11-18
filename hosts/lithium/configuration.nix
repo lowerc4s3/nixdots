@@ -86,7 +86,7 @@
       clash-verge.enable = true;
       steam = {
         enable = true;
-        millenium.enable = true;
+        millennium.enable = true;
       };
     };
   };
